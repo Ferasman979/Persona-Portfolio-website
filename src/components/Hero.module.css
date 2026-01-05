@@ -1,0 +1,143 @@
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: var(--nav-height);
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 0 1.5rem;
+    gap: 4rem;
+}
+
+.content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.greeting {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.name {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #f8fafc, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+}
+
+.roleWrapper {
+    font-size: 1.75rem;
+    color: var(--secondary);
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.dynamicRole {
+    color: var(--accent);
+    margin-left: 0.5rem;
+    font-weight: 600;
+}
+
+.bio {
+    font-size: 1.125rem;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.socialLink {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--primary);
+    font-weight: 600;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+    background-color: var(--primary);
+    color: var(--background);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+.imageWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.placeholderImage {
+    width: 350px;
+    height: 350px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--card-bg), #0f172a);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: rotate(3deg);
+    transition: transform 0.3s ease;
+}
+
+.placeholderImage:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.headshot {
+    object-fit: cover;
+    border-radius: 20px;
+    /* match container */
+}
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: auto;
+        padding: 3rem 0;
+    }
+
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .roleWrapper,
+    .socials {
+        justify-content: center;
+    }
+
+    .bio {
+        text-align: left;
+    }
+}

@@ -1,0 +1,67 @@
+:root {
+  /* Brighter Dark Theme (Slate/Blue-Grey Palette) */
+  --background: #0f172a;
+  /* Slate 900 */
+  --foreground: #f8fafc;
+  /* Slate 50 */
+  --primary: #38bdf8;
+  /* Sky 400 */
+  --secondary: #94a3b8;
+  /* Slate 400 */
+  --accent: #fcd34d;
+  /* Amber 300 */
+  --card-bg: #1e293b;
+  /* Slate 800 */
+
+  --nav-height: 5rem;
+  /* Slightly taller for better spacing */
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+  color: #cbd5e1;
+  /* Slate 300 for better readability */
+}
+
+section {
+  padding: 6rem 1rem;
+  min-height: 50vh;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
