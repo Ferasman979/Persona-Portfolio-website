@@ -1,0 +1,67 @@
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+.header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 1rem;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: 0.25rem;
+}
+
+.role {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.body {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--primary);
+}
+
+.text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #e2e8f0;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--secondary);
+    margin-top: 1rem;
+}
+
+.date {
+    opacity: 0.8;
+}
+
+.relationship {
+    font-weight: 500;
+    color: var(--accent);
+}
