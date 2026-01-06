@@ -106,6 +106,85 @@ a.secondary {
   }
 }
 
+/* About Grid Styles */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .aboutGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.aboutCard {
+  background: rgba(255, 255, 255, 0.05);
+  /* Slightly brighter for visibility */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  /* More visible border */
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.08);
+  /* Brighter hover state */
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  /* Bright/Primary color for visibility */
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.cardText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  /* Brighter text (nearly white) */
+}
+
+.cardList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cardListItem {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  color: #d1d5db;
+  /* Light grey, highly visible */
+}
+
+.cardListItem strong {
+  color: var(--foreground);
+  /* White/Brightest for emphasis */
+  font-weight: 600;
+}
+
+.cardListItem::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
 @media (max-width: 600px) {
   .main {
     padding: 48px 24px;

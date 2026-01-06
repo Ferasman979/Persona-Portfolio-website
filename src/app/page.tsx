@@ -1,5 +1,7 @@
 "use client";
 
+import styles from './page.module.css';
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
@@ -14,13 +16,36 @@ export default function Home() {
       <Hero />
 
       <Section id="about" title="About Me">
-        <p>
-          I am a passionate ML Developer and Research Assistant at Sheridan College, specializing in architecting scalable data schemas and automating machine learning lifecycles for production-grade RAG agents and NLP systems. My technical foundation relies on building reproducible CI/CD pipelines and managing high-availability containerized services.
-          <br /><br />
-          I design and deliver high-impact, scalable machine learning and agentic workflows using modern, production-grade technologies. My work takes a holistic approach, integrating robust data pipelines with model monitoring, observability, and actionable dashboard analytics.
-          <br /><br />
-          Outside of tech, I love playing soccer and fueling my curiosity through reading books.
-        </p>
+        <div className={styles.aboutGrid}>
+          {/* Card 1: About Me */}
+          <div className={styles.aboutCard}>
+            <h3 className={styles.cardTitle}>About Me</h3>
+            <p className={styles.cardText}>
+              I am a Computer Science (Data Analytics) student at Sheridan College specializing in GenAI and ML development. I focus on architecting scalable data pipelines and productionizing Machine Learning models through robust MLOps practices. With hands-on experience in Cloud Computing (AWS/GCP/Azure) and Containerization (Docker/K8s), I transform complex data into high-performance, cost-efficient production services.
+              <br /><br />
+              Currently, I serve as an ML Developer and Research Assistant, leading the deployment of containerized ML services supporting over 20,000 active users. Outside of tech, I am passionate about staying active on the soccer field and experimenting with new recipes in the cooking kitchen.
+            </p>
+          </div>
+
+          {/* Card 2: What I Do */}
+          <div className={styles.aboutCard}>
+            <h3 className={styles.cardTitle}>What I Do</h3>
+            <ul className={styles.cardList}>
+              <li className={styles.cardListItem}>
+                <strong>Architect Scalable ML & Data Pipelines:</strong> Design and govern high-volume ingestion pipelines and automated validation workflows for RAG Agents and NLP systems.
+              </li>
+              <li className={styles.cardListItem}>
+                <strong>Operationalize MLOps & CI/CD:</strong> Transform prototype ML engines into reproducible pipelines for automated feature engineering, training, and continuous evaluation.
+              </li>
+              <li className={styles.cardListItem}>
+                <strong>Develop Full-Stack & API Solutions:</strong> Build and deploy REST APIs and full-stack applications that integrate machine learning into functional user experiences.
+              </li>
+              <li className={styles.cardListItem}>
+                <strong>Optimize Infrastructure & Monitoring:</strong> Manage system reliability and scaling using tools like Grafana and Prometheus to maintain 99.9% up-time for production services.
+              </li>
+            </ul>
+          </div>
+        </div>
       </Section>
 
       <Section id="experience" title="Work Experience">
