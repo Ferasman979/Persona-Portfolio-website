@@ -1,8 +1,11 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
 import EndorsementCard from "@/components/EndorsementCard";
+import ExperienceCard from "@/components/ExperienceCard";
 
 export default function Home() {
   return (
@@ -14,13 +17,77 @@ export default function Home() {
         <p>
           I am a passionate ML Developer and Research Assistant at Sheridan College, specializing in architecting scalable data schemas and automating machine learning lifecycles for production-grade RAG agents and NLP systems. My technical foundation relies on building reproducible CI/CD pipelines and managing high-availability containerized services.
           <br /><br />
-          Previously, as a Data Analyst at Paradigm Electronics Inc., I engineered robust ETL pipelines, optimized global sales reporting, and developed full-stack applications that improved operational efficiency and drove revenue growth.
-          <br /><br />
-          Outside of tech, I stay active by playing soccer and fueling my curiosity through reading.
+          I design and deliver high-impact, scalable machine learning and agentic workflows using modern, production-grade technologies. My work takes a holistic approach, integrating robust data pipelines with model monitoring, observability, and actionable dashboard analytics.
         </p>
       </Section>
 
+      <Section id="experience" title="Work Experience">
+        <ExperienceCard
+          role="ML Developer/Research Assistant"
+          company="Sheridan College"
+          location="Oakville, Ontario"
+          date="Oct 2025 – PRESENT"
+          points={[
+            "Platform & Data Governance: Architected and governed highly scalable data schemas, ingestion pipelines, and automated validation workflows, specifically supporting productionized RAG Agents and sophisticated NLP systems.",
+            "CI/CD & Reproducibility (Model Lifecycle): Designed and operationalized the end-to-end Machine Learning lifecycle (MLOps), transforming prototype ML engines into highly reproducible CI/CD pipelines that fully automate feature engineering, model training, and continuous evaluation.",
+            "High-Volume Production Operations: Led the deployment, monitoring, and sustained operation of high-impact, containerized ML services, managing infrastructure reliability and scaling to support 20,000+ active users with 99.9% up-time and volume requirements.",
+            "Cross-Functional Project Lead: Collaborated with designers and developers, defining operational requirements and implementing best practices to ensure models, vector stores, and data flows were inherently scalable, maintainable, and cost-efficient in production environments."
+          ]}
+        />
+        <br />
+        <ExperienceCard
+          role="Data Analyst"
+          company="Paradigm Electronics Inc."
+          location="Mississauga, ON"
+          date="May 2024 – Aug 2025"
+          points={[
+            "Data Pipeline Optimization & Automation: Engineered and scaled robust ETL pipelines and complex SQL transformations using Apache Airflow, resulting in the automated daily, Month-to-Date (MTD), and Year-to-Date (YTD) reporting for Global sales operations.",
+            "Business Intelligence & Financial Impact: Developed and deployed key performance indicator (KPI) dashboards for Finance and Sales teams, incorporating automated anomaly detection that directly led to the recovery of $15,000 CAD in misplaced costs.",
+            "Strategic Data Analysis & Revenue Growth: Conducted deep-dive data analysis on product quality metrics and sales performance indicators, providing actionable insights that fueled a documented 20% revenue growth for the organization in Q2, 2024.",
+            "Full-Stack Development & API Engineering: Led full-stack development initiatives and deployed REST APIs as scalable solutions. Incorporated API scripting and monitored API performance to ensure reliable, real-time access to critical performance and operational metrics.",
+            "Workflow Automation & Efficiency: Executed the deployment of automated batch jobs and background processes that streamlined sales contract management, successfully reducing contract processing time by 45% and improving overall sales workflow efficiency."
+          ]}
+        />
+      </Section>
+
+      <Section id="volunteering" title="Volunteering">
+        <ExperienceCard
+          role="Workshop Team Member"
+          company="Google Developer Group Sheridan"
+          date="May 2025 – Present"
+          points={[
+            "Supported and organized the design and delivery of community tech workshops, helping 100+ attendees gain hands-on experience with Google technologies."
+          ]}
+        />
+      </Section>
+
       <Section id="projects" title="Projects">
+        <ProjectCard
+          title="HR GenAI Application: Autonomous Recruiting Agent"
+          description="A production-grade recruitment platform that orchestrates autonomous AI agents to validate candidates. It replaces traditional keyword matching with deep semantic analysis and web-based fact-checking."
+          githubLink="https://github.com/Ferasman979/HRApp"
+          demoLink="/demovid4website.mp4"
+          technologies={["Next.js 16", "Node.js", "LangChain", "LangGraph", "OpenAI/Groq", "Azure Container Apps", "MongoDB"]}
+          features={[
+            {
+              title: "🚀 Key Features",
+              items: [
+                "Unified Recruiter Dashboard with real-time Kanban board.",
+                "Autonomous 'Processor' & 'Researcher' agents for candidate validation.",
+                "RAG-powered candidate chat for deep insights.",
+                "Mission Control for live agent observability."
+              ]
+            },
+            {
+              title: "🛡️ Robust Architecture",
+              items: [
+                "Event-driven microservices design.",
+                "Custom API rate limiting for chatbot stability.",
+                "Scalable Azure Container Apps deployment."
+              ]
+            }
+          ]}
+        />
         <ProjectCard
           title="Sports Analytics App: CV-Driven Shot Recommendation System"
           description="Production-deployed mobile app using computer vision and ML to analyze ball trajectories and deliver real-time shot recommendations and coach feedback."
@@ -46,35 +113,7 @@ export default function Home() {
             }
           ]}
         />
-        <ProjectCard
-          title="HR GenAI Application: Autonomous Recruiting Agent"
-          description="A production-grade recruitment platform that orchestrates autonomous AI agents to validate candidates. It replaces traditional keyword matching with deep semantic analysis and web-based fact-checking."
-          githubLink="https://github.com/Ferasman979/HRApp"
-          demoLink="/demovid4website.mp4"
-          technologies={["Next.js 16", "Node.js", "LangChain", "OpenAI/Groq", "Azure Container Apps", "MongoDB"]}
-          features={[
-            {
-              title: "🚀 Key Features",
-              items: [
-                "Unified Recruiter Dashboard with real-time Kanban board.",
-                "Autonomous 'Processor' & 'Researcher' agents for candidate validation.",
-                "RAG-powered candidate chat for deep insights.",
-                "Mission Control for live agent observability."
-              ]
-            },
-            {
-              title: "🛡️ Robust Architecture",
-              items: [
-                "Event-driven microservices design.",
-                "Custom API rate limiting for chatbot stability.",
-                "Scalable Azure Container Apps deployment."
-              ]
-            }
-          ]}
-        />
       </Section>
-
-
 
       <Section id="endorsements" title="Endorsements">
         <EndorsementCard

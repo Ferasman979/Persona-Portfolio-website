@@ -31,12 +31,7 @@ const Hero = () => {
                         </span>
                     </div>
 
-                    <p className={styles.bio}>
-                        I design and deliver high-impact, scalable machine learning and agentic workflows using modern, production-grade technologies.
-                        My work takes a holistic approach, integrating robust data pipelines with model monitoring, observability, and actionable dashboard analytics.
-                        This combo has been key in identifying product quality issues and implementing cost-effective solutions.
-                        I bring deep, hands-on experience in large language models, with sustained work in this space since 2023.
-                    </p>
+
 
                     <div className={styles.socials}>
                         <Link href="https://github.com/Ferasman979" target="_blank" className={styles.socialLink}>
