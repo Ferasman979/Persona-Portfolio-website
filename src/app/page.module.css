@@ -1,5 +1,5 @@
 .page {
-  --background: #fafafa;
+  --background: #0a0a0a;
   --foreground: #fff;
 
   --text-primary: #000;
@@ -21,7 +21,7 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
-  max-width: 800px;
+  max-width: 95%;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
@@ -107,6 +107,25 @@ a.secondary {
 }
 
 /* About Grid Styles */
+.projectGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .projectGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .aboutGrid {
   display: grid;
   grid-template-columns: 1fr;

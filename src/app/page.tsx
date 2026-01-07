@@ -15,11 +15,11 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      <Section id="about" title="About Me">
+      <Section id="about">
         <div className={styles.aboutGrid}>
           {/* Card 1: About Me */}
           <div className={styles.aboutCard}>
-            <h3 className={styles.cardTitle}>About Me</h3>
+            <h3 className={styles.cardTitle}>My Profile</h3>
             <p className={styles.cardText}>
               I am a Computer Science (Data Analytics) student at Sheridan College specializing in GenAI and ML development. I focus on architecting scalable data pipelines and productionizing Machine Learning models through robust MLOps practices. With hands-on experience in Cloud Computing (AWS/GCP/Azure) and Containerization (Docker/K8s), I transform complex data into high-performance, cost-efficient production services.
               <br /><br />
@@ -78,170 +78,161 @@ export default function Home() {
       </Section>
 
       <Section id="projects" title="Top Projects">
-        <ProjectCard
-          title="HR GenAI Application"
-          description={
-            <>
-              <p>
-                <strong>Completed</strong>
-              </p>
-              <br />
-              <p>
-                <strong>AI-powered Applicant Tracking System (ATS)</strong> that automates candidate evaluation using
-                autonomous GenAI agents and tool-driven workflows. The platform uses <strong>LlamaParse</strong> to
-                extract structured data from complex resume PDFs, <strong>LangChain + LangGraph</strong> to orchestrate
-                multi-step agent reasoning, and <strong>Llama 3 (Groq)</strong> to perform contextual skill matching and
-                scoring via Retrieval-Augmented Generation (RAG).
-              </p>
-              <br />
-              <p>
-                Autonomous research agents use <strong>Puppeteer</strong> to browse and analyze external candidate links
-                (GitHub, portfolios, LinkedIn), summarizing project complexity and validating experience claims. Resume
-                data, agent outputs, and evaluation results are stored in <strong>MongoDB</strong>, with change streams
-                triggering downstream processing stages in an event-driven pipeline.
-              </p>
-              <br />
-              <p>
-                The system provides a real-time recruiter dashboard built with <strong>Next.js and React</strong>, enabling
-                job management, candidate pipeline tracking, and conversational resume querying. Full observability is
-                implemented using <strong>OpenTelemetry</strong>, with metrics collected by <strong>Prometheus</strong>,
-                distributed traces visualized in <strong>Tempo</strong>, and system health dashboards in{' '}
-                <strong>Grafana</strong>. Infrastructure is deployed on <strong>Azure Container Apps</strong> with
-                automated build and deployment pipelines via <strong>GitHub Actions</strong>, ensuring scalable,
-                cost-efficient AI processing.
-              </p>
-              <br />
-              <p>
-                <strong>Deployed on:</strong> Microsoft Azure
-              </p>
-            </>
-          }
-          githubLink="https://github.com/TaimoorAleem/AICricketCoach_CapstoneProject"
-          demoLink="/demovid4website.mp4"
-          technologies={[
-            "Next.js", "React", "TypeScript", "LangChain", "LangGraph", "Llama 3 (Groq)", "LlamaParse", "Puppeteer",
-            "MongoDB", "Azure Container Apps", "GitHub Actions", "OpenTelemetry", "Prometheus", "Grafana", "Tempo"
-          ]}
-          features={[
-            {
-              title: "🚀 Key Features",
-              items: [
-                "Unified Recruiter Dashboard with real-time Kanban board.",
-                "Autonomous 'Processor' & 'Researcher' agents for candidate validation.",
-                "RAG-powered candidate chat for deep insights.",
-                "Mission Control for live agent observability."
-              ]
-            },
-            {
-              title: "🛡️ Robust Architecture",
-              items: [
-                "Event-driven microservices design.",
-                "Custom API rate limiting for chatbot stability.",
-                "Scalable Azure Container Apps deployment."
-              ]
+        <div className={styles.projectGrid}>
+          <ProjectCard
+            title="HR GenAI Application"
+            status="Completed"
+            description={
+              <div className="space-y-4">
+                <p>
+                  <strong>AI-powered Applicant Tracking System (ATS)</strong> that automates candidate evaluation using
+                  autonomous GenAI agents and tool-driven workflows. The platform uses <strong>LlamaParse</strong> to
+                  extract structured data from complex resume PDFs, <strong>LangChain + LangGraph</strong> to orchestrate
+                  multi-step agent reasoning, and <strong>Llama 3 (Groq)</strong> to perform contextual skill matching and
+                  scoring via Retrieval-Augmented Generation (RAG).
+                </p>
+                <br />
+                <p>
+                  Autonomous research agents use <strong>Puppeteer</strong> to browse and analyze external candidate links
+                  (GitHub, portfolios, LinkedIn), summarizing project complexity and validating experience claims. Resume
+                  data, agent outputs, and evaluation results are stored in <strong>MongoDB</strong>, with change streams
+                  triggering downstream processing stages in an event-driven pipeline.
+                </p>
+                <br />
+                <p>
+                  The system provides a real-time recruiter dashboard built with <strong>Next.js and React</strong>, enabling
+                  job management, candidate pipeline tracking, and conversational resume querying. Full observability is
+                  implemented using <strong>OpenTelemetry</strong>, with metrics collected by <strong>Prometheus</strong>,
+                  distributed traces visualized in <strong>Tempo</strong>, and system health dashboards in{' '}
+                  <strong>Grafana</strong>. Infrastructure is deployed on <strong>Azure Container Apps</strong> with
+                  automated build and deployment pipelines via <strong>GitHub Actions</strong>, ensuring scalable,
+                  cost-efficient AI processing.
+                </p>
+                <p className="mt-2 text-sm text-gray-400">
+                  <br />
+                  <strong>Deployed on:</strong> Microsoft Azure
+                </p>
+              </div>
             }
-          ]}
-        />
-        <ProjectCard
-          title="Sports Analytics App: CV-Driven Shot Recommendation System"
-          description={
-            <>
-              <p>
-                <strong>Production-Grade Computer Vision Application</strong> developed to analyze cricket shot mechanics
-                in real-time. This mobile platform utilizes <strong>YOLOv8</strong> for high-speed object detection to
-                track ball trajectories and <strong>RandomForest</strong> classifiers to provide instant, data-driven
-                shot recommendations and corrective feedback to players.
-              </p>
-              <br />
-              <p>
-                The system features a cross-platform mobile app built with <strong>Flutter</strong>, offering a seamless
-                user experience for recording execution and receiving detailed coaching insights. Inference is decoupled
-                via a serverless architecture on <strong>Google Cloud Platform (Cloud Run)</strong>, ensuring
-                cost-effective scaling to zero when idle, while <strong>Pub/Sub</strong> handles asynchronous event
-                messaging for smooth analysis workflows.
-              </p>
-              <br />
-              <p>
-                <strong>Deployed on:</strong> Google Play Store (Internal Testing) & GCP
-              </p>
-            </>
-          }
-          githubLink="https://github.com/TaimoorAleem/AICricketCoach_CapstoneProject"
-          technologies={[
-            "Python", "OpenCV", "YOLOv8", "RandomForest", "Flutter", "Google Cloud Platform", "Cloud Run", "Pub/Sub"
-          ]}
-          features={[
-            {
-              title: "🏆 Achievement",
-              items: [
-                "First Place for Capstone projects in data analytics stream."
-              ]
-            },
-            {
-              title: "🚀 Impact Metrics",
-              items: [
-                "Deployed to production with ~10 active users.",
-                "Real-time CV inference via serverless architecture.",
-                "Cost-optimized ML inference using Cloud Run."
-              ]
-            },
-            {
-              title: "🔑 Key Contributions",
-              items: [
-                "Designed end-to-end CV pipeline using YOLOv8 to detect ball trajectories.",
-                "Built and trained a shot recommendation model (RandomForest + SMOTE).",
-                "Implemented coach feedback workflows for delivery-specific insights.",
-                "Deployed scalable inference using Cloud Run."
-              ]
+            githubLink="https://github.com/Ferasman979/HRApp"
+            demoLink="/demovid4website.mp4"
+            technologies={[
+              "Next.js", "React", "TypeScript", "LangChain", "LangGraph", "Llama 3", "LlamaParse", "Puppeteer",
+              "MongoDB", "Azure Container Apps", "GitHub Actions", "OpenTelemetry"
+            ]}
+            features={[
+              {
+                title: "🚀 Key Technical Highlights",
+                items: [
+                  <span key="1"><strong>Autonomous Agents:</strong> 'Processor' & 'Researcher' agents validate candidates via live web browsing.</span>,
+                  <span key="2"><strong>RAG & LLMs:</strong> Contextual scoring using Llama 3 and structured extraction with LlamaParse.</span>,
+                  <span key="3"><strong>Event-Driven:</strong> MongoDB change streams trigger asynchronous processing pipelines.</span>,
+                  <span key="4"><strong>Observability:</strong> Full tracing and metrics via OpenTelemetry, Prometheus, & Grafana.</span>
+                ]
+              }
+            ]}
+          />
+          <ProjectCard
+            title="Sports Analytics App"
+            status="Completed"
+            description={
+              <div className="space-y-4">
+                <p>
+                  <strong>Production-Grade Computer Vision Application</strong> developed to analyze cricket shot mechanics
+                  in real-time. This mobile platform utilizes <strong>YOLOv8</strong> for high-speed object detection to
+                  track ball trajectories and <strong>RandomForest</strong> classifiers to provide instant, data-driven
+                  shot recommendations and corrective feedback to players.
+                </p>
+                <br />
+                <p>
+                  The system features a cross-platform mobile app built with <strong>Flutter</strong>, offering a seamless
+                  user experience for recording execution and receiving detailed coaching insights. Inference is decoupled
+                  via a serverless architecture on <strong>Google Cloud Platform (Cloud Run)</strong>, ensuring
+                  cost-effective scaling to zero when idle, while <strong>Pub/Sub</strong> handles asynchronous event
+                  messaging for smooth analysis workflows.
+                </p>
+                <p className="mt-2 text-sm text-gray-400">
+                  <br />
+                  <strong>Deployed on:</strong> Google Play Store (Internal Testing) & GCP
+                </p>
+              </div>
             }
-          ]}
-        />
-        <ProjectCard
-          title="RetailStore Insights: Generative AI Chatbot"
-          description={
-            <>
-              <p>
-                <strong>AI-Powered Business Intelligence Agent</strong> designed to bridge the gap between technical data
-                warehouses and non-technical business stakeholders. This application enables users to query complex
-                sales and inventory databases using natural language, providing instant, data-driven answers without
-                requiring SQL knowledge.
-              </p>
-              <br />
-              <p>
-                Powered by <strong>Google Gemini Pro</strong> and <strong>LangChain</strong>, the system utilizes advanced
-                <strong>SQL Database Chains</strong> and <strong>Few-Shot Prompting</strong> to accurately map natural
-                language questions to executable MySQL queries. It handles complex reasoning, such as calculating net
-                revenue or filtering stock by brand, while ensuring data security through read-only access controls.
-              </p>
-              <br />
-              <p>
-                <strong>Technologies:</strong> Google Gemini Pro, LangChain, Streamlit, Python, MySQL
-              </p>
-            </>
-          }
-          githubLink="https://github.com/Ferasman979/RetailStore_Insights-Chatbot"
-          technologies={[
-            "Google Gemini Pro", "LangChain", "Streamlit", "Python", "MySQL"
-          ]}
-          features={[
-            {
-              title: "🚀 Key Features",
-              items: [
-                "Natural Language to SQL conversion using Gemini Pro.",
-                "Few-Shot prompting for high-accuracy query generation.",
-                "Interactive Streamlit dashboard for real-time analytics."
-              ]
-            },
-            {
-              title: "💡 Impact",
-              items: [
-                "Empowers non-technical staff with self-service analytics.",
-                "Reduces dependency on data teams for ad-hoc reporting.",
-                "Ensures data safety with read-only SQL execution."
-              ]
+            githubLink="https://github.com/TaimoorAleem/AICricketCoach_CapstoneProject"
+            technologies={[
+              "Python", "OpenCV", "YOLOv8", "RandomForest", "Flutter", "Google Cloud Platform", "Cloud Run", "Pub/Sub"
+            ]}
+            features={[
+              {
+                title: "🏆 Achievement",
+                items: [
+                  "First Place for Capstone projects in data analytics stream."
+                ]
+              },
+              {
+                title: "🚀 Impact Metrics",
+                items: [
+                  "Deployed to production with ~10 active users.",
+                  "Real-time CV inference via serverless architecture.",
+                  "Cost-optimized ML inference using Cloud Run."
+                ]
+              },
+              {
+                title: "🔑 Key Contributions",
+                items: [
+                  "Designed end-to-end CV pipeline using YOLOv8 to detect ball trajectories.",
+                  "Deployed scalable inference using Cloud Run."
+                ]
+              }
+            ]}
+          />
+          <ProjectCard
+            title="RetailStore Insights Chatbot"
+            status="Completed"
+            description={
+              <div className="space-y-4">
+                <p>
+                  <strong>AI-Powered Business Intelligence Agent</strong> designed to bridge the gap between technical data
+                  warehouses and non-technical business stakeholders. This application enables users to query complex
+                  sales and inventory databases using natural language, providing instant, data-driven answers without
+                  requiring SQL knowledge.
+                </p>
+                <br />
+                <p>
+                  Powered by <strong>Google Gemini Pro</strong> and <strong>LangChain</strong>, the system utilizes advanced
+                  <strong>SQL Database Chains</strong> and <strong>Few-Shot Prompting</strong> to accurately map natural
+                  language questions to executable MySQL queries. It handles complex reasoning, such as calculating net
+                  revenue or filtering stock by brand, while ensuring data security through read-only access controls.
+                </p>
+                <p className="mt-2 text-sm text-gray-400">
+                  <br />
+                  <strong>Technologies:</strong> Google Gemini Pro, LangChain, Streamlit, Python, MySQL
+                </p>
+              </div>
             }
-          ]}
-        />
+            githubLink="https://github.com/Ferasman979/RetailStore_Insights-Chatbot"
+            technologies={[
+              "Google Gemini Pro", "LangChain", "Streamlit", "Python", "MySQL"
+            ]}
+            features={[
+              {
+                title: "🚀 Key Features",
+                items: [
+                  "Natural Language to SQL conversion using Gemini Pro.",
+                  "Few-Shot prompting for high-accuracy query generation.",
+                  "Interactive Streamlit dashboard for real-time analytics."
+                ]
+              },
+              {
+                title: "💡 Impact",
+                items: [
+                  "Empowers non-technical staff with self-service analytics.",
+                  "Reduces dependency on data teams for ad-hoc reporting.",
+                  "Ensures data safety with read-only SQL execution."
+                ]
+              }
+            ]}
+          />
+        </div>
       </Section>
 
       <Section id="endorsements" title="Endorsements">
@@ -263,14 +254,42 @@ export default function Home() {
             "Supported and organized the design and delivery of community tech workshops, helping 100+ attendees gain hands-on experience with Google technologies."
           ]}
         />
+        <br />
+        <ExperienceCard
+          role="Co-Organizer"
+          company="Datathon (Google Developer Group)"
+          date="Oct 2025"
+          points={[
+            "Co-organized a 300+ people hackathon 'Datathon' with Google Developer Group, managing logistics and mentor support.",
+            <a
+              key="datathon-link"
+              href="https://gdg.community.dev/gdg-on-campus-sheridan-college-trafalgar-road-campus-oakville-canada/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                marginTop: '0.5rem',
+                backgroundColor: 'var(--primary)',
+                color: 'var(--background)',
+                padding: '0.5rem 1rem',
+                borderRadius: '6px',
+                textDecoration: 'none',
+                fontWeight: 600,
+                fontSize: '0.9rem'
+              }}
+            >
+              Event Link ↗
+            </a>
+          ]}
+        />
       </Section>
 
       <Section id="contact" title="Contact">
         <p>
           Feel free to reach out to me via email or LinkedIn.
           <br />
-          <a href="mailto:ferasmahmood999@gmail.com" style={{ color: 'var(--primary)', marginTop: '1rem', display: 'inline-block' }}>
-            ferasmahmood999@gmail.com &rarr;
+          <a href="mailto:mahmoofe@sheridancollege.ca" style={{ color: 'var(--primary)', marginTop: '1rem', display: 'inline-block' }}>
+            mahmoofe@sheridancollege.ca &rarr;
           </a>
         </p>
       </Section>

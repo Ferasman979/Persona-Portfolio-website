@@ -5,7 +5,7 @@ interface ExperienceCardProps {
     company: string;
     location?: string;
     date: string;
-    points: string[];
+    points: (string | React.ReactNode)[];
 }
 
 const ExperienceCard = ({ role, company, location, date, points }: ExperienceCardProps) => {

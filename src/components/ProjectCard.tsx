@@ -7,12 +7,16 @@ interface ProjectCardProps {
     githubLink?: string;
     demoLink?: string;
     technologies: string[];
-    features?: { title: string; items: string[] }[];
+    features?: { title: string; items: (string | React.ReactNode)[] }[];
+    status?: string;
 }
 
-const ProjectCard = ({ title, description, githubLink, demoLink, technologies, features }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, githubLink, demoLink, technologies, features, status }: ProjectCardProps) => {
     return (
         <article className={styles.card}>
+            {status && (
+                <div className={styles.completedBadge}>{status}</div>
+            )}
             <div className={styles.header}>
                 <h3 className={styles.title}>{title}</h3>
                 <div className={styles.links}>
