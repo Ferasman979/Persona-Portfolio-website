@@ -79,11 +79,49 @@ export default function Home() {
 
       <Section id="projects" title="Top Projects">
         <ProjectCard
-          title="HR GenAI Application: Autonomous Recruiting Agent"
-          description="A production-grade recruitment platform that orchestrates autonomous AI agents to validate candidates. It replaces traditional keyword matching with deep semantic analysis and web-based fact-checking."
-          githubLink="https://github.com/Ferasman979/HRApp"
+          title="HR GenAI Application"
+          description={
+            <>
+              <p>
+                <strong>Completed</strong>
+              </p>
+              <br />
+              <p>
+                <strong>AI-powered Applicant Tracking System (ATS)</strong> that automates candidate evaluation using
+                autonomous GenAI agents and tool-driven workflows. The platform uses <strong>LlamaParse</strong> to
+                extract structured data from complex resume PDFs, <strong>LangChain + LangGraph</strong> to orchestrate
+                multi-step agent reasoning, and <strong>Llama 3 (Groq)</strong> to perform contextual skill matching and
+                scoring via Retrieval-Augmented Generation (RAG).
+              </p>
+              <br />
+              <p>
+                Autonomous research agents use <strong>Puppeteer</strong> to browse and analyze external candidate links
+                (GitHub, portfolios, LinkedIn), summarizing project complexity and validating experience claims. Resume
+                data, agent outputs, and evaluation results are stored in <strong>MongoDB</strong>, with change streams
+                triggering downstream processing stages in an event-driven pipeline.
+              </p>
+              <br />
+              <p>
+                The system provides a real-time recruiter dashboard built with <strong>Next.js and React</strong>, enabling
+                job management, candidate pipeline tracking, and conversational resume querying. Full observability is
+                implemented using <strong>OpenTelemetry</strong>, with metrics collected by <strong>Prometheus</strong>,
+                distributed traces visualized in <strong>Tempo</strong>, and system health dashboards in{' '}
+                <strong>Grafana</strong>. Infrastructure is deployed on <strong>Azure Container Apps</strong> with
+                automated build and deployment pipelines via <strong>GitHub Actions</strong>, ensuring scalable,
+                cost-efficient AI processing.
+              </p>
+              <br />
+              <p>
+                <strong>Deployed on:</strong> Microsoft Azure
+              </p>
+            </>
+          }
+          githubLink="https://github.com/TaimoorAleem/AICricketCoach_CapstoneProject"
           demoLink="/demovid4website.mp4"
-          technologies={["Next.js 16", "Node.js", "LangChain", "LangGraph", "OpenAI/Groq", "Azure Container Apps", "MongoDB"]}
+          technologies={[
+            "Next.js", "React", "TypeScript", "LangChain", "LangGraph", "Llama 3 (Groq)", "LlamaParse", "Puppeteer",
+            "MongoDB", "Azure Container Apps", "GitHub Actions", "OpenTelemetry", "Prometheus", "Grafana", "Tempo"
+          ]}
           features={[
             {
               title: "🚀 Key Features",
@@ -106,9 +144,32 @@ export default function Home() {
         />
         <ProjectCard
           title="Sports Analytics App: CV-Driven Shot Recommendation System"
-          description="Production-deployed mobile app using computer vision and ML to analyze ball trajectories and deliver real-time shot recommendations and coach feedback."
+          description={
+            <>
+              <p>
+                <strong>Production-Grade Computer Vision Application</strong> developed to analyze cricket shot mechanics
+                in real-time. This mobile platform utilizes <strong>YOLOv8</strong> for high-speed object detection to
+                track ball trajectories and <strong>RandomForest</strong> classifiers to provide instant, data-driven
+                shot recommendations and corrective feedback to players.
+              </p>
+              <br />
+              <p>
+                The system features a cross-platform mobile app built with <strong>Flutter</strong>, offering a seamless
+                user experience for recording execution and receiving detailed coaching insights. Inference is decoupled
+                via a serverless architecture on <strong>Google Cloud Platform (Cloud Run)</strong>, ensuring
+                cost-effective scaling to zero when idle, while <strong>Pub/Sub</strong> handles asynchronous event
+                messaging for smooth analysis workflows.
+              </p>
+              <br />
+              <p>
+                <strong>Deployed on:</strong> Google Play Store (Internal Testing) & GCP
+              </p>
+            </>
+          }
           githubLink="https://github.com/TaimoorAleem/AICricketCoach_CapstoneProject"
-          technologies={["Python", "OpenCV", "YOLOv8", "RandomForest", "Flutter", "Google Cloud Platform", "Cloud Run", "Pub/Sub"]}
+          technologies={[
+            "Python", "OpenCV", "YOLOv8", "RandomForest", "Flutter", "Google Cloud Platform", "Cloud Run", "Pub/Sub"
+          ]}
           features={[
             {
               title: "🏆 Achievement",
@@ -127,10 +188,56 @@ export default function Home() {
             {
               title: "🔑 Key Contributions",
               items: [
-                "Designed end-to-end CV pipeline using YOLOv8 to detect ball trajectories from video.",
-                "Built and trained a shot recommendation model (RandomForest + GridSearchCV + SMOTE).",
+                "Designed end-to-end CV pipeline using YOLOv8 to detect ball trajectories.",
+                "Built and trained a shot recommendation model (RandomForest + SMOTE).",
                 "Implemented coach feedback workflows for delivery-specific insights.",
-                "Deployed scalable inference using Cloud Run with Pub/Sub notifications."
+                "Deployed scalable inference using Cloud Run."
+              ]
+            }
+          ]}
+        />
+        <ProjectCard
+          title="RetailStore Insights: Generative AI Chatbot"
+          description={
+            <>
+              <p>
+                <strong>AI-Powered Business Intelligence Agent</strong> designed to bridge the gap between technical data
+                warehouses and non-technical business stakeholders. This application enables users to query complex
+                sales and inventory databases using natural language, providing instant, data-driven answers without
+                requiring SQL knowledge.
+              </p>
+              <br />
+              <p>
+                Powered by <strong>Google Gemini Pro</strong> and <strong>LangChain</strong>, the system utilizes advanced
+                <strong>SQL Database Chains</strong> and <strong>Few-Shot Prompting</strong> to accurately map natural
+                language questions to executable MySQL queries. It handles complex reasoning, such as calculating net
+                revenue or filtering stock by brand, while ensuring data security through read-only access controls.
+              </p>
+              <br />
+              <p>
+                <strong>Technologies:</strong> Google Gemini Pro, LangChain, Streamlit, Python, MySQL
+              </p>
+            </>
+          }
+          githubLink="https://github.com/Ferasman979/RetailStore_Insights-Chatbot"
+          technologies={[
+            "Google Gemini Pro", "LangChain", "Streamlit", "Python", "MySQL"
+          ]}
+          features={[
+            {
+              title: "🚀 Key Features",
+              items: [
+                "Natural Language to SQL conversion using Gemini Pro.",
+                "Few-Shot prompting for high-accuracy query generation.",
+                "Interactive Streamlit dashboard for real-time analytics."
+              ]
+            },
+            {
+              title: "💡 Impact",
+              items: [
+                "Empowers non-technical staff with self-service analytics.",
+                "Reduces dependency on data teams for ad-hoc reporting.",
+                "Ensures data safety with read-only SQL execution."
               ]
             }
           ]}

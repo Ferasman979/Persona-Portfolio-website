@@ -3,7 +3,7 @@ import styles from './ProjectCard.module.css';
 
 interface ProjectCardProps {
     title: string;
-    description: string;
+    description: string | React.ReactNode;
     githubLink?: string;
     demoLink?: string;
     technologies: string[];
@@ -29,7 +29,7 @@ const ProjectCard = ({ title, description, githubLink, demoLink, technologies, f
                 </div>
             </div>
 
-            <p className={styles.description}>{description}</p>
+            <div className={styles.description}>{description}</div>
 
             {features && features.map((feature, idx) => (
                 <div key={idx} className={styles.features}>
