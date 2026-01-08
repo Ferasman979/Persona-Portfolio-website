@@ -80,16 +80,16 @@ export default function Home() {
       <Section id="projects" title="Top Projects">
         <div className={styles.projectGrid}>
           <ProjectCard
-            title="HR GenAI Application"
+            title="HR / Talent Acquisition App"
             status="Completed"
             description={
               <div className="space-y-4">
                 <p>
-                  <strong>AI-powered Applicant Tracking System (ATS)</strong> that automates candidate evaluation using
-                  autonomous GenAI agents and tool-driven workflows. The platform uses <strong>LlamaParse</strong> to
-                  extract structured data from complex resume PDFs, <strong>LangChain + LangGraph</strong> to orchestrate
-                  multi-step agent reasoning, and <strong>Llama 3 (Groq)</strong> to perform contextual skill matching and
-                  scoring via Retrieval-Augmented Generation (RAG).
+                  <strong>AI-Powered Recruitment Platform</strong> that transforms the traditional recruitment process by
+                  deployying a <strong>Multi-Agent System</strong> to handle the heavy lifting of candidate evaluation.
+                  Unlike standard keyword-matching ATS, this system deeply "reads" resumes using computer vision-powered
+                  parsing, verifies claims by browsing the web (GitHub, Portfolios), and provides a comprehensive, scored
+                  analysis for every applicant.
                 </p>
                 <br />
                 <p>
