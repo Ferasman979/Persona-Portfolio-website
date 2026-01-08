@@ -86,7 +86,7 @@ export default function Home() {
               <div className="space-y-4">
                 <p>
                   <strong>AI-Powered Recruitment Platform</strong> that transforms the traditional recruitment process by
-                  deployying a <strong>Multi-Agent System</strong> to handle the heavy lifting of candidate evaluation.
+                  deploying a <strong>Multi-Agent System</strong> to handle the heavy lifting of candidate evaluation.
                   Unlike standard keyword-matching ATS, this system deeply "reads" resumes using computer vision-powered
                   parsing, verifies claims by browsing the web (GitHub, Portfolios), and provides a comprehensive, scored
                   analysis for every applicant.
