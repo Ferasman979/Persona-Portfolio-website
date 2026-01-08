@@ -288,8 +288,8 @@ export default function Home() {
         <p>
           Feel free to reach out to me via email or LinkedIn.
           <br />
-          <a href="mailto:mahmoofe@sheridancollege.ca" style={{ color: 'var(--primary)', marginTop: '1rem', display: 'inline-block' }}>
-            mahmoofe@sheridancollege.ca &rarr;
+          <a href="mailto:ferasmahmood999@gmail.com" style={{ color: 'var(--primary)', marginTop: '1rem', display: 'inline-block' }}>
+            ferasmahmood999@gmail.com &rarr;
           </a>
         </p>
       </Section>
