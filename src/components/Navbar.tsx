@@ -22,6 +22,9 @@ const Navbar = () => {
                     <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumeButton}>
                         Resume
                     </a>
+                    <a href="/resume.pdf" download="Feras_Mahmood_Resume.pdf" className={styles.downloadButton} title="Download Resume">
+                        ⬇
+                    </a>
                 </div>
             </div>
         </nav>
