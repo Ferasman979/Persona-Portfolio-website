@@ -46,8 +46,8 @@ const Hero = () => {
                 <div className={styles.imageWrapper}>
                     <div className={styles.placeholderImage}>
                         <Image
-                            src="/headshot.jpg"
-                            alt="Feras | GenAI Developer"
+                            src="/headshot.jpeg"
+                            alt="headshot"
                             width={350}
                             height={350}
                             className={styles.headshot}

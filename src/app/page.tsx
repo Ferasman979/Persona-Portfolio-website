@@ -23,7 +23,7 @@ export default function Home() {
             <p className={styles.cardText}>
               I am a Computer Science (Data Analytics) student at Sheridan College specializing in GenAI and ML development. I focus on architecting scalable data pipelines and productionizing Machine Learning models through robust MLOps practices. With hands-on experience in Cloud Computing (AWS/GCP/Azure) and Containerization (Docker/K8s), I transform complex data into high-performance, cost-efficient production services.
               <br /><br />
-              Currently, I serve as an ML Developer and Research Assistant, leading the deployment of containerized ML services supporting over 20,000 active users. Outside of tech, I am passionate about staying active on the soccer field and experimenting with new recipes in the cooking kitchen.
+              Currently, I serve as an ML Developer and Research Assistant, leading the deployment of containerized ML services supporting over 20,000 active users. Outside of tech, I am passionate about staying active on the soccer field and experimenting with new recipes in the kitchen.
             </p>
           </div>
 
@@ -229,9 +229,9 @@ export default function Home() {
 
       <Section id="endorsements" title="Endorsements">
         <EndorsementCard
-          name="Thamer (Tom) Khirdaji"
+          name="Tom Khirdaji"
           role="Information Technology Manager at Paradigm | Anthem | Martin Logan Electronics"
-          relationship="Thamer (Tom) managed Feras directly"
+          relationship="Tom managed Feras directly"
           date="September 5, 2025"
           text="I had the pleasure of supervising Feras Mahmood during his 16-month internship as a Data Analyst at Paradigm. Over this time, Feras consistently demonstrated strong technical skills, curiosity, and a commitment to learning. Feras worked on a wide range of projects, delivering dashboards in Zoho Analytics, writing SQL queries, and integrating data through RESTful APIs. He also contributed to automation efforts using PowerShell scripts, which streamlined some of our internal workflows. Beyond analytics, Feras showed initiative by building several web applications using JavaScript, Node.js, and React, expanding his impact beyond traditional data analysis. What stood out about Feras was his ability to quickly grasp new tools and technologies, and his willingness to take ownership of tasks. His contributions helped our team improve data visibility and operational efficiency. I am confident that his blend of analytical and development skills will serve him well in his future career, and I would gladly recommend him for any data or technology role he pursues."
         />
