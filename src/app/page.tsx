@@ -85,28 +85,22 @@ export default function Home() {
             description={
               <div className="space-y-4">
                 <p>
-                  <strong>AI-Powered Recruitment Platform</strong> that transforms the traditional recruitment process by
-                  deploying a <strong>Multi-Agent System</strong> to handle the heavy lifting of candidate evaluation.
-                  Unlike standard keyword-matching ATS, this system deeply "reads" resumes using computer vision-powered
-                  parsing, verifies claims by browsing the web (GitHub, Portfolios), and provides a comprehensive, scored
-                  analysis for every applicant.
+                  <strong>Advanced Micro-MCP (Model Context Protocol) System</strong> that orchestrates autonomous agents to revolutionise
+                  recruitment. This architecture replaces the traditional monolith with specialized micro-services that "think" and "act" independently.
                 </p>
                 <br />
                 <p>
-                  Autonomous research agents use <strong>Puppeteer</strong> to browse and analyze external candidate links
-                  (GitHub, portfolios, LinkedIn), summarizing project complexity and validating experience claims. Resume
-                  data, agent outputs, and evaluation results are stored in <strong>MongoDB</strong>, with change streams
-                  triggering downstream processing stages in an event-driven pipeline.
+                  The <strong>Processor Agent</strong> (Reflexive) instantly reacts to uploads, using <strong>LlamaParse</strong> for high-fidelity extraction
+                  and generating local vector embeddings via a quantized model for zero-latency scoring. Meanwhile, the <strong>Researcher Agent</strong> (Deep Thinking)
+                  conducts deep-dive background checks, using <strong>Puppeteer</strong> and <strong>LangGraph</strong> to browse the web, verify claims, and
+                  perform graph-based network analysis.
                 </p>
                 <br />
                 <p>
-                  The system provides a real-time recruiter dashboard built with <strong>Next.js and React</strong>, enabling
-                  job management, candidate pipeline tracking, and conversational resume querying. Full observability is
-                  implemented using <strong>OpenTelemetry</strong>, with metrics collected by <strong>Prometheus</strong>,
-                  distributed traces visualized in <strong>Tempo</strong>, and system health dashboards in{' '}
-                  <strong>Grafana</strong>. Infrastructure is deployed on <strong>Azure Container Apps</strong> with
-                  automated build and deployment pipelines via <strong>GitHub Actions</strong>, ensuring scalable,
-                  cost-efficient AI processing.
+                  Built for scale and reliability, the system features a full CNCF-standard observability stack with <strong>Prometheus</strong> (metrics),
+                  <strong>Grafana</strong> (dashboards), and <strong>Tempo</strong> (distributed tracing). The infrastructure is fully containerized with
+                  <strong>Docker</strong> (featuring "baked-in" models) and powered by <strong>MongoDB</strong> for event-driven persistence, ensuring a robust,
+                  production-ready AI platform.
                 </p>
                 <p className="mt-2 text-sm text-gray-400">
                   <br />
