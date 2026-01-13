@@ -85,22 +85,20 @@ export default function Home() {
             description={
               <div className="space-y-4">
                 <p>
-                  <strong>Advanced Micro-MCP (Model Context Protocol) System</strong> that orchestrates autonomous agents to revolutionise
-                  recruitment. This architecture replaces the traditional monolith with specialized micro-services that "think" and "act" independently.
+                  <strong>Smart Recruitment Platform</strong> that streamlines the hiring process by automatically
+                  analyzing resumes and verifying candidate backgrounds.
                 </p>
                 <br />
                 <p>
-                  The <strong>Processor Agent</strong> (Reflexive) instantly reacts to uploads, using <strong>LlamaParse</strong> for high-fidelity extraction
-                  and generating local vector embeddings via a quantized model for zero-latency scoring. Meanwhile, the <strong>Researcher Agent</strong> (Deep Thinking)
-                  conducts deep-dive background checks, using <strong>Puppeteer</strong> and <strong>LangGraph</strong> to browse the web, verify claims, and
-                  perform graph-based network analysis.
+                  The system employs <strong>Autonomous AI Agents</strong> that act like digital recruiters. They use
+                  web browsing tools to verify candidate claims, cross-reference experience on external sites, and
+                  conduct research to present a validated report to hiring managers.
                 </p>
                 <br />
                 <p>
-                  Built for scale and reliability, the system features a full CNCF-standard observability stack with <strong>Prometheus</strong> (metrics),
+                  Built for scale and reliability, the system features a full observability stack with <strong>Prometheus</strong> (metrics),
                   <strong>Grafana</strong> (dashboards), and <strong>Tempo</strong> (distributed tracing). The infrastructure is fully containerized with
-                  <strong>Docker</strong> (featuring "baked-in" models) and powered by <strong>MongoDB</strong> for event-driven persistence, ensuring a robust,
-                  production-ready AI platform.
+                  <strong>Docker</strong> (featuring "baked-in" models) and powered by <strong>MongoDB</strong> for event-driven persistence.
                 </p>
                 <p className="mt-2 text-sm text-gray-400">
                   <br />
@@ -116,12 +114,12 @@ export default function Home() {
             ]}
             features={[
               {
-                title: "🚀 Key Technical Highlights",
+                title: "Key Technical Highlights",
                 items: [
-                  <span key="1"><strong>Autonomous Agents:</strong> 'Processor' & 'Researcher' agents validate candidates via live web browsing.</span>,
-                  <span key="2"><strong>RAG & LLMs:</strong> Contextual scoring using Llama 3 and structured extraction with LlamaParse.</span>,
-                  <span key="3"><strong>Event-Driven:</strong> MongoDB change streams trigger asynchronous processing pipelines.</span>,
-                  <span key="4"><strong>Observability:</strong> Full tracing and metrics via OpenTelemetry, Prometheus, & Grafana.</span>
+                  <span key="1"><strong>Micro-Service Architecture:</strong> Decoupled agents using Model Context Protocol (MCP).</span>,
+                  <span key="2"><strong>Production Observability:</strong> Full metric tracking with Prometheus & Grafana.</span>,
+                  <span key="3"><strong>Containerization:</strong> Optimized Docker builds with pre-loaded models for performance.</span>,
+                  <span key="4"><strong>Event-Driven Design:</strong> Asynchronous pipelines triggered by database events.</span>
                 ]
               }
             ]}
@@ -157,13 +155,13 @@ export default function Home() {
             ]}
             features={[
               {
-                title: "🏆 Achievement",
+                title: "Achievement",
                 items: [
                   "First Place for Capstone projects in data analytics stream."
                 ]
               },
               {
-                title: "🚀 Impact Metrics",
+                title: "Impact Metrics",
                 items: [
                   "Deployed to production with ~10 active users.",
                   "Real-time CV inference via serverless architecture.",
@@ -171,7 +169,7 @@ export default function Home() {
                 ]
               },
               {
-                title: "🔑 Key Contributions",
+                title: "Key Contributions",
                 items: [
                   "Designed end-to-end CV pipeline using YOLOv8 to detect ball trajectories.",
                   "Deployed scalable inference using Cloud Run."
@@ -209,7 +207,7 @@ export default function Home() {
             ]}
             features={[
               {
-                title: "🚀 Key Features",
+                title: "Key Features",
                 items: [
                   "Natural Language to SQL conversion using Gemini Pro.",
                   "Few-Shot prompting for high-accuracy query generation.",
@@ -217,7 +215,7 @@ export default function Home() {
                 ]
               },
               {
-                title: "💡 Impact",
+                title: "Impact",
                 items: [
                   "Empowers non-technical staff with self-service analytics.",
                   "Reduces dependency on data teams for ad-hoc reporting.",
@@ -287,6 +285,6 @@ export default function Home() {
           </a>
         </p>
       </Section>
-    </main>
+    </main >
   );
 }
