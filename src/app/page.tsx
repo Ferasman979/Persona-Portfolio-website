@@ -125,6 +125,58 @@ export default function Home() {
             ]}
           />
           <ProjectCard
+            title="Employee Productivity ML Pipeline & Insights"
+            status="Completed"
+            description={
+              <div className="space-y-4">
+                <p>
+                  <strong>End-to-End Production-Grade ML Pipeline</strong> on the Databricks Unified Analytics Platform
+                  to predict and analyze employee productivity. The system transforms raw HR data into actionable
+                  business intelligence using a governed, scalable architecture.
+                </p>
+                <br />
+                <p>
+                  <strong>Medallion Architecture:</strong> Engineered a multi-stage pipeline (Bronze → Silver → Gold)
+                  using <strong>Spark</strong> and <strong>Delta Lake</strong>, implementing Liquid Clustering for
+                  optimized query performance.
+                </p>
+                <br />
+                <p>
+                  <strong>Machine Learning Lifecycle:</strong> Developed a predictive model using <strong>SparkML</strong> to
+                  forecast productivity scores; utilized <strong>MLflow</strong> for experiment tracking, model versioning,
+                  and lifecycle management.
+                </p>
+                <br />
+                <p>
+                  <strong>Data Governance & Scale:</strong> Integrated <strong>Unity Catalog</strong> for fine-grained
+                  access control and audit logs. Implemented batch inference combining Spark and Pandas, surfacing insights
+                  through BI-ready SQL views for seamless <strong>Power BI</strong> integration.
+                </p>
+                <p className="mt-2 text-sm text-gray-400">
+                  <br />
+                  <strong>Business Impact:</strong> Identified high-potential employees to mitigate burnout risks and
+                  automated modeling workflows for executive insights.
+                </p>
+              </div>
+            }
+            githubLink="https://github.com/Ferasman979/Employee-Performance-Lakehouse/tree/main"
+            demoLink="/databricks_demo.mp4"
+            technologies={[
+              "Databricks", "Spark (PySpark/SQL)", "Delta Lake", "MLflow", "Unity Catalog", "Power BI"
+            ]}
+            features={[
+              {
+                title: "Technical Highlights",
+                items: [
+                  <span key="1"><strong>Medallion Architecture:</strong> Multi-stage pipeline with Liquid Clustering.</span>,
+                  <span key="2"><strong>ML Lifecycle:</strong> SparkML modeling with MLflow versioning.</span>,
+                  <span key="3"><strong>Governance:</strong> Unity Catalog for security and lineage.</span>,
+                  <span key="4"><strong>Scalable Inference:</strong> Batch processing with Power BI integration.</span>
+                ]
+              }
+            ]}
+          />
+          <ProjectCard
             title="Sports Analytics App"
             status="Completed"
             description={

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Hero.module.css';
 
-const roles = ["GenAI Developer", "Data Analyst", "ML Developer"];
+const roles = ["GenAI Developer", "Data Analyst", "Data Engineer", "ML Developer"];
 
 const Hero = () => {
     const [roleIndex, setRoleIndex] = useState(0);
