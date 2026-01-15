@@ -125,7 +125,7 @@ export default function Home() {
             ]}
           />
           <ProjectCard
-            title="Employee Productivity ML Pipeline & Insights"
+            title="Workforce Productivity ML Pipeline & Insights"
             status="Completed"
             description={
               <div className="space-y-4">
