@@ -21,9 +21,9 @@ export default function Home() {
           <div className={styles.aboutCard}>
             <h3 className={styles.cardTitle}>My Profile</h3>
             <p className={styles.cardText}>
-              I am a Computer Science (Data Analytics) student at Sheridan College specializing in GenAI and ML development. I focus on architecting scalable data pipelines and productionizing Machine Learning models through robust MLOps practices. With hands-on experience in Cloud Computing (AWS/GCP/Azure) and Containerization (Docker/K8s), I transform complex data into high-performance, cost-efficient production services.
+              I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I serve as an ML Developer and Research Assistant, leading the deployment of machine learning services that support over 20,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
               <br /><br />
-              Currently, I serve as an ML Developer and Research Assistant, leading the deployment of containerized ML services supporting over 20,000 active users. Outside of tech, I am passionate about staying active on the soccer field and experimenting with new recipes in the kitchen.
+              Outside work, I play soccer field and love experimenting with new recipes in the kitchen.
             </p>
           </div>
 
@@ -32,16 +32,16 @@ export default function Home() {
             <h3 className={styles.cardTitle}>What I Do</h3>
             <ul className={styles.cardList}>
               <li className={styles.cardListItem}>
-                <strong>Architect Scalable ML & Data Pipelines:</strong> Design and govern high-volume ingestion pipelines and automated validation workflows for RAG Agents and NLP systems.
+                <strong>Architect Scalable ML & Data Pipelines:</strong> Design and govern high-volume ingestion engines and automated validation workflows for RAG Agents and complex NLP systems.
               </li>
               <li className={styles.cardListItem}>
-                <strong>Operationalize MLOps & CI/CD:</strong> Transform prototype ML engines into reproducible pipelines for automated feature engineering, training, and continuous evaluation.
+                <strong>Operationalize MLOps & CI/CD:</strong> Orchestrate end-to-end ML lifecycles using GitHub Actions and Apache Airflow to transform prototypes into reproducible pipelines for automated feature engineering, training, and continuous evaluation.
               </li>
               <li className={styles.cardListItem}>
-                <strong>Develop Full-Stack & API Solutions:</strong> Build and deploy REST APIs and full-stack applications that integrate machine learning into functional user experiences.
+                <strong>Deploy APIs & Webhooks:</strong> Build and deploy robust ML-integrated webhooks and REST APIs as serverless services via Google Cloud Run and Azure Container Apps; implemented and validated ML/GenAI microservices using k3s for lightweight, high-performance local and edge testing.
               </li>
               <li className={styles.cardListItem}>
-                <strong>Optimize Infrastructure & Monitoring:</strong> Manage system reliability and scaling using tools like Grafana and Prometheus to maintain 99.9% up-time for production services.
+                <strong>Infrastructure & Reliability Engineering:</strong> Manage system scaling using Terraform for Infrastructure as Code (IaC) and maintain 99.9% uptime through a deep observability stack including Prometheus, Grafana, and Tempo for distributed tracing.
               </li>
             </ul>
           </div>
