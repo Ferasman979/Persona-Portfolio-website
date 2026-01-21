@@ -24,10 +24,6 @@ const Navbar = () => {
                         <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumeLink}>
                             RESUME
                         </a>
-                        <div className={styles.separator}></div>
-                        <a href="/resume.pdf" download="Feras_Mahmood_Resume.pdf" className={styles.downloadLink} title="Download Resume">
-                            ⬇
-                        </a>
                     </div>
                 </div>
             </div>
