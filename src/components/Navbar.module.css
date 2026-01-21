@@ -47,22 +47,6 @@
     transform: scale(1.05);
 }
 
-.resumeGroup {
-    display: flex;
-    align-items: center;
-    border: 2px solid #fbbf24;
-    border-radius: 9999px;
-    margin-left: 2rem;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.resumeGroup:hover {
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
-    transform: translateY(-2px);
-    background-color: rgba(251, 191, 36, 0.1);
-}
-
 .resumeLink {
     background-color: transparent;
     color: #fbbf24;
@@ -73,15 +57,18 @@
     font-size: 1rem;
     text-decoration: none;
     transition: all 0.3s ease;
+    border: 2px solid #fbbf24;
+    border-radius: 9999px;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
 }
 
-
-
-
-
 .resumeLink:hover {
-    background-color: #fbbf24;
-    color: var(--background);
+    background-color: rgba(251, 191, 36, 0.1);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+    transform: translateY(-2px);
+    color: #fbbf24;
 }
 
 @media (max-width: 900px) {

@@ -20,11 +20,9 @@ const Navbar = () => {
                             {item.name}
                         </Link>
                     ))}
-                    <div className={styles.resumeGroup}>
-                        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumeLink}>
-                            RESUME
-                        </a>
-                    </div>
+                    <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumeLink}>
+                        RESUME
+                    </Link>
                 </div>
             </div>
         </nav>
