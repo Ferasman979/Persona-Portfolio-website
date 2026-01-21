@@ -159,6 +159,26 @@ a.secondary {
   /* Brighter hover state */
 }
 
+.profileImages {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.profileImageContainer {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.aboutCard:hover .profileImageContainer {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 .cardTitle {
   font-size: 1.25rem;
   font-weight: 600;

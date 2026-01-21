@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from 'react';
+import Image from 'next/image';
 import styles from './page.module.css';
 
 import Navbar from "@/components/Navbar";
@@ -10,6 +12,8 @@ import EndorsementCard from "@/components/EndorsementCard";
 import ExperienceCard from "@/components/ExperienceCard";
 
 export default function Home() {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
   return (
     <main>
       <Navbar />
@@ -23,8 +27,28 @@ export default function Home() {
             <p className={styles.cardText}>
               I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I serve as an ML Developer and Research Assistant, leading the deployment of machine learning services that support over 20,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
               <br /><br />
-              Outside work, I play soccer field and love experimenting with new recipes in the kitchen.
+              Outside work, I play soccer and love experimenting with new recipes in the kitchen.
             </p>
+            <div className={styles.profileImages}>
+              <div className={styles.profileImageContainer}>
+                <Image
+                  src="/hobby-food.jpg"
+                  alt="Food hobby"
+                  width={200}
+                  height={150}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                />
+              </div>
+              <div className={styles.profileImageContainer}>
+                <Image
+                  src="/hobby-soccer.jpg"
+                  alt="Soccer hobby"
+                  width={200}
+                  height={150}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                />
+              </div>
+            </div>
           </div>
 
           {/* Card 2: What I Do */}
@@ -55,10 +79,10 @@ export default function Home() {
           location="Oakville, Ontario"
           date="Oct 2025 – PRESENT"
           points={[
-            "Platform & Data Governance: Architected and governed highly scalable data schemas, ingestion pipelines, and automated validation workflows, specifically supporting productionized RAG Agents and sophisticated NLP systems.",
-            "CI/CD & Reproducibility (Model Lifecycle): Designed and operationalized the end-to-end Machine Learning lifecycle (MLOps), transforming prototype ML engines into highly reproducible CI/CD pipelines that fully automate feature engineering, model training, and continuous evaluation.",
-            "High-Volume Production Operations: Led the deployment, monitoring, and sustained operation of high-impact, containerized ML services, managing infrastructure reliability and scaling to support 20,000+ active users with 99.9% up-time and volume requirements.",
-            "Cross-Functional Project Lead: Collaborated with designers and developers, defining operational requirements and implementing best practices to ensure models, vector stores, and data flows were inherently scalable, maintainable, and cost-efficient in production environments."
+            <span key="1"><strong>Platform & Data Governance:</strong> Architected and governed highly scalable data schemas, ingestion pipelines, and automated validation workflows, specifically supporting productionized RAG Agents and sophisticated NLP systems.</span>,
+            <span key="2"><strong>CI/CD & Reproducibility (Model Lifecycle):</strong> Designed and operationalized the end-to-end Machine Learning lifecycle (MLOps), transforming prototype ML engines into highly reproducible CI/CD pipelines that fully automate feature engineering, model training, and continuous evaluation.</span>,
+            <span key="3"><strong>High-Volume Production Operations:</strong> Led the deployment, monitoring, and sustained operation of high-impact, containerized ML services, managing infrastructure reliability and scaling to support 20,000+ active users with 99.9% up-time and volume requirements.</span>,
+            <span key="4"><strong>Cross-Functional Project Lead:</strong> Collaborated with designers and developers, defining operational requirements and implementing best practices to ensure models, vector stores, and data flows were inherently scalable, maintainable, and cost-efficient in production environments.</span>
           ]}
         />
         <br />
@@ -68,11 +92,11 @@ export default function Home() {
           location="Mississauga, ON"
           date="May 2024 – Aug 2025"
           points={[
-            "Data Pipeline Optimization & Automation: Engineered and scaled robust ETL pipelines and complex SQL transformations using Apache Airflow, resulting in the automated daily, Month-to-Date (MTD), and Year-to-Date (YTD) reporting for Global sales operations.",
-            "Business Intelligence & Financial Impact: Developed and deployed key performance indicator (KPI) dashboards for Finance and Sales teams, incorporating automated anomaly detection that directly led to the recovery of $15,000 CAD in misplaced costs.",
-            "Strategic Data Analysis & Revenue Growth: Conducted deep-dive data analysis on product quality metrics and sales performance indicators, providing actionable insights that fueled a documented 20% revenue growth for the organization in Q2, 2024.",
-            "Full-Stack Development & API Engineering: Led full-stack development initiatives and deployed REST APIs as scalable solutions. Incorporated API scripting and monitored API performance to ensure reliable, real-time access to critical performance and operational metrics.",
-            "Workflow Automation & Efficiency: Executed the deployment of automated batch jobs and background processes that streamlined sales contract management, successfully reducing contract processing time by 45% and improving overall sales workflow efficiency."
+            <span key="1"><strong>Data Pipeline Optimization & Automation:</strong> Engineered and scaled robust ETL pipelines and complex SQL transformations using Apache Airflow, resulting in the automated daily, Month-to-Date (MTD), and Year-to-Date (YTD) reporting for Global sales operations.</span>,
+            <span key="2"><strong>Business Intelligence Reporting:</strong> Conducted deep-dive analysis using SQL to develop and deploy key performance indicator (KPI) dashboards for Finance and Sales teams, incorporating automated anomaly detection that directly led to the recovery of $15,000 CAD in misplaced costs.</span>,
+            <span key="3"><strong>Strategic Data Analysis & Revenue Growth:</strong> Conducted deep-dive data analysis on product quality metrics and sales performance indicators, providing actionable insights that fueled a documented 20% revenue growth for the organization in Q2, 2024.</span>,
+            <span key="4"><strong>Full-Stack Development & API Engineering:</strong> Led full-stack development initiatives and deployed REST APIs as scalable solutions. Incorporated API scripting and monitored API performance to ensure reliable, real-time access to critical performance and operational metrics.</span>,
+            <span key="5"><strong>Deploying Background jobs (cron/ps):</strong> Executed the deployment of automated batch jobs and background processes that streamlined sales contract management, successfully reducing contract processing time by 45% and improving overall sales workflow efficiency.</span>
           ]}
         />
       </Section>
@@ -130,27 +154,15 @@ export default function Home() {
             description={
               <div className="space-y-4">
                 <p>
-                  <strong>End-to-End Production-Grade ML Pipeline</strong> on the Databricks Unified Analytics Platform
-                  to predict and analyze employee productivity. The system transforms raw HR data into actionable
-                  business intelligence using a governed, scalable architecture.
+                  <strong>A data-driven solution designed to help HR teams optimize workforce efficiency and well-being.</strong> This system provides actionable insights into employee performance patterns without requiring technical expertise.
                 </p>
                 <br />
                 <p>
-                  <strong>Medallion Architecture:</strong> Engineered a multi-stage pipeline (Bronze → Silver → Gold)
-                  using <strong>Spark</strong> and <strong>Delta Lake</strong>, implementing Liquid Clustering for
-                  optimized query performance.
+                  Under the hood, it operates as an <strong>End-to-End Production-Grade ML Pipeline</strong> on the <strong>Databricks</strong> platform. It leverages a <strong>Medallion Architecture</strong> (Bronze → Silver → Gold) using <strong>Spark</strong> and <strong>Delta Lake</strong> for robust data processing.
                 </p>
                 <br />
                 <p>
-                  <strong>Machine Learning Lifecycle:</strong> Developed a predictive model using <strong>SparkML</strong> to
-                  forecast productivity scores; utilized <strong>MLflow</strong> for experiment tracking, model versioning,
-                  and lifecycle management.
-                </p>
-                <br />
-                <p>
-                  <strong>Data Governance & Scale:</strong> Integrated <strong>Unity Catalog</strong> for fine-grained
-                  access control and audit logs. Implemented batch inference combining Spark and Pandas, surfacing insights
-                  through BI-ready SQL views for seamless <strong>Power BI</strong> integration.
+                  The system uses <strong>SparkML</strong> for predictive modeling and <strong>MLflow</strong> for complete lifecycle management. Data governance is handled by <strong>Unity Catalog</strong>, ensuring security and lineage, while insights are delivered via seamless <strong>Power BI</strong> integration.
                 </p>
                 <p className="mt-2 text-sm text-gray-400">
                   <br />
@@ -229,53 +241,78 @@ export default function Home() {
               }
             ]}
           />
-          <ProjectCard
-            title="RetailStore Insights Chatbot"
-            status="Completed"
-            description={
-              <div className="space-y-4">
-                <p>
-                  <strong>AI-Powered Business Intelligence Agent</strong> designed to bridge the gap between technical data
-                  warehouses and non-technical business stakeholders. This application enables users to query complex
-                  sales and inventory databases using natural language, providing instant, data-driven answers without
-                  requiring SQL knowledge.
-                </p>
-                <br />
-                <p>
-                  Powered by <strong>Google Gemini Pro</strong> and <strong>LangChain</strong>, the system utilizes advanced
-                  <strong>SQL Database Chains</strong> and <strong>Few-Shot Prompting</strong> to accurately map natural
-                  language questions to executable MySQL queries. It handles complex reasoning, such as calculating net
-                  revenue or filtering stock by brand, while ensuring data security through read-only access controls.
-                </p>
-                <p className="mt-2 text-sm text-gray-400">
+          {showAllProjects && (
+            <ProjectCard
+              title="RetailStore Insights Chatbot"
+              status="Completed"
+              description={
+                <div className="space-y-4">
+                  <p>
+                    <strong>AI-Powered Business Intelligence Agent</strong> designed to bridge the gap between technical data
+                    warehouses and non-technical business stakeholders. This application enables users to query complex
+                    sales and inventory databases using natural language, providing instant, data-driven answers without
+                    requiring SQL knowledge.
+                  </p>
                   <br />
-                  <strong>Technologies:</strong> Google Gemini Pro, LangChain, Streamlit, Python, MySQL
-                </p>
-              </div>
-            }
-            githubLink="https://github.com/Ferasman979/RetailStore_Insights-Chatbot"
-            technologies={[
-              "Google Gemini Pro", "LangChain", "Streamlit", "Python", "MySQL"
-            ]}
-            features={[
-              {
-                title: "Key Features",
-                items: [
-                  "Natural Language to SQL conversion using Gemini Pro.",
-                  "Few-Shot prompting for high-accuracy query generation.",
-                  "Interactive Streamlit dashboard for real-time analytics."
-                ]
-              },
-              {
-                title: "Impact",
-                items: [
-                  "Empowers non-technical staff with self-service analytics.",
-                  "Reduces dependency on data teams for ad-hoc reporting.",
-                  "Ensures data safety with read-only SQL execution."
-                ]
+                  <p>
+                    Powered by <strong>Google Gemini Pro</strong> and <strong>LangChain</strong>, the system utilizes advanced
+                    <strong>SQL Database Chains</strong> and <strong>Few-Shot Prompting</strong> to accurately map natural
+                    language questions to executable MySQL queries. It handles complex reasoning, such as calculating net
+                    revenue or filtering stock by brand, while ensuring data security through read-only access controls.
+                  </p>
+                  <p className="mt-2 text-sm text-gray-400">
+                    <br />
+                    <strong>Technologies:</strong> Google Gemini Pro, LangChain, Streamlit, Python, MySQL
+                  </p>
+                </div>
               }
-            ]}
-          />
+              githubLink="https://github.com/Ferasman979/RetailStore_Insights-Chatbot"
+              technologies={[
+                "Google Gemini Pro", "LangChain", "Streamlit", "Python", "MySQL"
+              ]}
+              features={[
+                {
+                  title: "Key Features",
+                  items: [
+                    "Natural Language to SQL conversion using Gemini Pro.",
+                    "Few-Shot prompting for high-accuracy query generation.",
+                    "Interactive Streamlit dashboard for real-time analytics."
+                  ]
+                },
+                {
+                  title: "Impact",
+                  items: [
+                    "Empowers non-technical staff with self-service analytics.",
+                    "Reduces dependency on data teams for ad-hoc reporting.",
+                    "Ensures data safety with read-only SQL execution."
+                  ]
+                }
+              ]}
+            />
+          )}
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+          <button
+            onClick={() => setShowAllProjects(!showAllProjects)}
+            style={{
+              padding: '0.75rem 2rem',
+              borderRadius: '9999px',
+              backgroundColor: 'var(--primary)',
+              color: 'var(--background)',
+              fontWeight: 600,
+              border: 'none',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              transition: 'opacity 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}
+          >
+            {showAllProjects ? 'Show Less' : 'Show More Projects'}
+            <span>{showAllProjects ? '↑' : '↓'}</span>
+          </button>
         </div>
       </Section>
 
