@@ -241,6 +241,49 @@ export default function Home() {
               }
             ]}
           />
+          <ProjectCard
+            title="C++ Distributed Gradient Sync-Engine (POC)"
+            status="In Progress"
+            description={
+              <div className="space-y-4">
+                <p>
+                  <strong>High-Performance Distributed Training Infrastructure</strong> designed to demonstrate gradient synchronization (All-Reduce)
+                  across multiple nodes using <strong>C++17</strong> and <strong>LibTorch</strong>. This Proof of Concept (POC) showcases how to build scalable
+                  ML systems from scratch without relying on high-level Python frameworks.
+                </p>
+                <br />
+                <p>
+                  The engine leverages <strong>c10d</strong> for distributed communication (NCCL for CUDA, Gloo for CPU) and implements a custom
+                  <strong>C++ Dataset</strong> loader for tokenized text. It supports loading <strong>TorchScript</strong> models (traced BERT) directly
+                  into the C++ runtime for high-efficiency inference and training loops.
+                </p>
+                <br />
+                <p>
+                  Infrastructure is fully containerized with a multi-stage <strong>Docker</strong> build, optimized for deployment on <strong>Google Cloud Vertex AI</strong>
+                  using Spot GPUs to minimize costs.
+                </p>
+                <p className="mt-2 text-sm text-gray-400">
+                  <br />
+                  <strong>Deployed on:</strong> Google Cloud Vertex AI
+                </p>
+              </div>
+            }
+            githubLink="https://github.com/Ferasman979/Sync-Engine"
+            technologies={[
+              "C++17", "LibTorch", "Google Cloud Vertex AI", "Docker", "CMake", "TorchScript", "c10d"
+            ]}
+            features={[
+              {
+                title: "Technical Highlights",
+                items: [
+                  <span key="1"><strong>Distributed Backend:</strong> Implemented gradient sync using c10d (NCCL/Gloo).</span>,
+                  <span key="2"><strong>High-Performance Loading:</strong> Custom C++ dataset for tokenized text processing.</span>,
+                  <span key="3"><strong>Cloud Native:</strong> Optimized Docker images for Vertex AI execution.</span>,
+                  <span key="4"><strong>Hybrid Workflow:</strong> Traced PyTorch models (Python) running in C++ environment.</span>
+                ]
+              }
+            ]}
+          />
           {showAllProjects && (
             <ProjectCard
               title="RetailStore Insights Chatbot"
