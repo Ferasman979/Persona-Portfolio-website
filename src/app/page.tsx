@@ -241,97 +241,93 @@ export default function Home() {
               }
             ]}
           />
-          <ProjectCard
-            title="C++ Distributed Gradient Sync-Engine (POC)"
-            status="In Progress"
-            description={
-              <div className="space-y-4">
-                <p>
-                  <strong>High-Performance Distributed Training Infrastructure</strong> designed to demonstrate gradient synchronization (All-Reduce)
-                  across multiple nodes using <strong>C++17</strong> and <strong>LibTorch</strong>. This Proof of Concept (POC) showcases how to build scalable
-                  ML systems from scratch without relying on high-level Python frameworks.
-                </p>
-                <br />
-                <p>
-                  The engine leverages <strong>c10d</strong> for distributed communication (NCCL for CUDA, Gloo for CPU) and implements a custom
-                  <strong>C++ Dataset</strong> loader for tokenized text. It supports loading <strong>TorchScript</strong> models (traced BERT) directly
-                  into the C++ runtime for high-efficiency inference and training loops.
-                </p>
-                <br />
-                <p>
-                  Infrastructure is fully containerized with a multi-stage <strong>Docker</strong> build, optimized for deployment on <strong>Google Cloud Vertex AI</strong>
-                  using Spot GPUs to minimize costs.
-                </p>
-                <p className="mt-2 text-sm text-gray-400">
-                  <br />
-                  <strong>Deployed on:</strong> Google Cloud Vertex AI
-                </p>
-              </div>
-            }
-            githubLink="https://github.com/Ferasman979/Sync-Engine"
-            technologies={[
-              "C++17", "LibTorch", "Google Cloud Vertex AI", "Docker", "CMake", "TorchScript", "c10d"
-            ]}
-            features={[
-              {
-                title: "Technical Highlights",
-                items: [
-                  <span key="1"><strong>Distributed Backend:</strong> Implemented gradient sync using c10d (NCCL/Gloo).</span>,
-                  <span key="2"><strong>High-Performance Loading:</strong> Custom C++ dataset for tokenized text processing.</span>,
-                  <span key="3"><strong>Cloud Native:</strong> Optimized Docker images for Vertex AI execution.</span>,
-                  <span key="4"><strong>Hybrid Workflow:</strong> Traced PyTorch models (Python) running in C++ environment.</span>
-                ]
-              }
-            ]}
-          />
           {showAllProjects && (
-            <ProjectCard
-              title="RetailStore Insights Chatbot"
-              status="Completed"
-              description={
-                <div className="space-y-4">
-                  <p>
-                    <strong>AI-Powered Business Intelligence Agent</strong> designed to bridge the gap between technical data
-                    warehouses and non-technical business stakeholders. This application enables users to query complex
-                    sales and inventory databases using natural language, providing instant, data-driven answers without
-                    requiring SQL knowledge.
-                  </p>
-                  <br />
-                  <p>
-                    Powered by <strong>Google Gemini Pro</strong> and <strong>LangChain</strong>, the system utilizes advanced
-                    <strong>SQL Database Chains</strong> and <strong>Few-Shot Prompting</strong> to accurately map natural
-                    language questions to executable MySQL queries. It handles complex reasoning, such as calculating net
-                    revenue or filtering stock by brand, while ensuring data security through read-only access controls.
-                  </p>
-                  <p className="mt-2 text-sm text-gray-400">
+            <>
+              <ProjectCard
+                title="OptiMulti-Video"
+                status="Completed"
+                description={
+                  <div className="space-y-4">
+                    <p>
+                      <strong>High-Performance Multimodal Attention with Custom CUDA Kernels</strong>. This project demonstrates a vertical slice of a high-performance Multimodal AI system.
+                    </p>
                     <br />
-                    <strong>Technologies:</strong> Google Gemini Pro, LangChain, Streamlit, Python, MySQL
-                  </p>
-                </div>
-              }
-              githubLink="https://github.com/Ferasman979/RetailStore_Insights-Chatbot"
-              technologies={[
-                "Google Gemini Pro", "LangChain", "Streamlit", "Python", "MySQL"
-              ]}
-              features={[
-                {
-                  title: "Key Features",
-                  items: [
-                    "Natural Language to SQL conversion using Gemini Pro.",
-                    "Few-Shot prompting for high-accuracy query generation.",
-                    "Interactive Streamlit dashboard for real-time analytics."
-                  ]
-                },
-                {
-                  title: "Impact",
-                  items: [
-                    "Empowers non-technical staff with self-service analytics.",
-                    "Reduces dependency on data teams for ad-hoc reporting.",
-                    "Ensures data safety with read-only SQL execution."
-                  ]
+                    <p>
+                      It features a <strong>Custom CUDA Kernel</strong> written in CUDA C++ for low-latency fusion of video and text embeddings, integrated into a compact <strong>Video-Text Transformer</strong> architecture.
+                    </p>
+                    <br />
+                    <p>
+                      The training pipeline utilizes <strong>Fully Sharded Data Parallel (FSDP)</strong> to distribute workloads across dual T4 GPUs, optimizing for both performance and resource accessibility.
+                    </p>
+                    <p className="mt-2 text-sm text-gray-400">
+                      <br />
+                      <strong>Tested on:</strong> Google Colab / Kaggle (Dual T4 GPUs)
+                    </p>
+                  </div>
                 }
-              ]}
-            />
+                githubLink="https://github.com/Ferasman979/OptiMulti-Video"
+                technologies={[
+                  "CUDA C++", "PyTorch", "FSDP", "Python", "Google Colab", "Transformer"
+                ]}
+                features={[
+                  {
+                    title: "Key Technical Highlights",
+                    items: [
+                      <span key="1"><strong>Custom CUDA Kernel:</strong> Fused "Normalize & Project" for low latency.</span>,
+                      <span key="2"><strong>Distributed Training:</strong> FSDP implementation for multi-GPU setups.</span>,
+                      <span key="3"><strong>Multimodal Fusion:</strong> Video-Text Transformer architecture.</span>
+                    ]
+                  }
+                ]}
+              />
+              <ProjectCard
+                title="RetailStore Insights Chatbot"
+                status="Completed"
+                description={
+                  <div className="space-y-4">
+                    <p>
+                      <strong>AI-Powered Business Intelligence Agent</strong> designed to bridge the gap between technical data
+                      warehouses and non-technical business stakeholders. This application enables users to query complex
+                      sales and inventory databases using natural language, providing instant, data-driven answers without
+                      requiring SQL knowledge.
+                    </p>
+                    <br />
+                    <p>
+                      Powered by <strong>Google Gemini Pro</strong> and <strong>LangChain</strong>, the system utilizes advanced
+                      <strong>SQL Database Chains</strong> and <strong>Few-Shot Prompting</strong> to accurately map natural
+                      language questions to executable MySQL queries. It handles complex reasoning, such as calculating net
+                      revenue or filtering stock by brand, while ensuring data security through read-only access controls.
+                    </p>
+                    <p className="mt-2 text-sm text-gray-400">
+                      <br />
+                      <strong>Technologies:</strong> Google Gemini Pro, LangChain, Streamlit, Python, MySQL
+                    </p>
+                  </div>
+                }
+                githubLink="https://github.com/Ferasman979/RetailStore_Insights-Chatbot"
+                technologies={[
+                  "Google Gemini Pro", "LangChain", "Streamlit", "Python", "MySQL"
+                ]}
+                features={[
+                  {
+                    title: "Key Features",
+                    items: [
+                      "Natural Language to SQL conversion using Gemini Pro.",
+                      "Few-Shot prompting for high-accuracy query generation.",
+                      "Interactive Streamlit dashboard for real-time analytics."
+                    ]
+                  },
+                  {
+                    title: "Impact",
+                    items: [
+                      "Empowers non-technical staff with self-service analytics.",
+                      "Reduces dependency on data teams for ad-hoc reporting.",
+                      "Ensures data safety with read-only SQL execution."
+                    ]
+                  }
+                ]}
+              />
+            </>
           )}
         </div>
 
