@@ -149,41 +149,38 @@ export default function Home() {
             ]}
           />
           <ProjectCard
-            title="Workforce Productivity ML Pipeline & Insights"
+            title="OptiMulti-Video"
             status="Completed"
             description={
               <div className="space-y-4">
                 <p>
-                  <strong>A data-driven solution designed to help HR teams optimize workforce efficiency and well-being.</strong> This system provides actionable insights into employee performance patterns without requiring technical expertise.
+                  <strong>High-Performance Multimodal Attention with Custom CUDA Kernels</strong>. This project demonstrates a vertical slice of a high-performance Multimodal AI system.
                 </p>
                 <br />
                 <p>
-                  Under the hood, it operates as an <strong>End-to-End Production-Grade ML Pipeline</strong> on the <strong>Databricks</strong> platform. It leverages a <strong>Medallion Architecture</strong> (Bronze → Silver → Gold) using <strong>Spark</strong> and <strong>Delta Lake</strong> for robust data processing.
+                  It features a <strong>Custom CUDA Kernel</strong> written in CUDA C++ for low-latency fusion of video and text embeddings, integrated into a compact <strong>Video-Text Transformer</strong> architecture.
                 </p>
                 <br />
                 <p>
-                  The system uses <strong>SparkML</strong> for predictive modeling and <strong>MLflow</strong> for complete lifecycle management. Data governance is handled by <strong>Unity Catalog</strong>, ensuring security and lineage, while insights are delivered via seamless <strong>Power BI</strong> integration.
+                  The training pipeline utilizes <strong>Fully Sharded Data Parallel (FSDP)</strong> to distribute workloads across dual T4 GPUs, optimizing for both performance and resource accessibility.
                 </p>
                 <p className="mt-2 text-sm text-gray-400">
                   <br />
-                  <strong>Business Impact:</strong> Identified high-potential employees to mitigate burnout risks and
-                  automated modeling workflows for executive insights.
+                  <strong>Tested on:</strong> Google Colab / Kaggle (Dual T4 GPUs)
                 </p>
               </div>
             }
-            githubLink="https://github.com/Ferasman979/Employee-Performance-Lakehouse/tree/main"
-            demoLink="/databricks_demo.mp4"
+            githubLink="https://github.com/Ferasman979/OptiMulti-Video"
             technologies={[
-              "Databricks", "Spark (PySpark/SQL)", "Delta Lake", "MLflow", "Unity Catalog", "Power BI"
+              "CUDA C++", "PyTorch", "FSDP", "Python", "Google Colab", "Transformer"
             ]}
             features={[
               {
-                title: "Technical Highlights",
+                title: "Key Technical Highlights",
                 items: [
-                  <span key="1"><strong>Medallion Architecture:</strong> Multi-stage pipeline with Liquid Clustering.</span>,
-                  <span key="2"><strong>ML Lifecycle:</strong> SparkML modeling with MLflow versioning.</span>,
-                  <span key="3"><strong>Governance:</strong> Unity Catalog for security and lineage.</span>,
-                  <span key="4"><strong>Scalable Inference:</strong> Batch processing with Power BI integration.</span>
+                  <span key="1"><strong>Custom CUDA Kernel:</strong> Fused "Normalize & Project" for low latency.</span>,
+                  <span key="2"><strong>Distributed Training:</strong> FSDP implementation for multi-GPU setups.</span>,
+                  <span key="3"><strong>Multimodal Fusion:</strong> Video-Text Transformer architecture.</span>
                 ]
               }
             ]}
@@ -244,38 +241,41 @@ export default function Home() {
           {showAllProjects && (
             <>
               <ProjectCard
-                title="OptiMulti-Video"
+                title="Workforce Productivity ML Pipeline & Insights"
                 status="Completed"
                 description={
                   <div className="space-y-4">
                     <p>
-                      <strong>High-Performance Multimodal Attention with Custom CUDA Kernels</strong>. This project demonstrates a vertical slice of a high-performance Multimodal AI system.
+                      <strong>A data-driven solution designed to help HR teams optimize workforce efficiency and well-being.</strong> This system provides actionable insights into employee performance patterns without requiring technical expertise.
                     </p>
                     <br />
                     <p>
-                      It features a <strong>Custom CUDA Kernel</strong> written in CUDA C++ for low-latency fusion of video and text embeddings, integrated into a compact <strong>Video-Text Transformer</strong> architecture.
+                      Under the hood, it operates as an <strong>End-to-End Production-Grade ML Pipeline</strong> on the <strong>Databricks</strong> platform. It leverages a <strong>Medallion Architecture</strong> (Bronze → Silver → Gold) using <strong>Spark</strong> and <strong>Delta Lake</strong> for robust data processing.
                     </p>
                     <br />
                     <p>
-                      The training pipeline utilizes <strong>Fully Sharded Data Parallel (FSDP)</strong> to distribute workloads across dual T4 GPUs, optimizing for both performance and resource accessibility.
+                      The system uses <strong>SparkML</strong> for predictive modeling and <strong>MLflow</strong> for complete lifecycle management. Data governance is handled by <strong>Unity Catalog</strong>, ensuring security and lineage, while insights are delivered via seamless <strong>Power BI</strong> integration.
                     </p>
                     <p className="mt-2 text-sm text-gray-400">
                       <br />
-                      <strong>Tested on:</strong> Google Colab / Kaggle (Dual T4 GPUs)
+                      <strong>Business Impact:</strong> Identified high-potential employees to mitigate burnout risks and
+                      automated modeling workflows for executive insights.
                     </p>
                   </div>
                 }
-                githubLink="https://github.com/Ferasman979/OptiMulti-Video"
+                githubLink="https://github.com/Ferasman979/Employee-Performance-Lakehouse/tree/main"
+                demoLink="/databricks_demo.mp4"
                 technologies={[
-                  "CUDA C++", "PyTorch", "FSDP", "Python", "Google Colab", "Transformer"
+                  "Databricks", "Spark (PySpark/SQL)", "Delta Lake", "MLflow", "Unity Catalog", "Power BI"
                 ]}
                 features={[
                   {
-                    title: "Key Technical Highlights",
+                    title: "Technical Highlights",
                     items: [
-                      <span key="1"><strong>Custom CUDA Kernel:</strong> Fused "Normalize & Project" for low latency.</span>,
-                      <span key="2"><strong>Distributed Training:</strong> FSDP implementation for multi-GPU setups.</span>,
-                      <span key="3"><strong>Multimodal Fusion:</strong> Video-Text Transformer architecture.</span>
+                      <span key="1"><strong>Medallion Architecture:</strong> Multi-stage pipeline with Liquid Clustering.</span>,
+                      <span key="2"><strong>ML Lifecycle:</strong> SparkML modeling with MLflow versioning.</span>,
+                      <span key="3"><strong>Governance:</strong> Unity Catalog for security and lineage.</span>,
+                      <span key="4"><strong>Scalable Inference:</strong> Batch processing with Power BI integration.</span>
                     ]
                   }
                 ]}
