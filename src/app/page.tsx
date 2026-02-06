@@ -74,7 +74,7 @@ export default function Home() {
 
       <Section id="experience" title="Work Experience">
         <ExperienceCard
-          role="ML Developer/Research Assistant"
+          role="AI/ML Developer"
           company="Sheridan College"
           location="Oakville, Ontario"
           date="Oct 2025 – PRESENT"
