@@ -1,45 +1,45 @@
 import { Storage } from '@google-cloud/storage';
 import { NextResponse } from 'next/server';
 
-function getPrivateKey(): string {
-    const key = process.env.GCP_PRIVATE_KEY ?? '';
-    // Vercel stores env vars as literals — replace escaped newlines with real ones
-    return key.replace(/\\n/g, '\n');
-}
-
 function getStorage(): Storage {
+    const encodedKey = process.env.GCP_SERVICE_ACCOUNT_B64;
+    if (!encodedKey) {
+        throw new Error('GCP_SERVICE_ACCOUNT_B64 environment variable is not set');
+    }
+
+    // Decode the base64-encoded service account JSON
+    const credentials = JSON.parse(
+        Buffer.from(encodedKey, 'base64').toString('utf-8')
+    );
+
     return new Storage({
-        projectId: process.env.GCP_PROJECT_ID,
-        credentials: {
-            client_email: process.env.GCP_CLIENT_EMAIL,
-            private_key: getPrivateKey(),
-        },
+        projectId: credentials.project_id,
+        credentials,
     });
 }
 
 export async function GET() {
-    // Validate required env vars are present
-    const requiredVars = [
-        'GCP_PROJECT_ID',
-        'GCP_CLIENT_EMAIL',
-        'GCP_PRIVATE_KEY',
-        'GCS_BUCKET_NAME',
-        'GCS_RESUME_FILENAME',
-    ];
-    const missing = requiredVars.filter((v) => !process.env[v]);
-    if (missing.length > 0) {
-        console.error('Missing environment variables:', missing.join(', '));
+    if (!process.env.GCP_SERVICE_ACCOUNT_B64) {
+        console.error('Missing env var: GCP_SERVICE_ACCOUNT_B64');
         return new NextResponse(
-            `Server misconfiguration: missing env vars: ${missing.join(', ')}`,
+            'Server misconfiguration: missing GCP_SERVICE_ACCOUNT_B64',
+            { status: 500 }
+        );
+    }
+
+    const bucketName = process.env.GCS_BUCKET_NAME;
+    const fileName = process.env.GCS_RESUME_FILENAME;
+
+    if (!bucketName || !fileName) {
+        console.error('Missing env vars: GCS_BUCKET_NAME or GCS_RESUME_FILENAME');
+        return new NextResponse(
+            'Server misconfiguration: missing GCS_BUCKET_NAME or GCS_RESUME_FILENAME',
             { status: 500 }
         );
     }
 
     try {
         const storage = getStorage();
-        const bucketName = process.env.GCS_BUCKET_NAME!;
-        const fileName = process.env.GCS_RESUME_FILENAME!;
-
         console.log(`Fetching gs://${bucketName}/${fileName}`);
 
         const bucket = storage.bucket(bucketName);
