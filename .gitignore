@@ -40,4 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# GCP service account credentials - NEVER commit these
+gcp-credentials.json
+*-credentials.json
+*-keyfile.json
+
 .vercel

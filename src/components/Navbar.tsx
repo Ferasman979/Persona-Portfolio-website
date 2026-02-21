@@ -31,7 +31,7 @@ const Navbar = () => {
                             {item.name}
                         </Link>
                     ))}
-                    <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumeLink}>
+                    <Link href="/api/resume" target="_blank" rel="noopener noreferrer" className={styles.resumeLink}>
                         RESUME
                     </Link>
                 </div>
@@ -62,7 +62,7 @@ const Navbar = () => {
                         </Link>
                     ))}
                     <Link
-                        href="/resume.pdf"
+                        href="/api/resume"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.mobileResumeLink}
