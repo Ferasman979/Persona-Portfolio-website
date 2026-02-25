@@ -107,6 +107,66 @@ a.secondary {
 }
 
 /* About Grid Styles */
+.profileExperienceWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 1rem;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .profileExperienceWrapper {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  .profileColumn,
+  .experienceColumn {
+    flex: 1;
+    width: 50%;
+  }
+
+  /* Adjust padding so they look unified side by side */
+  .profileColumn {
+    padding-right: 1.5rem;
+  }
+
+  .experienceColumn {
+    padding-left: 1.5rem;
+  }
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--foreground);
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+.experienceCardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .projectGrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -131,12 +191,6 @@ a.secondary {
   grid-template-columns: 1fr;
   gap: 1.5rem;
   width: 100%;
-}
-
-@media (min-width: 768px) {
-  .aboutGrid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .aboutCard {

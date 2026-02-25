@@ -19,87 +19,71 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      <Section id="about">
-        <div className={styles.aboutGrid}>
-          {/* Card 1: About Me */}
-          <div className={styles.aboutCard}>
-            <h3 className={styles.cardTitle}>My Profile</h3>
-            <p className={styles.cardText}>
-              I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I serve as an ML Developer and Research Assistant, leading the deployment of machine learning services that support over 20,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
-              <br /><br />
-              Outside work, I play soccer and love experimenting with new recipes in the kitchen.
-            </p>
-            <div className={styles.profileImages}>
-              <div className={styles.profileImageContainer}>
-                <Image
-                  src="/hobby-food.jpg"
-                  alt="Food hobby"
-                  width={200}
-                  height={150}
-                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-                />
-              </div>
-              <div className={styles.profileImageContainer}>
-                <Image
-                  src="/hobby-soccer.jpg"
-                  alt="Soccer hobby"
-                  width={200}
-                  height={150}
-                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-                />
+      <div className={styles.profileExperienceWrapper}>
+        <div className={styles.profileColumn}>
+          <h2 className={styles.sectionTitle}>My Profile</h2>
+          <div className={styles.aboutGrid}>
+            <div className={styles.aboutCard}>
+              <p className={styles.cardText}>
+                I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I serve as an ML Developer and Research Assistant, leading the deployment of machine learning services that support over 20,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
+                <br /><br />
+                Outside work, I play soccer and love experimenting with new recipes in the kitchen.
+              </p>
+              <div className={styles.profileImages}>
+                <div className={styles.profileImageContainer}>
+                  <Image
+                    src="/hobby-food.jpg"
+                    alt="Food hobby"
+                    width={200}
+                    height={150}
+                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                  />
+                </div>
+                <div className={styles.profileImageContainer}>
+                  <Image
+                    src="/hobby-soccer.jpg"
+                    alt="Soccer hobby"
+                    width={200}
+                    height={150}
+                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                  />
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Card 2: What I Do */}
-          <div className={styles.aboutCard}>
-            <h3 className={styles.cardTitle}>What I Do</h3>
-            <ul className={styles.cardList}>
-              <li className={styles.cardListItem}>
-                <strong>Architect Scalable ML & Data Pipelines:</strong> Design and govern high-volume ingestion engines and automated validation workflows for RAG Agents and complex NLP systems.
-              </li>
-              <li className={styles.cardListItem}>
-                <strong>Operationalize MLOps & CI/CD:</strong> Orchestrate end-to-end ML lifecycles using GitHub Actions and Apache Airflow to transform prototypes into reproducible pipelines for automated feature engineering, training, and continuous evaluation.
-              </li>
-              <li className={styles.cardListItem}>
-                <strong>Deploy APIs & Webhooks:</strong> Build and deploy robust ML-integrated webhooks and REST APIs as serverless services via Google Cloud Run and Azure Container Apps; implemented and validated ML/GenAI microservices using k3s for lightweight, high-performance local and edge testing.
-              </li>
-              <li className={styles.cardListItem}>
-                <strong>Infrastructure & Reliability Engineering:</strong> Manage system scaling using Terraform for Infrastructure as Code (IaC) and maintain 99.9% uptime through a deep observability stack including Prometheus, Grafana, and Tempo for distributed tracing.
-              </li>
-            </ul>
+        <div className={styles.experienceColumn}>
+          <h2 className={styles.sectionTitle}>Work Experience</h2>
+          <div className={styles.experienceCardsContainer}>
+            <ExperienceCard
+              role="AI/ML Developer"
+              company="Sheridan College"
+              location="Oakville, Ontario"
+              date="Oct 2025 – PRESENT"
+              points={[
+                <span key="1"><strong>Platform & Data Governance:</strong> Architected and governed highly scalable data schemas, ingestion pipelines, and automated validation workflows, specifically supporting productionized RAG Agents and sophisticated NLP systems.</span>,
+                <span key="2"><strong>CI/CD & Reproducibility (Model Lifecycle):</strong> Designed and operationalized the end-to-end Machine Learning lifecycle (MLOps), transforming prototype ML engines into highly reproducible CI/CD pipelines that fully automate feature engineering, model training, and continuous evaluation.</span>,
+                <span key="3"><strong>High-Volume Production Operations:</strong> Led the deployment, monitoring, and sustained operation of high-impact, containerized ML services, managing infrastructure reliability and scaling to support 20,000+ active users with 99.9% up-time and volume requirements.</span>,
+                <span key="4"><strong>Cross-Functional Project Lead:</strong> Collaborated with designers and developers, defining operational requirements and implementing best practices to ensure models, vector stores, and data flows were inherently scalable, maintainable, and cost-efficient in production environments.</span>
+              ]}
+            />
+            <br />
+            <ExperienceCard
+              role="Data Analyst"
+              company="Paradigm Electronics Inc."
+              location="Mississauga, ON"
+              date="May 2024 – Aug 2025"
+              points={[
+                <span key="1"><strong>Data Pipeline Engineering:</strong> Optimized Airflow ETL DAGs, achieving a runtime reduction from 12 minutes to 8 minutes through parallel processing for automated daily, monthly, and yearly reporting for Global Sales Operations.</span>,
+                <span key="2"><strong>Business Intelligence & Financial Impact:</strong> Developed and deployed Key Performance Indicator (KPI) dashboards for Production and Engineering teams, highlighting products with the highest quality risks to drive operational efficiency and reduce defect-related costs.</span>,
+                <span key="3"><strong>Predictive Demand Modeling:</strong> Streamlined distribution planning by forecasting 6-month product demand across all SKUs using 3 years of historical data, powered by PySpark distributed regression.</span>,
+                <span key="4"><strong>Cloud Infrastructure & Automation:</strong> Deployed Node.js/EJS apps on AWS ECS achieving 99.5% uptime; optimized GitHub Actions CI/CD pipelines with IaC, reducing deployment time from 15 to 8 minutes.</span>
+              ]}
+            />
           </div>
         </div>
-      </Section>
-
-      <Section id="experience" title="Work Experience">
-        <ExperienceCard
-          role="AI/ML Developer"
-          company="Sheridan College"
-          location="Oakville, Ontario"
-          date="Oct 2025 – PRESENT"
-          points={[
-            <span key="1"><strong>Platform & Data Governance:</strong> Architected and governed highly scalable data schemas, ingestion pipelines, and automated validation workflows, specifically supporting productionized RAG Agents and sophisticated NLP systems.</span>,
-            <span key="2"><strong>CI/CD & Reproducibility (Model Lifecycle):</strong> Designed and operationalized the end-to-end Machine Learning lifecycle (MLOps), transforming prototype ML engines into highly reproducible CI/CD pipelines that fully automate feature engineering, model training, and continuous evaluation.</span>,
-            <span key="3"><strong>High-Volume Production Operations:</strong> Led the deployment, monitoring, and sustained operation of high-impact, containerized ML services, managing infrastructure reliability and scaling to support 20,000+ active users with 99.9% up-time and volume requirements.</span>,
-            <span key="4"><strong>Cross-Functional Project Lead:</strong> Collaborated with designers and developers, defining operational requirements and implementing best practices to ensure models, vector stores, and data flows were inherently scalable, maintainable, and cost-efficient in production environments.</span>
-          ]}
-        />
-        <br />
-        <ExperienceCard
-          role="Data Analyst"
-          company="Paradigm Electronics Inc."
-          location="Mississauga, ON"
-          date="May 2024 – Aug 2025"
-          points={[
-            <span key="1"><strong>Data Pipeline Optimization & Automation:</strong> Engineered and scaled robust ETL pipelines and complex SQL transformations using Apache Airflow, resulting in the automated daily, Month-to-Date (MTD), and Year-to-Date (YTD) reporting for Global sales operations.</span>,
-            <span key="2"><strong>Business Intelligence Reporting:</strong> Conducted deep-dive analysis using SQL to develop and deploy key performance indicator (KPI) dashboards for Finance and Sales teams, incorporating automated anomaly detection that directly led to the recovery of $15,000 CAD in misplaced costs.</span>,
-            <span key="3"><strong>Strategic Data Analysis & Revenue Growth:</strong> Conducted deep-dive data analysis on product quality metrics and sales performance indicators, providing actionable insights that fueled a documented 20% revenue growth for the organization in Q2, 2024.</span>,
-            <span key="4"><strong>Full-Stack Development & API Engineering:</strong> Led full-stack development initiatives and deployed REST APIs as scalable solutions. Incorporated API scripting and monitored API performance to ensure reliable, real-time access to critical performance and operational metrics.</span>,
-            <span key="5"><strong>Deploying Background jobs (cron/ps):</strong> Executed the deployment of automated batch jobs and background processes that streamlined sales contract management, successfully reducing contract processing time by 45% and improving overall sales workflow efficiency.</span>
-          ]}
-        />
-      </Section>
+      </div>
 
       <Section id="projects" title="Top Projects">
         <div className={styles.projectGrid}>
@@ -370,6 +354,7 @@ export default function Home() {
           role="Workshop Team Member"
           company="Google Developer Group Sheridan"
           date="May 2025 – Present"
+          alwaysExpanded={true}
           points={[
             "Supported and organized the design and delivery of community tech workshops, helping 100+ attendees gain hands-on experience with Google technologies."
           ]}
@@ -379,6 +364,7 @@ export default function Home() {
           role="Co-Organizer"
           company="Datathon (Google Developer Group)"
           date="Oct 2025"
+          alwaysExpanded={true}
           points={[
             "Co-organized a 300+ people hackathon 'Datathon' with Google Developer Group, managing logistics and mentor support.",
             <a
@@ -408,8 +394,8 @@ export default function Home() {
         <p>
           Feel free to reach out to me via email or LinkedIn.
           <br />
-          <a href="mailto:ferasmahmood999@gmail.com" style={{ color: 'var(--primary)', marginTop: '1rem', display: 'inline-block' }}>
-            ferasmahmood999@gmail.com &rarr;
+          <a href="mailto:technocratz979@gmail.com" style={{ color: 'var(--primary)', marginTop: '1rem', display: 'inline-block' }}>
+            technocratz979@gmail.com &rarr;
           </a>
         </p>
       </Section>

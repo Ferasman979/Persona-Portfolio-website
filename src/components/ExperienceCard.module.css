@@ -5,9 +5,11 @@
     padding: 1.5rem;
     transition: all 0.3s ease;
     height: 100%;
+    cursor: pointer;
 }
 
-.card:hover {
+.card:hover,
+.card.expanded {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
@@ -17,7 +19,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
@@ -47,10 +48,43 @@
     margin-top: 0.25rem;
 }
 
+.dateAndArrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chevron {
+    color: var(--primary);
+    transition: transform 0.3s ease-in-out;
+}
+
+.chevronExpanded {
+    transform: rotate(180deg);
+}
+
+.listContainer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-in-out;
+}
+
+.card.expanded .listContainer {
+    grid-template-rows: 1fr;
+}
+
 .list {
     list-style: none;
     padding: 0;
     margin: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+}
+
+.card.expanded .list {
+    opacity: 1;
+    margin-top: 1rem;
 }
 
 .listItem {
