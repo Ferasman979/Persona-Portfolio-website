@@ -347,6 +347,13 @@ export default function Home() {
           date="September 5, 2025"
           text="I had the pleasure of supervising Feras Mahmood during his 16-month internship as a Data Analyst at Paradigm. Over this time, Feras consistently demonstrated strong technical skills, curiosity, and a commitment to learning. Feras worked on a wide range of projects, delivering KPI dashboards, writing SQL queries, and integrating data through RESTful APIs. He also contributed to automation efforts using PowerShell scripts, which streamlined some of our internal workflows. Beyond analytics, Feras showed initiative by building several web applications using JavaScript, Node.js, and React, expanding his impact beyond traditional data analysis. What stood out about Feras was his ability to quickly grasp new tools and technologies, and his willingness to take ownership of tasks. His contributions helped our team improve data visibility and operational efficiency. I am confident that his blend of analytical and development skills will serve him well in his future career, and I would gladly recommend him for any data or technology role he pursues."
         />
+        <EndorsementCard
+          name="Frank Pugliano"
+          role="Manager at Paradigm Electronics"
+          relationship="Frank worked with Feras"
+          date="August 2025"
+          text="Feras played a pivotal role in developing high-impact internal applications for our team, most notably building dashboards that gave us significantly greater visibility into client documents and key financial metrics. These tools made a real difference in how our team operated day-to-day."
+        />
       </Section>
 
       <Section id="volunteering" title="Volunteering">
