@@ -352,7 +352,7 @@ export default function Home() {
           role="Manager at Paradigm Electronics"
           relationship="Frank worked with Feras"
           date="August 2025"
-          text="Feras played a pivotal role in developing high-impact internal applications for our team, most notably building dashboards that gave us significantly greater visibility into client documents and key financial metrics. These tools made a real difference in how our team operated day-to-day."
+          text="Feras played a pivotal role in developing high-impact internal web applications for our team, along with dashboards that gave us significantly greater visibility into client documents and key financial metrics. These tools made a real difference in how our team operated day-to-day."
         />
       </Section>
 
