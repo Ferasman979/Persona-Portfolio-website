@@ -32,7 +32,7 @@ const Hero = () => {
                     <p className={styles.greeting}>Hello, I&apos;m</p>
                     <h1 className={styles.name}>Feras</h1>
                     <div className={styles.roleWrapper}>
-                        <span>I specialize in</span>
+                        <span className={styles.rolePrefix}>I specialize in</span>
                         <span className={styles.dynamicRole} key={roleIndex}>
                             {roles[roleIndex]}
                         </span>
