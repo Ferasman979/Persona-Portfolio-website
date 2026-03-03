@@ -5,7 +5,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Hero.module.css';
 
-const roles = ["GenAI Developer", "Data Analyst", "Data Engineer", "ML Developer"];
+const roles = [
+    "Engineering Data Pipelines",
+    "Engineering Agentic AI Workflows",
+    "Distributed Training ML Models",
+    "Context Engineering GenAI Models",
+    "Deploying AI & ML Infra on Kubernetes",
+    "Data Analysis",
+];
 
 const Hero = () => {
     const [roleIndex, setRoleIndex] = useState(0);
@@ -25,14 +32,11 @@ const Hero = () => {
                     <p className={styles.greeting}>Hello, I&apos;m</p>
                     <h1 className={styles.name}>Feras</h1>
                     <div className={styles.roleWrapper}>
-                        <span>I am a</span>
+                        <span>I specialize in</span>
                         <span className={styles.dynamicRole} key={roleIndex}>
                             {roles[roleIndex]}
                         </span>
                     </div>
-
-
-
                     <div className={styles.socials}>
                         <Link href="https://github.com/Ferasman979" target="_blank" className={styles.socialLink}>
                             GitHub
