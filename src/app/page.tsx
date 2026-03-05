@@ -25,7 +25,7 @@ export default function Home() {
           <div className={styles.aboutGrid}>
             <div className={styles.aboutCard}>
               <p className={styles.cardText}>
-                I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I serve as an ML Developer and Research Assistant, leading the deployment of machine learning services that support over 20,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
+                I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I serve as an ML Developer and Research Assistant, leading the deployment of machine learning services that support 10,000-15,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
                 <br /><br />
                 Outside work, I play soccer and love experimenting with new recipes in the kitchen.
               </p>
@@ -64,7 +64,7 @@ export default function Home() {
               points={[
                 <span key="1"><strong>Platform & Data Governance:</strong> Architected and governed highly scalable data schemas, ingestion pipelines, and automated validation workflows, specifically supporting productionized RAG Agents and sophisticated NLP systems.</span>,
                 <span key="2"><strong>CI/CD & Reproducibility (Model Lifecycle):</strong> Designed and operationalized the end-to-end Machine Learning lifecycle (MLOps), transforming prototype ML engines into highly reproducible CI/CD pipelines that fully automate feature engineering, model training, and continuous evaluation.</span>,
-                <span key="3"><strong>High-Volume Production Operations:</strong> Led the deployment, monitoring, and sustained operation of high-impact, containerized ML services, managing infrastructure reliability and scaling to support 20,000+ active users with 99.9% up-time and volume requirements.</span>,
+                <span key="3"><strong>High-Volume Production Operations:</strong> Led the deployment, monitoring, and sustained operation of high-impact, containerized ML services, managing infrastructure reliability and scaling to support 10,000-15,000 active users with 99.9% up-time and volume requirements.</span>,
                 <span key="4"><strong>Cross-Functional Project Lead:</strong> Collaborated with designers and developers, defining operational requirements and implementing best practices to ensure models, vector stores, and data flows were inherently scalable, maintainable, and cost-efficient in production environments.</span>
               ]}
             />
