@@ -25,7 +25,7 @@ export default function Home() {
           <div className={styles.aboutGrid}>
             <div className={styles.aboutCard}>
               <p className={styles.cardText}>
-                I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I serve as an ML Developer and Research Assistant, leading the deployment of machine learning services that support 10,000-15,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
+                I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I work as an AI/ML Developer and Research Assistant, leading the deployment of AI infra and machine learning services that support 10,000-15,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
                 <br /><br />
                 Outside work, I play soccer and love experimenting with new recipes in the kitchen.
               </p>
