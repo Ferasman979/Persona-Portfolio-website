@@ -6,6 +6,7 @@
     position: relative;
     overflow: hidden;
     padding-top: var(--nav-height);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #1e3a5f 100%);
 }
 
 .container {

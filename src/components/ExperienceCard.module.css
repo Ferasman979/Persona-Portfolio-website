@@ -4,12 +4,16 @@
     border-radius: 12px;
     padding: 1.5rem;
     transition: all 0.3s ease;
-    height: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.card:not(.alwaysExpanded) {
     cursor: pointer;
 }
 
-.card:hover,
-.card.expanded {
+.card:not(.alwaysExpanded):hover,
+.card.expanded:not(.alwaysExpanded) {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
@@ -69,7 +73,8 @@
     transition: grid-template-rows 0.3s ease-in-out;
 }
 
-.card.expanded .listContainer {
+.card.expanded .listContainer,
+.card.alwaysExpanded .listContainer {
     grid-template-rows: 1fr;
 }
 
@@ -82,7 +87,8 @@
     transition: opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
 }
 
-.card.expanded .list {
+.card.expanded .list,
+.card.alwaysExpanded .list {
     opacity: 1;
     margin-top: 1rem;
 }

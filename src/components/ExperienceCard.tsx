@@ -39,7 +39,7 @@ const ExperienceCard = ({ role, company, location, date, points, alwaysExpanded 
 
     return (
         <div
-            className={`${styles.card} ${isExpanded ? styles.expanded : ''}`}
+            className={`${styles.card} ${isExpanded ? styles.expanded : ''} ${alwaysExpanded ? styles.alwaysExpanded : ''}`}
             onClick={handleClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

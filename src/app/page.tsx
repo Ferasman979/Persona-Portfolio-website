@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
 
@@ -14,8 +14,13 @@ import ExperienceCard from "@/components/ExperienceCard";
 export default function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
 
+  const hobbyImages = [
+    { src: "/hobby-food.jpg", alt: "Food hobby" },
+    { src: "/hobby-soccer.jpg", alt: "Soccer hobby" }
+  ];
+
   return (
-    <main>
+    <main className={styles.mainContainer}>
       <Navbar />
       <Hero />
 
@@ -29,25 +34,20 @@ export default function Home() {
                 <br /><br />
                 Outside work, I play soccer and love experimenting with new recipes in the kitchen.
               </p>
-              <div className={styles.profileImages}>
-                <div className={styles.profileImageContainer}>
-                  <Image
-                    src="/hobby-food.jpg"
-                    alt="Food hobby"
-                    width={200}
-                    height={150}
-                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-                  />
-                </div>
-                <div className={styles.profileImageContainer}>
-                  <Image
-                    src="/hobby-soccer.jpg"
-                    alt="Soccer hobby"
-                    width={200}
-                    height={150}
-                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-                  />
-                </div>
+              <div className={styles.profileImagesStack}>
+                {hobbyImages.map((image, index) => (
+                  <div key={index} className={styles.profileImageFrame}>
+                    <div className={styles.profileImageContainer}>
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      />
+                    </div>
+                    {index < hobbyImages.length - 1 && <div className={styles.imagePartition}></div>}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -61,6 +61,7 @@ export default function Home() {
               company="Sheridan College"
               location="Oakville, Ontario"
               date="Oct 2025 – PRESENT"
+              alwaysExpanded={true}
               points={[
                 <span key="1"><strong>Platform & Data Governance:</strong> Architected and governed highly scalable data schemas, ingestion pipelines, and automated validation workflows, specifically supporting productionized RAG Agents and sophisticated NLP systems.</span>,
                 <span key="2"><strong>CI/CD & Reproducibility (Model Lifecycle):</strong> Designed and operationalized the end-to-end Machine Learning lifecycle (MLOps), transforming prototype ML engines into highly reproducible CI/CD pipelines that fully automate feature engineering, model training, and continuous evaluation.</span>,
@@ -74,11 +75,12 @@ export default function Home() {
               company="Paradigm Electronics Inc."
               location="Mississauga, ON"
               date="May 2024 – Aug 2025"
+              alwaysExpanded={true}
               points={[
-                <span key="1"><strong>Data Pipeline Engineering:</strong> Optimized Airflow ETL DAGs, achieving a runtime reduction from 12 minutes to 8 minutes through parallel processing for automated daily, monthly, and yearly reporting for Global Sales Operations.</span>,
+                <span key="1"><strong>Data Pipeline Engineering:</strong> Optimized Airflow ETL DAGs, achieving a runtime reduction from 12 minutes to 3 minutes through parallel processing for automated daily, monthly, and yearly reporting for Global Sales Operations.</span>,
                 <span key="2"><strong>Business Intelligence & Financial Impact:</strong> Developed and deployed Key Performance Indicator (KPI) dashboards for Production and Engineering teams, highlighting products with the highest quality risks to drive operational efficiency and reduce defect-related costs.</span>,
                 <span key="3"><strong>Predictive Demand Modeling:</strong> Streamlined distribution planning by forecasting 6-month product demand across all SKUs using 3 years of historical data, powered by PySpark distributed regression.</span>,
-                <span key="4"><strong>Cloud Infrastructure & Automation:</strong> Deployed Node.js/EJS apps on AWS ECS achieving 99.5% uptime; optimized GitHub Actions CI/CD pipelines with IaC, reducing deployment time from 15 to 8 minutes.</span>
+                <span key="4"><strong>Cloud Infrastructure & Automation:</strong> Deployed Node.js/EJS apps on AWS ECS achieving 99.5% uptime; optimized GitHub Actions CI/CD pipelines with IaC, reducing deployment time.</span>
               ]}
             />
           </div>
