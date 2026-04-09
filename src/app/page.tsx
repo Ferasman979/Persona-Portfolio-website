@@ -77,10 +77,10 @@ export default function Home() {
               date="May 2024 – Aug 2025"
               alwaysExpanded={true}
               points={[
-                <span key="1"><strong>Data Pipeline Engineering:</strong> Optimized Airflow ETL DAGs, achieving a runtime reduction from 12 minutes to 3 minutes through parallel processing for automated daily, monthly, and yearly reporting for Global Sales Operations.</span>,
-                <span key="2"><strong>Business Intelligence & Financial Impact:</strong> Developed and deployed Key Performance Indicator (KPI) dashboards for Production and Engineering teams, highlighting products with the highest quality risks to drive operational efficiency and reduce defect-related costs.</span>,
+                <span key="1"><strong>Data Pipeline Engineering:</strong> Optimized Airflow ETL/ELT ingestion DAGs, achieving a runtime reduction from 9 minutes to 3 minutes through parallel processing for automated daily, monthly, and yearly reporting for Global Sales Operations.</span>,
+                <span key="2"><strong>Business Intelligence & Financial Impact:</strong> Developed and deployed Key Performance Indicator (KPI) dashboards using PowerBI for Production and Engineering teams, highlighting products with the highest quality risks to drive operational efficiency and reduce defect-related costs.</span>,
                 <span key="3"><strong>Analytics Data Modelling:</strong> Modelled and documented production-grade dbt pipelines on BigQuery, enforcing schema tests and data quality checks that reduced data incidents by 35% and improved stakeholder confidence in KPI reporting for Sales and Engineering teams.</span>,
-                <span key="4"><strong>Cloud Infrastructure & Automation:</strong> Deployed Node.js/EJS apps on AWS ECS achieving 99.5% uptime; optimized GitHub Actions CI/CD pipelines with IaC, reducing deployment time.</span>
+                <span key="4"><strong>Cloud Infrastructure & Automation:</strong> Deployed Node.js/EJS apps on AWS ECS with an Nginx reverse proxy, achieving 99.5% uptime; implemented parallel Docker builds in GitHub Actions CI/CD, significantly reducing pipeline execution time compared to sequential builds.</span>
               ]}
             />
           </div>
