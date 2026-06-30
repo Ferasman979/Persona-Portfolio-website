@@ -50,8 +50,8 @@ const Hero = () => {
                 <div className={styles.imageWrapper}>
                     <div className={styles.placeholderImage}>
                         <Image
-                            src="/headshot.jpeg"
-                            alt="headshot"
+                            src="/me.png"
+                            alt="Feras Mahmood"
                             width={350}
                             height={350}
                             className={styles.headshot}

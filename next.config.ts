@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
         source: '/resume',
         destination: '/api/resume',
       },
+      {
+        source: '/me.png',
+        destination: '/api/profile-image',
+      },
     ];
   },
 };
