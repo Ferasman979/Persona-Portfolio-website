@@ -30,7 +30,7 @@ export default function Home() {
           <div className={styles.aboutGrid}>
             <div className={styles.aboutCard}>
               <p className={styles.cardText}>
-                I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I work as an AI/ML Developer and Research Assistant, leading the deployment of AI infra and machine learning services that support 10,000-15,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
+                I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I work as an AI Software Developer and Research Assistant, leading the deployment of AI infra and machine learning services that support 10,000-15,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
                 <br /><br />
                 Outside work, I play soccer and love experimenting with new recipes in the kitchen.
               </p>
@@ -57,17 +57,11 @@ export default function Home() {
           <h2 className={styles.sectionTitle}>Work Experience</h2>
           <div className={styles.experienceCardsContainer}>
             <ExperienceCard
-              role="AI/ML Developer"
+              role="AI Software Developer"
               company="Sheridan College"
               location="Oakville, Ontario"
               date="Oct 2025 – PRESENT"
               alwaysExpanded={true}
-              points={[
-                <span key="1"><strong>Platform & Data Governance:</strong> Architected and governed highly scalable data schemas, ingestion pipelines, and automated validation workflows, specifically supporting productionized RAG Agents and sophisticated NLP systems.</span>,
-                <span key="2"><strong>CI/CD & Reproducibility (Model Lifecycle):</strong> Designed and operationalized the end-to-end Machine Learning lifecycle (MLOps), transforming prototype ML engines into highly reproducible CI/CD pipelines that fully automate feature engineering, model training, and continuous evaluation.</span>,
-                <span key="3"><strong>High-Volume Production Operations:</strong> Led the deployment, monitoring, and sustained operation of high-impact, containerized ML services, managing infrastructure reliability and scaling to support 10,000-15,000 active users with 99.9% up-time and volume requirements.</span>,
-                <span key="4"><strong>Cross-Functional Project Lead:</strong> Collaborated with designers and developers, defining operational requirements and implementing best practices to ensure models, vector stores, and data flows were inherently scalable, maintainable, and cost-efficient in production environments.</span>
-              ]}
             />
             <br />
             <ExperienceCard
@@ -76,12 +70,6 @@ export default function Home() {
               location="Mississauga, ON"
               date="May 2024 – Aug 2025"
               alwaysExpanded={true}
-              points={[
-                <span key="1"><strong>Data Pipeline Engineering:</strong> Optimized Airflow ETL/ELT ingestion DAGs, achieving a runtime reduction from 9 minutes to 3 minutes through parallel processing for automated daily, monthly, and yearly reporting for Global Sales Operations.</span>,
-                <span key="2"><strong>Business Intelligence & Financial Impact:</strong> Developed and deployed Key Performance Indicator (KPI) dashboards using PowerBI for Production and Engineering teams, highlighting products with the highest quality risks to drive operational efficiency and reduce defect-related costs.</span>,
-                <span key="3"><strong>Analytics Data Modelling:</strong> Modelled and documented production-grade dbt pipelines on BigQuery, enforcing schema tests and data quality checks that reduced data incidents by 35% and improved stakeholder confidence in KPI reporting for Sales and Engineering teams.</span>,
-                <span key="4"><strong>Cloud Infrastructure & Automation:</strong> Deployed Node.js/EJS apps on AWS ECS with an Nginx reverse proxy, achieving 99.5% uptime; implemented parallel Docker builds in GitHub Actions CI/CD, significantly reducing pipeline execution time compared to sequential builds.</span>
-              ]}
             />
           </div>
         </div>

@@ -8,11 +8,11 @@ interface ExperienceCardProps {
     company: string;
     location?: string;
     date: string;
-    points: (string | React.ReactNode)[];
+    points?: (string | React.ReactNode)[];
     alwaysExpanded?: boolean;
 }
 
-const ExperienceCard = ({ role, company, location, date, points, alwaysExpanded = false }: ExperienceCardProps) => {
+const ExperienceCard = ({ role, company, location, date, points = [], alwaysExpanded = false }: ExperienceCardProps) => {
     const [isExpanded, setIsExpanded] = useState(alwaysExpanded);
     // Track if the expansion was triggered by a click to prevent hover-leave from closing it
     const [isClickedOpen, setIsClickedOpen] = useState(false);
@@ -73,15 +73,17 @@ const ExperienceCard = ({ role, company, location, date, points, alwaysExpanded 
                     )}
                 </div>
             </div>
-            <div className={styles.listContainer}>
-                <ul className={styles.list}>
-                    {points.map((point, index) => (
-                        <li key={index} className={styles.listItem}>
-                            {point}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            {points.length > 0 && (
+                <div className={styles.listContainer}>
+                    <ul className={styles.list}>
+                        {points.map((point, index) => (
+                            <li key={index} className={styles.listItem}>
+                                {point}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     );
 };
