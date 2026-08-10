@@ -10,6 +10,7 @@ import Section from "@/components/Section";
 import ProjectCard from "@/components/ProjectCard";
 import EndorsementCard from "@/components/EndorsementCard";
 import ExperienceCard from "@/components/ExperienceCard";
+import CertificationCard from "@/components/CertificationCard";
 
 export default function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -326,6 +327,19 @@ export default function Home() {
             {showAllProjects ? 'Show Less' : 'Show More Projects'}
             <span>{showAllProjects ? '↑' : '↓'}</span>
           </button>
+        </div>
+      </Section>
+
+      <Section id="certifications" title="Certifications">
+        <div className={styles.certificationGrid}>
+          <CertificationCard
+            name="Databricks Certified Data Engineer Associate"
+            issuer="Databricks"
+            status="In Progress"
+            inProgress={true}
+            logoSrc="/databricks-logo.svg"
+            logoAlt="Databricks logo"
+          />
         </div>
       </Section>
 

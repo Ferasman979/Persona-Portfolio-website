@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Databricks">
+  <g fill="#FF3621">
+    <path d="M5 20 L50 38 L95 20 L95 29 L50 47 L5 29 Z" opacity="0.55" />
+    <path d="M5 38 L50 56 L95 38 L95 47 L50 65 L5 47 Z" opacity="0.78" />
+    <path d="M5 56 L50 74 L95 56 L95 65 L50 83 L5 65 Z" />
+  </g>
+</svg>

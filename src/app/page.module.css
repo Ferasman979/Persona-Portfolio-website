@@ -184,6 +184,13 @@ a.secondary {
   width: 100%;
 }
 
+.certificationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
 @media (min-width: 1200px) {
   .projectGrid {
     grid-template-columns: repeat(3, 1fr);
