@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { useState } from 'react';
 import styles from './page.module.css';
 
 import Navbar from "@/components/Navbar";
@@ -14,11 +13,6 @@ import CertificationCard from "@/components/CertificationCard";
 
 export default function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
-
-  const hobbyImages = [
-    { src: "/hobby-food.jpg", alt: "Food hobby" },
-    { src: "/hobby-soccer.jpg", alt: "Soccer hobby" }
-  ];
 
   return (
     <main className={styles.mainContainer}>
@@ -35,21 +29,6 @@ export default function Home() {
                 <br /><br />
                 Outside work, I play soccer and love experimenting with new recipes in the kitchen.
               </p>
-              <div className={styles.profileImagesStack}>
-                {hobbyImages.map((image, index) => (
-                  <div key={index} className={styles.profileImageFrame}>
-                    <div className={styles.profileImageContainer}>
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        fill
-                        style={{ objectFit: 'cover' }}
-                      />
-                    </div>
-                    {index < hobbyImages.length - 1 && <div className={styles.imagePartition}></div>}
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>

@@ -224,39 +224,6 @@ a.secondary {
   background: transparent;
 }
 
-.profileImagesStack {
-  margin-top: 2.5rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.profileImageFrame {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.profileImageContainer {
-  width: 100%;
-  aspect-ratio: 16/10;
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-}
-
-.imagePartition {
-  height: 2rem;
-  width: 1px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
-  margin-left: 2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
 .cardTitle {
   font-size: 1.25rem;
   font-weight: 600;
