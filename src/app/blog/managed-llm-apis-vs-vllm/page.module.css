@@ -128,19 +128,24 @@
 }
 
 .figure {
+  width: min(100vw - 2rem, 52rem);
+  max-width: none;
   margin: 2rem 0 2.5rem;
-  padding: 0.75rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  background: #000;
+  background: #fff;
 }
 
 .figureImage {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
   border-radius: calc(var(--radius-md) - 0.25rem);
-  background: #000;
+  background: #fff;
 }
 
 .figure figcaption {

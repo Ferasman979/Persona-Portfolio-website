@@ -56,14 +56,17 @@ export default function ManagedLlmApisVsVllm() {
             <p>This is exactly what caching exists for, and it&apos;s where the two approaches genuinely diverge.</p>
             <figure className={styles.figure}>
               <Image
-                src="/blog/prefix-cache-hit-vs-miss.png"
-                alt="Comparison of a cache hit, where schema, tool definitions, and system prompt are reused, versus a cache miss, where every token including the query is prefilled from scratch."
-                width={1600}
-                height={720}
+                src="/blog/cache-hit-state.png"
+                alt="Cache hit state: schema, tool definitions, and system prompt are reused from cache, so only the query is new and latency is faster."
+                width={808}
+                height={368}
                 className={styles.figureImage}
+                quality={100}
+                unoptimized
+                sizes="(max-width: 900px) 100vw, 52rem"
               />
               <figcaption>
-                A cache hit reuses the stable prefix and prefills only the new query. A miss recomputes the whole prompt.
+                On a cache hit, the stable prefix is reused and only the query needs prefill, which cuts time-to-first-token.
               </figcaption>
             </figure>
 
@@ -112,23 +115,26 @@ export default function ManagedLlmApisVsVllm() {
               </li>
             </ol>
             <p>Miss the threshold and every request re-prefills the whole prefix. That&apos;s directly visible to users as slower time-to-first-token.</p>
+            <figure className={styles.figure}>
+              <Image
+                src="/blog/cache-miss-state.png"
+                alt="Cache miss state: schema, tool definitions, system prompt, and query are all prefilled from scratch, so latency is slower."
+                width={800}
+                height={376}
+                className={styles.figureImage}
+                quality={100}
+                unoptimized
+                sizes="(max-width: 900px) 100vw, 52rem"
+              />
+              <figcaption>
+                On a cache miss, every token is prefilled from scratch, including the prefix you expected to reuse.
+              </figcaption>
+            </figure>
 
             <h3>KV caching on your own vLLM server has no floor</h3>
             <p>
               vLLM&apos;s automatic prefix caching works at a different level of the stack. It caches KV blocks, the actual attention state, keyed by content hash, at a block granularity you configure. There&apos;s no minimum-tokens policy, because there&apos;s no vendor policy at all. A 600-token prefix caches as readily as a 60,000-token one.
             </p>
-            <figure className={styles.figure}>
-              <Image
-                src="/blog/prefix-cache-lookup-flow.png"
-                alt="Flowchart of an incoming request with a shared prefix and user query. After a prefix cache lookup, a hit skips prefix prefill and computes only query tokens, while a miss runs a full prefill and then caches the prefix."
-                width={1600}
-                height={900}
-                className={styles.figureImage}
-              />
-              <figcaption>
-                Prefix cache lookup hashes the shared prefix. A hit skips that prefill; a miss computes it once, then caches it for later requests.
-              </figcaption>
-            </figure>
             <p>That gives you two things a managed API structurally can&apos;t:</p>
             <ul>
               <li><strong>Model choice.</strong> You pick the open-weights model that fits the job, at the size that fits your latency budget. Frontier reasoning models are slow by construction; a well-chosen lightweight model can cut TTFT and end-to-end latency dramatically. For a workload where a user is waiting, that difference is the product.</li>
@@ -155,14 +161,17 @@ export default function ManagedLlmApisVsVllm() {
             </p>
             <figure className={styles.figure}>
               <Image
-                src="/blog/llm-d-prefix-cache-routing.png"
-                alt="Flow diagram of a client request reaching an inference gateway that scores vLLM pods by prefix cache and load, then routing to the pod that already matches the prefix."
-                width={1600}
-                height={780}
+                src="/blog/inference-cache-workflow.png"
+                alt="Workflow of an incoming request through an inference gateway that scores pods by cache and load, then a prefix cache lookup that either skips prefill on a hit or runs a full prefill on a miss."
+                width={1168}
+                height={836}
                 className={styles.figureImage}
+                quality={100}
+                unoptimized
+                sizes="(max-width: 900px) 100vw, 52rem"
               />
               <figcaption>
-                llm-d&apos;s endpoint picker routes to the replica that already holds the prefix, instead of sending work to a cold cache.
+                The gateway scores pods by cache and load. A prefix match skips prefill; a miss pays for a full prefill on a cold cache.
               </figcaption>
             </figure>
             <p>
