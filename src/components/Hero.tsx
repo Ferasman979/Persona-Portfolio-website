@@ -1,56 +1,33 @@
-"use client";
-
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Hero.module.css';
 
-const roles = [
-    "Engineering Data Pipelines",
-    "Engineering Agentic AI Workflows",
-    "Distributed Training ML Models",
-    "Context Engineering GenAI Models",
-    "Deploying AI & ML Infra on Kubernetes",
-    "Data Analysis",
-];
-
 const Hero = () => {
-    const [roleIndex, setRoleIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setRoleIndex((prev) => (prev + 1) % roles.length);
-        }, 2000);
-
-        return () => clearInterval(interval);
-    }, []);
-
     return (
-        <section className={styles.hero}>
+        <section className={styles.hero} aria-labelledby="hero-title">
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <p className={styles.greeting}>Hello, I&apos;m</p>
-                    <h1 className={styles.name}>Feras</h1>
-                    <div className={styles.roleWrapper}>
-                        <span className={styles.rolePrefix}>I specialize in</span>
-                        <span className={styles.dynamicRole} key={roleIndex}>
-                            {roles[roleIndex]}
-                        </span>
-                    </div>
-                    <div className={styles.socials}>
-                        <Link href="https://github.com/Ferasman979" target="_blank" className={styles.socialLink}>
-                            GitHub
+                    <p className={styles.eyebrow}>Feras Mahmood · AI software developer</p>
+                    <h1 id="hero-title" className={styles.title}>
+                        I build dependable AI systems, from data pipeline to inference.
+                    </h1>
+                    <p className={styles.summary}>
+                        I engineer agentic workflows, machine-learning infrastructure, and data platforms designed for real users and production constraints.
+                    </p>
+                    <div className={styles.actions}>
+                        <Link href="/#projects" className={styles.primaryAction}>
+                            Explore my work
                         </Link>
-                        <Link href="https://www.linkedin.com/in/feras-mahmood/" target="_blank" className={styles.socialLink}>
-                            LinkedIn
+                        <Link href="https://github.com/Ferasman979" target="_blank" rel="noopener noreferrer" className={styles.secondaryAction}>
+                            GitHub <span aria-hidden="true">↗</span>
                         </Link>
                     </div>
                 </div>
 
                 <div className={styles.imageWrapper}>
-                    <div className={styles.placeholderImage}>
+                    <div className={styles.imageFrame}>
                         <Image
-                            src="/me.png"
+                            src="/api/profile-image"
                             alt="Feras Mahmood"
                             width={350}
                             height={350}

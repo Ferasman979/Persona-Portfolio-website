@@ -1,54 +1,65 @@
 .card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
     padding: 1.5rem;
-    transition: all 0.3s ease;
+    transition: background-color 160ms ease, border-color 160ms ease;
     width: 100%;
     height: auto;
 }
 
-.card:not(.alwaysExpanded) {
-    cursor: pointer;
-}
-
 .card:not(.alwaysExpanded):hover,
 .card.expanded:not(.alwaysExpanded) {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+    background: var(--surface-raised);
+    border-color: #46515d;
 }
 
 .header {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1rem;
+    text-align: left;
+    font: inherit;
+}
+
+.toggle {
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
 }
 
 .role {
+    display: block;
     font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--primary);
+    font-weight: 650;
+    color: var(--foreground);
     margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
 }
 
 .company {
+    display: block;
     font-size: 1.1rem;
-    color: var(--foreground);
+    color: var(--primary-strong);
     font-weight: 500;
 }
 
 .date {
     font-size: 0.9rem;
-    color: #888;
-    font-family: monospace;
+    color: var(--secondary);
+    font-variant-numeric: tabular-nums;
 }
 
 .location {
+    display: block;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--muted);
     margin-top: 0.25rem;
 }
 
@@ -60,7 +71,7 @@
 
 .chevron {
     color: var(--primary);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 160ms ease;
 }
 
 .chevronExpanded {
@@ -68,29 +79,13 @@
 }
 
 .listContainer {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease-in-out;
-}
-
-.card.expanded .listContainer,
-.card.alwaysExpanded .listContainer {
-    grid-template-rows: 1fr;
+    margin-top: 1rem;
 }
 
 .list {
     list-style: none;
     padding: 0;
     margin: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
-}
-
-.card.expanded .list,
-.card.alwaysExpanded .list {
-    opacity: 1;
-    margin-top: 1rem;
 }
 
 .listItem {
@@ -98,12 +93,12 @@
     padding-left: 1.25rem;
     margin-bottom: 0.75rem;
     line-height: 1.6;
-    color: #ccc;
+    color: var(--secondary);
     font-size: 0.95rem;
 }
 
 .listItem::before {
-    content: "▹";
+    content: "—";
     position: absolute;
     left: 0;
     color: var(--primary);

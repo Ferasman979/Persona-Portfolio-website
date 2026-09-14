@@ -1,77 +1,84 @@
+"use client";
+
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navItems = [
-        { name: 'About', href: '#about' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'Certifications', href: '#certifications' },
-        { name: 'Endorsements', href: '#endorsements' },
-        { name: 'Volunteering', href: '#volunteering' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'About', href: '/#about' },
+        { name: 'Experience', href: '/#experience' },
+        { name: 'Projects', href: '/#projects' },
+        { name: 'Blog', href: '/#blog' },
+        { name: 'Contact', href: '/#contact' },
     ];
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    useEffect(() => {
+        const closeOnEscape = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') setIsMenuOpen(false);
+        };
+
+        window.addEventListener('keydown', closeOnEscape);
+        return () => window.removeEventListener('keydown', closeOnEscape);
+    }, []);
 
     return (
-        <nav className={styles.navbar}>
+        <nav className={styles.navbar} aria-label="Primary navigation">
             <div className={styles.container}>
-                <div className={styles.brand}>
-                    {/* Optional: Add Brand/Logo here if needed */}
-                </div>
+                <Link href="/" className={styles.brand} aria-label="Feras Mahmood, home">
+                    FM
+                </Link>
 
-                {/* Desktop Links */}
                 <div className={styles.links}>
                     {navItems.map((item) => (
                         <Link key={item.name} href={item.href} className={styles.link}>
                             {item.name}
                         </Link>
                     ))}
-                    <Link href="/resume" target="_blank" rel="noopener noreferrer" className={styles.resumeLink}>
-                        RESUME
+                    <Link href="/resume" target="_blank" rel="noopener noreferrer" className={styles.resumeLink} aria-label="Open résumé in a new tab">
+                        Résumé ↗
                     </Link>
                 </div>
 
-                {/* Mobile Menu Button */}
                 <button
                     className={styles.mobileMenuButton}
-                    onClick={toggleMenu}
-                    aria-label="Toggle menu"
+                    onClick={() => setIsMenuOpen((current) => !current)}
+                    aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                    aria-expanded={isMenuOpen}
+                    aria-controls="mobile-navigation"
                 >
-                    <div className={`${styles.hamburger} ${isMenuOpen ? styles.open : ''}`}>
+                    <span className={`${styles.hamburger} ${isMenuOpen ? styles.open : ''}`} aria-hidden="true">
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
+                    </span>
                 </button>
 
-                {/* Mobile Menu Overlay */}
-                <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.showMenu : ''}`}>
-                    {navItems.map((item) => (
+                {isMenuOpen && (
+                    <div id="mobile-navigation" className={styles.mobileMenu}>
+                        {navItems.map((item) => (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                className={styles.mobileLink}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {item.name}
+                            </Link>
+                        ))}
                         <Link
-                            key={item.name}
-                            href={item.href}
-                            className={styles.mobileLink}
+                            href="/resume"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.mobileResumeLink}
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            {item.name}
+                            Résumé ↗
                         </Link>
-                    ))}
-                    <Link
-                        href="/resume"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.mobileResumeLink}
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        RESUME
-                    </Link>
-                </div>
+                    </div>
+                )}
             </div>
         </nav>
     );

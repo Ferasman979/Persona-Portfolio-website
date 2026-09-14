@@ -28,7 +28,7 @@ export async function GET() {
     }
 
     const bucketName = process.env.GCS_BUCKET_NAME;
-    const fileName = 'Me.png';
+    const fileName = 'Me.jpeg';
 
     if (!bucketName) {
         console.error('Missing env var: GCS_BUCKET_NAME');
@@ -56,7 +56,7 @@ export async function GET() {
         return new NextResponse(new Uint8Array(contents), {
             status: 200,
             headers: {
-                'Content-Type': 'image/png',
+                'Content-Type': 'image/jpeg',
                 'Cache-Control': 'public, max-age=3600',
             },
         });

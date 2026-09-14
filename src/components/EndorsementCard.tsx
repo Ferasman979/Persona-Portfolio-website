@@ -16,7 +16,7 @@ const EndorsementCard = ({ name, role, text, date, relationship }: EndorsementCa
                 <p className={styles.role}>{role}</p>
             </header>
             <div className={styles.body}>
-                <p className={styles.text}>"{text}"</p>
+                <p className={styles.text}>&ldquo;{text}&rdquo;</p>
                 <div className={styles.footer}>
                     <span className={styles.relationship}>{relationship}</span>
                     <span className={styles.date}>{date}</span>

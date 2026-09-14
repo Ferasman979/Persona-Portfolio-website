@@ -21,12 +21,12 @@ const ProjectCard = ({ title, description, githubLink, demoLink, technologies, f
                 <h3 className={styles.title}>{title}</h3>
                 <div className={styles.links}>
                     {githubLink && (
-                        <Link href={githubLink} target="_blank" aria-label="GitHub Link" className={styles.iconLink}>
+                        <Link href={githubLink} target="_blank" rel="noopener noreferrer" aria-label={`View ${title} on GitHub (opens in a new tab)`} className={styles.iconLink}>
                             GitHub ↗
                         </Link>
                     )}
                     {demoLink && (
-                        <Link href={demoLink} target="_blank" aria-label="View Demo Video" className={styles.demoButton}>
+                        <Link href={demoLink} target="_blank" rel="noopener noreferrer" aria-label={`View the ${title} demo video (opens in a new tab)`} className={styles.demoButton}>
                             View Demo ▶
                         </Link>
                     )}

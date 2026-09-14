@@ -1,18 +1,17 @@
 .card {
     background: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    transition: background-color 160ms ease, border-color 160ms ease;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-    border-color: var(--primary);
+    background: var(--surface-raised);
+    border-color: #46515d;
 }
 
 .header {
@@ -23,11 +22,10 @@
 }
 
 .title {
-    font-size: 1.75rem;
+    font-size: clamp(1.35rem, 3vw, 1.65rem);
     color: var(--foreground);
     margin-bottom: 0.5rem;
     max-width: 70%;
-    /* Prevent title from hitting buttons if long */
 }
 
 .links {
@@ -39,60 +37,49 @@
 .iconLink {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--primary);
+    min-height: 44px;
+    color: var(--primary-strong);
     font-size: 0.9rem;
-    font-weight: 600;
-    transition: color 0.2s;
-    border: 1px solid var(--primary);
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    background: rgba(255, 140, 0, 0.1);
-    /* Subtle orange tint */
+    font-weight: 650;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
 }
 
 .iconLink:hover {
-    background: var(--primary);
-    color: #000;
-    box-shadow: 0 0 10px var(--primary);
+    color: var(--foreground);
 }
 
 .completedBadge {
-    background-color: var(--success);
-    color: #000;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 0.7rem;
+    color: var(--success);
+    font-weight: 650;
+    font-size: 0.78rem;
     display: inline-block;
     width: fit-content;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.08em;
 }
 
 .demoButton {
-    background-color: var(--primary);
-    color: var(--background);
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-weight: 600;
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    color: var(--primary-strong);
+    font-weight: 650;
     text-decoration: none;
-    transition: all 0.2s;
     font-size: 0.9rem;
-    border: 1px solid var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
 }
 
 .demoButton:hover {
-    background-color: transparent;
-    color: var(--primary);
-    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    color: var(--foreground);
 }
 
 .description {
-    color: #f0f0f0;
+    color: var(--secondary);
     margin-bottom: 1.5rem;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .techStack {
@@ -104,12 +91,15 @@
 }
 
 .techItem {
-    background-color: rgba(56, 189, 248, 0.1);
-    color: var(--primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
+    color: var(--secondary);
+    padding: 0.2rem 0;
     font-size: 0.875rem;
     font-weight: 500;
+}
+
+.techItem:not(:last-child)::after {
+    content: " ·";
+    color: var(--muted);
 }
 
 .features {
@@ -117,12 +107,12 @@
 }
 
 .featureTitle {
-    color: var(--accent);
-    font-weight: 600;
+    color: var(--foreground);
+    font-weight: 650;
     margin-bottom: 0.75rem;
     display: block;
     font-size: 1.1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-subtle);
     padding-bottom: 0.25rem;
 }
 
@@ -139,7 +129,7 @@
 }
 
 .featureItem::before {
-    content: '▹';
+    content: '—';
     position: absolute;
     left: 0;
     color: var(--primary);

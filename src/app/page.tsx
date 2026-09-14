@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 import styles from './page.module.css';
 
 import Navbar from "@/components/Navbar";
@@ -15,11 +16,13 @@ export default function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
 
   return (
-    <main className={styles.mainContainer}>
+    <>
+      <a className="skipLink" href="#main-content">Skip to main content</a>
       <Navbar />
-      <Hero />
+      <main id="main-content" className={styles.mainContainer}>
+        <Hero />
 
-      <div className={styles.profileExperienceWrapper}>
+      <div id="about" className={styles.profileExperienceWrapper}>
         <div className={styles.profileColumn}>
           <h2 className={styles.sectionTitle}>My Profile</h2>
           <div className={styles.aboutGrid}>
@@ -33,7 +36,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.experienceColumn}>
+        <div id="experience" className={styles.experienceColumn}>
           <h2 className={styles.sectionTitle}>Work Experience</h2>
           <div className={styles.experienceCardsContainer}>
             <ExperienceCard
@@ -76,7 +79,7 @@ export default function Home() {
                 <p>
                   Built for scale and reliability, the system features a full observability stack with <strong>Prometheus</strong> (metrics),
                   <strong>Grafana</strong> (dashboards), and <strong>Tempo</strong> (distributed tracing). The infrastructure is fully containerized with
-                  <strong>Docker</strong> (featuring "baked-in" models) and powered by <strong>MongoDB</strong> for event-driven persistence.
+                  <strong>Docker</strong> (featuring &quot;baked-in&quot; models) and powered by <strong>MongoDB</strong> for event-driven persistence.
                 </p>
                 <p className="mt-2 text-sm text-gray-400">
                   <br />
@@ -132,7 +135,7 @@ export default function Home() {
               {
                 title: "Key Technical Highlights",
                 items: [
-                  <span key="1"><strong>Custom CUDA Kernel:</strong> Fused "Normalize & Project" for low latency.</span>,
+                  <span key="1"><strong>Custom CUDA Kernel:</strong> Fused &quot;Normalize &amp; Project&quot; for low latency.</span>,
                   <span key="2"><strong>Distributed Training:</strong> FSDP implementation for multi-GPU setups.</span>,
                   <span key="3"><strong>Multimodal Fusion:</strong> Video-Text Transformer architecture.</span>
                 ]
@@ -285,28 +288,32 @@ export default function Home() {
           )}
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+        <div className={styles.showMoreWrap}>
           <button
             onClick={() => setShowAllProjects(!showAllProjects)}
-            style={{
-              padding: '0.75rem 2rem',
-              borderRadius: '9999px',
-              backgroundColor: 'var(--primary)',
-              color: 'var(--background)',
-              fontWeight: 600,
-              border: 'none',
-              cursor: 'pointer',
-              fontSize: '1rem',
-              transition: 'opacity 0.2s',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem'
-            }}
+            className={styles.showMoreButton}
+            aria-expanded={showAllProjects}
           >
-            {showAllProjects ? 'Show Less' : 'Show More Projects'}
-            <span>{showAllProjects ? '↑' : '↓'}</span>
+            {showAllProjects ? 'Show fewer projects' : 'Show more projects'}
           </button>
         </div>
+      </Section>
+
+      <Section id="blog" title="Writing">
+        <article className={styles.blogPreview}>
+          <div>
+            <p className={styles.blogMeta}>
+              Infrastructure · <time dateTime="2026-09-13T19:51:00-04:00">September 13, 2026 at 7:51 PM EDT</time>
+            </p>
+            <h3 className={styles.blogTitle}>Managed LLM APIs vs. Your Own vLLM Server</h3>
+            <p className={styles.blogExcerpt}>
+              Managed APIs and self-hosted inference solve different workload shapes. The useful comparison starts with utilization, repeated context, latency, and operational control—not ideology.
+            </p>
+          </div>
+          <Link href="/blog/managed-llm-apis-vs-vllm" className={styles.inlineLink}>
+            Read the article <span aria-hidden="true">→</span>
+          </Link>
+        </article>
       </Section>
 
       <Section id="certifications" title="Certifications">
@@ -362,17 +369,7 @@ export default function Home() {
               href="https://gdg.community.dev/gdg-on-campus-sheridan-college-trafalgar-road-campus-oakville-canada/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                marginTop: '0.5rem',
-                backgroundColor: 'var(--primary)',
-                color: 'var(--background)',
-                padding: '0.5rem 1rem',
-                borderRadius: '6px',
-                textDecoration: 'none',
-                fontWeight: 600,
-                fontSize: '0.9rem'
-              }}
+              className={styles.inlineLink}
             >
               Event Link ↗
             </a>
@@ -384,11 +381,12 @@ export default function Home() {
         <p>
           Feel free to reach out to me via email or LinkedIn.
           <br />
-          <a href="mailto:technocratz979@gmail.com" style={{ color: 'var(--primary)', marginTop: '1rem', display: 'inline-block' }}>
+          <a href="mailto:technocratz979@gmail.com" className={styles.inlineLink}>
             technocratz979@gmail.com &rarr;
           </a>
         </p>
       </Section>
-    </main >
+      </main>
+    </>
   );
 }
