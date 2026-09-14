@@ -56,7 +56,7 @@ export default function ManagedLlmApisVsVllm() {
             <p>This is exactly what caching exists for, and it&apos;s where the two approaches genuinely diverge.</p>
             <figure className={styles.figure}>
               <Image
-                src="/blog/cache-hit-state.png"
+                src="/images/cache-hit-state.png"
                 alt="Cache hit state: schema, tool definitions, and system prompt are reused from cache, so only the query is new and latency is faster."
                 width={808}
                 height={368}
@@ -117,7 +117,7 @@ export default function ManagedLlmApisVsVllm() {
             <p>Miss the threshold and every request re-prefills the whole prefix. That&apos;s directly visible to users as slower time-to-first-token.</p>
             <figure className={styles.figure}>
               <Image
-                src="/blog/cache-miss-state.png"
+                src="/images/cache-miss-state.png"
                 alt="Cache miss state: schema, tool definitions, system prompt, and query are all prefilled from scratch, so latency is slower."
                 width={800}
                 height={376}
@@ -161,7 +161,7 @@ export default function ManagedLlmApisVsVllm() {
             </p>
             <figure className={styles.figure}>
               <Image
-                src="/blog/inference-cache-workflow.png"
+                src="/images/inference-cache-workflow.png"
                 alt="Workflow of an incoming request through an inference gateway that scores pods by cache and load, then a prefix cache lookup that either skips prefill on a hit or runs a full prefill on a miss."
                 width={1168}
                 height={836}
