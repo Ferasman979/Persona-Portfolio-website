@@ -3,7 +3,7 @@
     top: 0;
     width: 100%;
     height: var(--nav-height);
-    background-color: rgba(11, 13, 16, 0.92);
+    background-color: var(--nav-bg);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-subtle);
     display: flex;
@@ -156,13 +156,24 @@
     background-color: var(--surface);
 }
 
+.mobileControls {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 @media (max-width: 768px) {
     .links {
         display: none;
     }
 
+    .mobileControls {
+        display: flex;
+        margin-left: auto;
+    }
+
     .mobileMenuButton {
         display: block;
-        margin-left: auto;
+        margin-left: 0;
     }
 }

@@ -3,7 +3,7 @@
   width: 100%;
   position: relative;
   background:
-    radial-gradient(circle at 15% 0%, rgba(112, 215, 196, 0.07), transparent 26rem),
+    radial-gradient(circle at 15% 0%, var(--glow), transparent 26rem),
     var(--background);
 }
 

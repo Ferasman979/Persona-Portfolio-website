@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,21 +41,25 @@ const Navbar = () => {
                     <Link href="/resume" target="_blank" rel="noopener noreferrer" className={styles.resumeLink} aria-label="Open résumé in a new tab">
                         Résumé ↗
                     </Link>
+                    <ThemeToggle />
                 </div>
 
-                <button
-                    className={styles.mobileMenuButton}
-                    onClick={() => setIsMenuOpen((current) => !current)}
-                    aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-                    aria-expanded={isMenuOpen}
-                    aria-controls="mobile-navigation"
-                >
-                    <span className={`${styles.hamburger} ${isMenuOpen ? styles.open : ''}`} aria-hidden="true">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
+                <div className={styles.mobileControls}>
+                    <ThemeToggle />
+                    <button
+                        className={styles.mobileMenuButton}
+                        onClick={() => setIsMenuOpen((current) => !current)}
+                        aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                        aria-expanded={isMenuOpen}
+                        aria-controls="mobile-navigation"
+                    >
+                        <span className={`${styles.hamburger} ${isMenuOpen ? styles.open : ''}`} aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
 
                 {isMenuOpen && (
                     <div id="mobile-navigation" className={styles.mobileMenu}>
