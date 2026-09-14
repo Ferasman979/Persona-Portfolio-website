@@ -132,7 +132,7 @@
   padding: 0.75rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  background: var(--surface);
+  background: #000;
 }
 
 .figureImage {
@@ -140,7 +140,7 @@
   height: auto;
   display: block;
   border-radius: calc(var(--radius-md) - 0.25rem);
-  filter: brightness(1.45) contrast(1.12);
+  background: #000;
 }
 
 .figure figcaption {
