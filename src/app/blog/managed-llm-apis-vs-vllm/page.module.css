@@ -140,12 +140,13 @@
   height: auto;
   display: block;
   border-radius: calc(var(--radius-md) - 0.25rem);
+  filter: brightness(1.45) contrast(1.12);
 }
 
 .figure figcaption {
   margin-top: 0.85rem;
   padding: 0 0.25rem 0.25rem;
-  color: var(--muted);
+  color: var(--secondary);
   font-size: 0.92rem;
   line-height: 1.5;
 }
