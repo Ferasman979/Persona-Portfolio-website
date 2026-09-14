@@ -307,7 +307,7 @@ export default function Home() {
             </p>
             <h3 className={styles.blogTitle}>Managed LLM APIs vs. Your Own vLLM Server</h3>
             <p className={styles.blogExcerpt}>
-              Managed APIs and self-hosted inference solve different workload shapes. The useful comparison starts with utilization, repeated context, latency, and operational control—not ideology.
+              Managed APIs and self-hosted inference solve different workload shapes. The useful comparison starts with utilization, repeated context, latency, and operational control, not ideology.
             </p>
           </div>
           <Link href="/blog/managed-llm-apis-vs-vllm" className={styles.inlineLink}>
