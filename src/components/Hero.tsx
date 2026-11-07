@@ -12,7 +12,7 @@ const Hero = () => {
                         I build dependable AI systems, from data pipeline to inference.
                     </h1>
                     <p className={styles.summary}>
-                        I engineer agentic workflows, machine-learning infrastructure, and data platforms designed for AI agents and real users for compliance heavy products.
+                        I research, build, and deploy AI infrastructure. I engineer agentic workflows, machine-learning infrastructure, and data platforms designed for AI agents and real users for compliance heavy products.
                     </p>
                     <div className={styles.actions}>
                         <Link href="/#projects" className={styles.primaryAction}>
