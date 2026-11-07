@@ -7,12 +7,12 @@ const Hero = () => {
         <section className={styles.hero} aria-labelledby="hero-title">
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <p className={styles.eyebrow}>Feras Mahmood · software developer | Researcher</p>
+                    <p className={styles.eyebrow}>Feras Mahmood · AI Researcher | Software Developer</p>
                     <h1 id="hero-title" className={styles.title}>
-                        I build dependable AI systems, from data pipeline to inference.
+                        I research, build, and deploy the AI infrastructure behind dependable products.
                     </h1>
                     <p className={styles.summary}>
-                        I research, build, and deploy AI infrastructure. I engineer agentic workflows, machine-learning infrastructure, and data platforms designed for AI agents and real users for compliance heavy products.
+                        From data pipelines to inference, I design agentic workflows and ML platforms for real users in compliance-heavy settings.
                     </p>
                     <div className={styles.actions}>
                         <Link href="/#projects" className={styles.primaryAction}>
