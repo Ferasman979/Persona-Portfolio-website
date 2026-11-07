@@ -7,7 +7,7 @@ const Hero = () => {
         <section className={styles.hero} aria-labelledby="hero-title">
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <p className={styles.eyebrow}>Feras Mahmood · AI Researcher | Software Developer</p>
+                    <p className={styles.eyebrow}>Feras Mahmood · AI Researcher | Data and AI Infra Engineering</p>
                     <h1 id="hero-title" className={styles.title}>
                         I research, build, and deploy the AI infrastructure behind dependable products.
                     </h1>
