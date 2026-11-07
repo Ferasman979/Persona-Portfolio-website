@@ -319,8 +319,8 @@ export default function Home() {
       <Section id="certifications" title="Certifications">
         <div className={styles.certificationGrid}>
           <CertificationCard
-            name="Databricks Certified Data Engineer Associate"
-            issuer="Databricks"
+            name="Azure Databricks (DP-750)"
+            issuer="Microsoft"
             status="Certified"
             logoSrc="/databricks-logo.svg"
             logoAlt="Databricks logo"
