@@ -28,7 +28,7 @@ export default function Home() {
           <div className={styles.aboutGrid}>
             <div className={styles.aboutCard}>
               <p className={styles.cardText}>
-                I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I work as an AI Software Developer and Research Assistant, leading the deployment of AI infra and machine learning services that support 10,000-15,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
+                I am a final-year Computer Science student at Sheridan College specializing in GenAI and ML development. Currently, I work as an AI Researcher, leading the deployment of AI infra and machine learning services that support 10,000-15,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
                 <br /><br />
                 Outside work, I play soccer and love experimenting with new recipes in the kitchen.
               </p>
@@ -40,7 +40,7 @@ export default function Home() {
           <h2 className={styles.sectionTitle}>Work Experience</h2>
           <div className={styles.experienceCardsContainer}>
             <ExperienceCard
-              role="AI Software Developer"
+              role="AI Researcher"
               company="Sheridan College"
               location="Oakville, Ontario"
               date="Oct 2025 – PRESENT"
@@ -321,10 +321,17 @@ export default function Home() {
           <CertificationCard
             name="Databricks Certified Data Engineer Associate"
             issuer="Databricks"
-            status="In Progress"
-            inProgress={true}
+            status="Certified"
             logoSrc="/databricks-logo.svg"
             logoAlt="Databricks logo"
+          />
+          <CertificationCard
+            name="Certified Kubernetes Administrator (CKA)"
+            issuer="CNCF"
+            status="In Progress"
+            inProgress={true}
+            logoSrc="/kubernetes-logo.svg"
+            logoAlt="Kubernetes logo"
           />
         </div>
       </Section>
