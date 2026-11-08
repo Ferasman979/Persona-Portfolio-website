@@ -322,8 +322,8 @@ export default function Home() {
             name="Azure Databricks (DP-750)"
             issuer="Microsoft"
             status="Certified"
-            logoSrc="/databricks-logo.svg"
-            logoAlt="Databricks logo"
+            logoSrc="/azure-logo.png"
+            logoAlt="Microsoft Azure logo"
           />
           <CertificationCard
             name="Certified Kubernetes Administrator (CKA)"
