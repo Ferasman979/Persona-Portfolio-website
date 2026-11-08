@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
       { pathname: '/images/**' },
       { pathname: '/api/profile-image' },
       { pathname: '/blog/**' },
+      { pathname: '/headshot-white.jpeg' },
+      { pathname: '/azure-logo.png' },
     ],
   },
   async rewrites() {
