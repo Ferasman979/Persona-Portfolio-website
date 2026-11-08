@@ -9,10 +9,10 @@ const Hero = () => {
                 <div className={styles.content}>
                     <p className={styles.eyebrow}>Feras Mahmood · AI Researcher | Data and AI Infra Engineering</p>
                     <h1 id="hero-title" className={styles.title}>
-                        I research, build, and deploy the AI infrastructure behind dependable products.
+                        I enjoy researching, designing, and testing AI infrastructure.
                     </h1>
                     <p className={styles.summary}>
-                        From data pipelines to inference, I design agentic workflows and ML platforms for real users in compliance-heavy settings.
+                        I have worked with Mitacs-funded healthcare, hardware, and educational startups to engineer data storage infrastructure and search engines.
                     </p>
                     <div className={styles.actions}>
                         <Link href="/#projects" className={styles.primaryAction}>
