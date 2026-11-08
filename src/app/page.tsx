@@ -148,28 +148,20 @@ export default function Home() {
             description={
               <div className="space-y-4">
                 <p>
-                  <strong>Production-Grade Computer Vision Application</strong> developed to analyze cricket shot mechanics
-                  in real-time. This mobile platform utilizes <strong>YOLOv8</strong> for high-speed object detection to
-                  track ball trajectories and <strong>RandomForest</strong> classifiers to provide instant, data-driven
-                  shot recommendations and corrective feedback to players.
+                  <strong>Applied Machine Learning Capstone</strong> built around a <strong>Python</strong> pipeline
+                  (<strong>PyTorch</strong>, <strong>OpenCV</strong>) for classification and anomaly detection on
+                  biometric time-series data.
                 </p>
                 <br />
                 <p>
-                  The system features a cross-platform mobile app built with <strong>Flutter</strong>, offering a seamless
-                  user experience for recording execution and receiving detailed coaching insights. Inference is decoupled
-                  via a serverless architecture on <strong>Google Cloud Platform (Cloud Run)</strong>, ensuring
-                  cost-effective scaling to zero when idle, while <strong>Pub/Sub</strong> handles asynchronous event
-                  messaging for smooth analysis workflows.
-                </p>
-                <p className="mt-2 text-sm text-gray-400">
-                  <br />
-                  <strong>Deployed on:</strong> Google Play Store (Internal Testing) & GCP
+                  Model inference is served through a serverless architecture on <strong>Google Cloud Platform
+                  (Cloud Run)</strong>, scaling to zero when idle.
                 </p>
               </div>
             }
             githubLink="https://github.com/TaimoorAleem/AICricketCoach_CapstoneProject"
             technologies={[
-              "Python", "OpenCV", "YOLOv8", "RandomForest", "Flutter", "Google Cloud Platform", "Cloud Run", "Pub/Sub"
+              "Python", "PyTorch", "OpenCV", "Google Cloud Platform", "Cloud Run"
             ]}
             features={[
               {
@@ -179,17 +171,9 @@ export default function Home() {
                 ]
               },
               {
-                title: "Impact Metrics",
-                items: [
-                  "Deployed to production with ~10 active users.",
-                  "Real-time CV inference via serverless architecture.",
-                  "Cost-optimized ML inference using Cloud Run."
-                ]
-              },
-              {
                 title: "Key Contributions",
                 items: [
-                  "Designed end-to-end CV pipeline using YOLOv8 to detect ball trajectories.",
+                  "Built the classification and anomaly detection pipeline in Python.",
                   "Deployed scalable inference using Cloud Run."
                 ]
               }
