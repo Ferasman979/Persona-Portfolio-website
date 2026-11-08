@@ -57,7 +57,7 @@ export async function GET() {
             status: 200,
             headers: {
                 'Content-Type': 'application/pdf',
-                'Content-Disposition': 'inline; filename="Feras_Alawadi_Resume.pdf"',
+                'Content-Disposition': 'inline; filename="Feras_Mahmood_Resume.pdf"',
                 'Cache-Control': 'no-store',
             },
         });
