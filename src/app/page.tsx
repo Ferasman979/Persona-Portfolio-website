@@ -394,11 +394,6 @@ export default function Home() {
         </p>
       </Section>
       </main>
-      <footer className={styles.siteFooter}>
-        <a href="mailto:ferasmahmood999@gmail.com" className={styles.inlineLink}>
-          ferasmahmood999@gmail.com
-        </a>
-      </footer>
     </>
   );
 }

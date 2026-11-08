@@ -109,13 +109,6 @@
   background: var(--surface-raised);
 }
 
-.siteFooter {
-  display: flex;
-  justify-content: center;
-  padding: 2rem 1rem 3rem;
-  border-top: 1px solid var(--border-subtle);
-}
-
 .inlineLink {
   display: inline-flex;
   min-height: 44px;
