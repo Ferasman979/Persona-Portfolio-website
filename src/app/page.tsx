@@ -28,7 +28,7 @@ export default function Home() {
           <div className={styles.aboutGrid}>
             <div className={styles.aboutCard}>
               <p className={styles.cardText}>
-                I am a Computer Science graduate of Sheridan College. I work as an AI Researcher, not a software developer, specializing in developing on-prem inference engines and AI training workflows across NVIDIA workstations (H100 and A100 GPUs). My work includes leading the deployment of AI infra and machine learning services that support 10,000-15,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
+                I am a Computer Science graduate of Sheridan College. I work as an AI Researcher, specializing in developing on-prem inference engines and AI training workflows across NVIDIA workstations (H100 and A100 GPUs). My work includes leading the deployment of AI infra and machine learning services that support 10,000-15,000 active users. I am particularly driven by engineering data pipelines that transform manual verification into automated, scalable workflows.
                 <br /><br />
                 Outside work, I play soccer and love experimenting with new recipes in the kitchen.
               </p>
@@ -394,6 +394,11 @@ export default function Home() {
         </p>
       </Section>
       </main>
+      <footer className={styles.siteFooter}>
+        <a href="mailto:ferasmahmood999@gmail.com" className={styles.inlineLink}>
+          ferasmahmood999@gmail.com
+        </a>
+      </footer>
     </>
   );
 }

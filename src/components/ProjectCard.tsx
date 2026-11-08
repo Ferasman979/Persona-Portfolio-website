@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './ProjectCard.module.css';
 
@@ -12,6 +15,9 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ title, description, githubLink, demoLink, technologies, features, status }: ProjectCardProps) => {
+    const [showDescription, setShowDescription] = useState(false);
+    const descriptionId = `${title.replace(/\s+/g, '-').toLowerCase()}-description`;
+
     return (
         <article className={styles.card}>
             {status && (
@@ -33,7 +39,19 @@ const ProjectCard = ({ title, description, githubLink, demoLink, technologies, f
                 </div>
             </div>
 
-            <div className={styles.description}>{description}</div>
+            <button
+                type="button"
+                onClick={() => setShowDescription(!showDescription)}
+                className={styles.descriptionToggle}
+                aria-expanded={showDescription}
+                aria-controls={descriptionId}
+            >
+                {showDescription ? 'Hide description' : 'Show description'}
+            </button>
+
+            {showDescription && (
+                <div id={descriptionId} className={styles.description}>{description}</div>
+            )}
 
             {features && features.map((feature, idx) => (
                 <div key={idx} className={styles.features}>

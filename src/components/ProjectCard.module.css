@@ -76,6 +76,26 @@
     color: var(--foreground);
 }
 
+.descriptionToggle {
+    align-self: flex-start;
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--foreground);
+    cursor: pointer;
+    font-weight: 650;
+    font-size: 0.9rem;
+    transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.descriptionToggle:hover {
+    border-color: var(--primary);
+    background: var(--surface-raised);
+}
+
 .description {
     color: var(--secondary);
     margin-bottom: 1.5rem;
