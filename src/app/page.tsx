@@ -341,7 +341,7 @@ export default function Home() {
         <ExperienceCard
           role="Workshop Team Member"
           company="Google Developer Group Sheridan"
-          date="May 2025 – Present"
+          date="May 2025 – April 2026"
           alwaysExpanded={true}
           points={[
             "Supported and organized the design and delivery of community tech workshops, helping 100+ attendees gain hands-on experience with Google technologies."
