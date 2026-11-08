@@ -388,8 +388,8 @@ export default function Home() {
         <p>
           Feel free to reach out to me via email or LinkedIn.
           <br />
-          <a href="mailto:technocratz979@gmail.com" className={styles.inlineLink}>
-            technocratz979@gmail.com &rarr;
+          <a href="mailto:ferasmahmood999@gmail.com" className={styles.inlineLink}>
+            ferasmahmood999@gmail.com &rarr;
           </a>
         </p>
       </Section>
