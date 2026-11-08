@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { SectionLink } from "@/components/SectionLink";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -25,9 +25,9 @@ export default function ManagedLlmApisVsVllm() {
       <main id="article-content" className={styles.page}>
         <article className={styles.article}>
           <header className={styles.header}>
-            <Link href="/#blog" className={styles.backLink}>
+            <SectionLink id="blog" className={styles.backLink}>
               <span aria-hidden="true">←</span> Back to writing
-            </Link>
+            </SectionLink>
             <p className={styles.kicker}>AI infrastructure · Systems engineering</p>
             <h1>Managed LLM APIs vs. Your Own vLLM Server: A Question of Workload Shape, Not Ideology</h1>
             <p className={styles.meta}>

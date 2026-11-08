@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { SectionLink } from './SectionLink';
 import styles from './Hero.module.css';
 
 const Hero = () => {
@@ -15,9 +16,9 @@ const Hero = () => {
                         I have worked with Mitacs-funded healthcare, hardware, and educational startups to engineer data storage infrastructure and search engines.
                     </p>
                     <div className={styles.actions}>
-                        <Link href="/#projects" className={styles.primaryAction}>
+                        <SectionLink id="projects" className={styles.primaryAction}>
                             Explore my work
-                        </Link>
+                        </SectionLink>
                         <Link href="https://github.com/Ferasman979" target="_blank" rel="noopener noreferrer" className={styles.secondaryAction}>
                             GitHub <span aria-hidden="true">↗</span>
                         </Link>

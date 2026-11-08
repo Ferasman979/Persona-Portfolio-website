@@ -11,6 +11,7 @@ import ProjectCard from "@/components/ProjectCard";
 import EndorsementCard from "@/components/EndorsementCard";
 import ExperienceCard from "@/components/ExperienceCard";
 import CertificationCard from "@/components/CertificationCard";
+import { PendingScroll } from "@/components/SectionLink";
 
 export default function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -19,6 +20,7 @@ export default function Home() {
     <>
       <a className="skipLink" href="#main-content">Skip to main content</a>
       <Navbar />
+      <PendingScroll />
       <main id="main-content" className={styles.mainContainer}>
         <Hero />
 

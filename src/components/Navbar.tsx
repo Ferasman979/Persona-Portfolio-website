@@ -4,16 +4,17 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
 import ThemeToggle from './ThemeToggle';
+import { SectionLink } from './SectionLink';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navItems = [
-        { name: 'About', href: '/#about' },
-        { name: 'Experience', href: '/#experience' },
-        { name: 'Projects', href: '/#projects' },
-        { name: 'Blog', href: '/#blog' },
-        { name: 'Contact', href: '/#contact' },
+        { name: 'About', id: 'about' },
+        { name: 'Experience', id: 'experience' },
+        { name: 'Projects', id: 'projects' },
+        { name: 'Blog', id: 'blog' },
+        { name: 'Contact', id: 'contact' },
     ];
 
     useEffect(() => {
@@ -34,9 +35,9 @@ const Navbar = () => {
 
                 <div className={styles.links}>
                     {navItems.map((item) => (
-                        <Link key={item.name} href={item.href} className={styles.link}>
+                        <SectionLink key={item.name} id={item.id} className={styles.link}>
                             {item.name}
-                        </Link>
+                        </SectionLink>
                     ))}
                     <Link href="/resume" target="_blank" rel="noopener noreferrer" className={styles.resumeLink} aria-label="Open résumé in a new tab">
                         Résumé ↗
@@ -64,14 +65,14 @@ const Navbar = () => {
                 {isMenuOpen && (
                     <div id="mobile-navigation" className={styles.mobileMenu}>
                         {navItems.map((item) => (
-                            <Link
+                            <SectionLink
                                 key={item.name}
-                                href={item.href}
+                                id={item.id}
                                 className={styles.mobileLink}
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {item.name}
-                            </Link>
+                            </SectionLink>
                         ))}
                         <Link
                             href="/resume"
