@@ -14,6 +14,30 @@
     border-color: #46515d;
 }
 
+.cardLink {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cardLink:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+}
+
+.viewLink {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 650;
+    color: var(--primary-strong);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+
+.cardLink:hover .viewLink {
+    color: var(--foreground);
+}
+
 .logoContainer {
     position: relative;
     width: 72px;

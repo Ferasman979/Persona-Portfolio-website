@@ -305,11 +305,12 @@ export default function Home() {
       <Section id="certifications" title="Certifications">
         <div className={styles.certificationGrid}>
           <CertificationCard
-            name="Azure Databricks (DP-750)"
+            name="Azure Databricks Data Engineer Associate"
             issuer="Microsoft"
             status="Certified"
-            logoSrc="/azure-logo.png"
-            logoAlt="Microsoft Azure logo"
+            logoSrc="/azure-databricks-badge.png"
+            logoAlt="Microsoft Certified Associate badge"
+            href="/certificate/azure-databricks"
           />
           <CertificationCard
             name="Certified Kubernetes Administrator (CKA)"

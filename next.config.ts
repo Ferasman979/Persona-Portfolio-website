@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       { pathname: '/api/profile-image' },
       { pathname: '/blog/**' },
       { pathname: '/headshot.jpeg' },
-      { pathname: '/azure-logo.png' },
+      { pathname: '/azure-databricks-badge.png' },
     ],
   },
   async rewrites() {
@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
       {
         source: '/resume',
         destination: '/api/resume',
+      },
+      {
+        source: '/certificate/azure-databricks',
+        destination: '/api/certificate',
       },
       {
         source: '/me.png',
