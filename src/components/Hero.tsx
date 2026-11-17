@@ -28,11 +28,11 @@ const Hero = () => {
                 <div className={styles.imageWrapper}>
                     <div className={styles.imageFrame}>
                         <Image
-                            src="/headshot.jpeg"
+                            src="/headshot-portrait.jpeg"
                             alt="Feras Mahmood"
                             width={700}
                             height={700}
-                            sizes="700px"
+                            sizes="350px"
                             quality={95}
                             className={styles.headshot}
                             priority

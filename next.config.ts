@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       { pathname: '/images/**' },
       { pathname: '/api/profile-image' },
       { pathname: '/blog/**' },
-      { pathname: '/headshot.jpeg' },
+      { pathname: '/headshot-portrait.jpeg' },
       { pathname: '/azure-databricks-badge.png' },
     ],
   },
