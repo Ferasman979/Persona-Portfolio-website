@@ -28,7 +28,7 @@ export async function GET() {
     }
 
     const bucketName = process.env.GCS_BUCKET_NAME;
-    const fileName = 'Me.jpeg';
+    const fileName = 'headshot-portrait.jpeg';
 
     if (!bucketName) {
         console.error('Missing env var: GCS_BUCKET_NAME');
