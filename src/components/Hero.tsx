@@ -30,8 +30,10 @@ const Hero = () => {
                         <Image
                             src="/headshot.jpeg"
                             alt="Feras Mahmood"
-                            width={350}
-                            height={350}
+                            width={700}
+                            height={700}
+                            sizes="700px"
+                            quality={95}
                             className={styles.headshot}
                             priority
                         />
