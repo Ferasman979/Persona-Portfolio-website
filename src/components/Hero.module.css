@@ -116,8 +116,8 @@
     object-fit: cover;
     filter: brightness(1.08) contrast(1.06) saturate(1.1);
     object-position: 50% 15%;
-    transform: scale(1.5);
-    transform-origin: 50% 62%;
+    transform: scale(1.2);
+    transform-origin: 50% 90%;
 }
 
 @media (max-width: 900px) {
