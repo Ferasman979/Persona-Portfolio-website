@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from 'react';
+import { useId, useRef, useState } from 'react';
 import Link from 'next/link';
 import styles from './ProjectCard.module.css';
 
@@ -10,7 +10,7 @@ interface ProjectCardProps {
     summary: React.ReactNode;
     /** Visual shown on the collapsed card (e.g. a diagram). */
     media?: React.ReactNode;
-    /** Shown only when expanded, above the description. */
+    /** Shown only when expanded, beside the text on wide screens. */
     details?: React.ReactNode;
     /** Shown only when expanded. */
     description?: React.ReactNode;
@@ -35,11 +35,31 @@ const ProjectCard = ({
     status,
 }: ProjectCardProps) => {
     const [expanded, setExpanded] = useState(false);
+    const cardRef = useRef<HTMLElement>(null);
     const contentId = useId();
     const hasMore = Boolean(details || description || (features && features.length));
 
+    const toggle = () => {
+        setExpanded((current) => !current);
+        // Expanding moves the card onto its own full-width row (and collapsing moves it back),
+        // so bring its top into view if the move pushed it off-screen.
+        requestAnimationFrame(() => {
+            const card = cardRef.current;
+            if (!card) return;
+            const { top } = card.getBoundingClientRect();
+            if (top < 0 || top > window.innerHeight * 0.6) {
+                const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                card.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+            }
+        });
+    };
+
     return (
-        <article className={styles.card}>
+        <article
+            ref={cardRef}
+            className={`${styles.card} ${expanded ? styles.cardExpanded : ''}`}
+            data-expanded={expanded ? 'true' : undefined}
+        >
             {status && (
                 <div className={styles.completedBadge}>{status}</div>
             )}
@@ -66,8 +86,8 @@ const ProjectCard = ({
             {hasMore && (
                 <button
                     type="button"
-                    onClick={() => setExpanded(!expanded)}
-                    className={styles.descriptionToggle}
+                    onClick={toggle}
+                    className={`${styles.descriptionToggle} ${expanded ? '' : styles.toggleBottom}`}
                     aria-expanded={expanded}
                     aria-controls={contentId}
                 >
@@ -77,20 +97,28 @@ const ProjectCard = ({
 
             {hasMore && expanded && (
                 <div id={contentId} className={styles.expanded}>
-                    {details && <div className={styles.details}>{details}</div>}
+                    <div className={`${styles.expandedGrid} ${details ? styles.withDetails : ''}`}>
+                        {details && <div className={styles.details}>{details}</div>}
 
-                    {description && <div className={styles.description}>{description}</div>}
+                        <div className={styles.textColumn}>
+                            {description && <div className={styles.description}>{description}</div>}
 
-                    {features && features.map((feature, idx) => (
-                        <div key={idx} className={styles.features}>
-                            <span className={styles.featureTitle}>{feature.title}</span>
-                            <ul className={styles.featureList}>
-                                {feature.items.map((item, i) => (
-                                    <li key={i} className={styles.featureItem}>{item}</li>
-                                ))}
-                            </ul>
+                            {features && features.length > 0 && (
+                                <div className={`${styles.featuresGrid} ${details ? '' : styles.wide}`}>
+                                    {features.map((feature, idx) => (
+                                        <div key={idx} className={styles.features}>
+                                            <span className={styles.featureTitle}>{feature.title}</span>
+                                            <ul className={styles.featureList}>
+                                                {feature.items.map((item, i) => (
+                                                    <li key={i} className={styles.featureItem}>{item}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
-                    ))}
+                    </div>
                 </div>
             )}
 

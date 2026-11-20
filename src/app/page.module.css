@@ -51,7 +51,6 @@
   grid-template-columns: 1fr;
   gap: 1.25rem;
   width: 100%;
-  align-items: start;
 }
 
 .certificationGrid {

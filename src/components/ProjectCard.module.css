@@ -8,6 +8,14 @@
     flex-direction: column;
 }
 
+.card:not(.cardExpanded) {
+    min-height: var(--project-card-min-h, auto);
+}
+
+.cardExpanded {
+    grid-column: 1 / -1;
+}
+
 .card:hover {
     background: var(--surface-raised);
     border-color: #46515d;
@@ -85,13 +93,50 @@
     margin-bottom: 1rem;
 }
 
+.cardExpanded .summary {
+    max-width: 72ch;
+}
+
+.cardExpanded .media {
+    max-width: 460px;
+}
+
 .expanded {
     border-top: 1px solid var(--border-subtle);
     padding-top: 1.25rem;
 }
 
+.expandedGrid {
+    display: grid;
+    gap: 2rem;
+}
+
 .details {
-    margin-bottom: 1.25rem;
+    min-width: 0;
+}
+
+.textColumn {
+    min-width: 0;
+}
+
+.featuresGrid {
+    display: grid;
+    gap: 1.5rem 2.5rem;
+}
+
+.featuresGrid .features {
+    margin-top: 0;
+}
+
+@media (min-width: 900px) {
+    .expandedGrid.withDetails {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .featuresGrid.wide {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
 }
 
 .descriptionToggle {
@@ -107,6 +152,10 @@
     font-weight: 650;
     font-size: 0.9rem;
     transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.toggleBottom {
+    margin-top: auto;
 }
 
 .descriptionToggle:hover {
