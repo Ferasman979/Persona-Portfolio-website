@@ -76,6 +76,19 @@
     fill: var(--muted);
 }
 
+.mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 10px;
+}
+
+.raw {
+    fill: var(--secondary);
+}
+
+.masked {
+    fill: var(--primary-strong);
+}
+
 .edgeLabel {
     fill: var(--muted);
     font-size: 9.5px;

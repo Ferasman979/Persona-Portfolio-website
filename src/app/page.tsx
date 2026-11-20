@@ -14,7 +14,7 @@ import CertificationCard from "@/components/CertificationCard";
 import { PendingScroll } from "@/components/SectionLink";
 import SlideGallery from "@/components/SlideGallery";
 import ProjectsView from "@/components/ProjectsView";
-import { CognivisionAgentLoop, CognivisionArchitecture } from "@/components/diagrams/CognivisionDiagrams";
+import { CognivisionAgentLoop, CognivisionArchitecture, CognivisionTracing } from "@/components/diagrams/CognivisionDiagrams";
 
 export default function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -79,8 +79,17 @@ export default function Home() {
               </p>
             }
             media={<CognivisionAgentLoop />}
-            details={<CognivisionArchitecture />}
+            details={
+              <>
+                <CognivisionArchitecture />
+                <CognivisionTracing />
+              </>
+            }
             githubLink="https://github.com/Ferasman979/Cognivision"
+            extraLinks={[
+              { label: "CogniVision", href: "https://www.brain-vision.org/cogniviision-faq/" },
+              { label: "Oakville Centre for Vision", href: "https://oakvillecentreforvision.com/" },
+            ]}
             technologies={[
               "React", "TypeScript", "Node.js", "Python", "LangGraph", "Amazon Bedrock", "Amazon Transcribe",
               "PostgreSQL", "AWS Fargate", "Terraform", "Langfuse"
@@ -98,6 +107,19 @@ export default function Home() {
                 ]
               },
               {
+                title: "Observability: Langfuse Tracing & PII Redaction",
+                items: [
+                  <span key="1"><strong>One trace per voice turn:</strong> grouped by conversation, and tagged with the form being filled and whether the turn was an extraction or a clinician review.</span>,
+                  <span key="2"><strong>No patient identifiers as IDs:</strong> the trace&apos;s user is a salted hash of the patient id, and it is left out entirely if no salt is configured, so it fails safe.</span>,
+                  <span key="3"><strong>Three-layer redaction before data leaves the service:</strong> rules by field name (name, phone, DOB, health card, address), pattern matching (emails, phones, health cards, postal codes), and NLP entity detection for names and places in free text.</span>,
+                  <span key="4"><strong>Fails closed:</strong> if redaction errors, the payload is replaced with <code>[REDACTED]</code> rather than sent as-is. If the NLP layer is unavailable, pattern matching still applies.</span>,
+                  <span key="5"><strong>Scores on every turn:</strong> latency, a first-token proxy, schema compliance, the clinician&apos;s approve or reject decision, and how long the review took.</span>,
+                  <span key="6"><strong>Prompt versioning and gates:</strong> extraction prompts live in Langfuse, and a new version only goes live after passing the golden-set evaluation.</span>,
+                  <span key="7"><strong>Tested:</strong> a redaction regression suite of 43 cases built on fabricated identities, never real patient data.</span>,
+                  <span key="8"><strong>Observability copy only:</strong> the application database keeps the real values; only what is sent to tracing is masked.</span>
+                ]
+              },
+              {
                 title: "Problems It Solves for Optometrists",
                 items: [
                   "Less typing during and after evaluations, so more time with the patient.",
@@ -110,7 +132,28 @@ export default function Home() {
               {
                 title: "Clinic & Community",
                 items: [
-                  "Built for optometrists at Oakville Centre for Vision.",
+                  <span key="oakville">
+                    Built for optometrists at{' '}
+                    <a
+                      href="https://oakvillecentreforvision.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.cardLink}
+                    >
+                      Oakville Centre for Vision ↗
+                    </a>
+                  </span>,
+                  <span key="faq">
+                    Learn more about the platform:{' '}
+                    <a
+                      href="https://www.brain-vision.org/cogniviision-faq/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.cardLink}
+                    >
+                      CogniVision FAQ ↗
+                    </a>
+                  </span>,
                   <span key="ig">
                     Follow CogniVision on Instagram:{' '}
                     <a

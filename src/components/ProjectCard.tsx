@@ -19,6 +19,8 @@ interface ProjectCardProps {
     features?: { title: string; items: (string | React.ReactNode)[] }[];
     githubLink?: string;
     demoLink?: string;
+    /** Additional outbound links shown with the project's links when it's open. */
+    extraLinks?: { label: string; href: string }[];
     technologies: string[];
     status?: string;
 }
@@ -34,6 +36,7 @@ const ProjectCard = ({
     features,
     githubLink,
     demoLink,
+    extraLinks,
     technologies,
     status,
 }: ProjectCardProps) => {
@@ -98,6 +101,11 @@ const ProjectCard = ({
                     View Demo ▶
                 </Link>
             )}
+            {extraLinks && extraLinks.map((link) => (
+                <Link key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={`${link.label} (opens in a new tab)`} className={styles.iconLink}>
+                    {link.label} ↗
+                </Link>
+            ))}
         </div>
     );
 

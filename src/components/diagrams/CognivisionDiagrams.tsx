@@ -129,3 +129,78 @@ export const CognivisionArchitecture = () => (
         <figcaption className={styles.caption}>High-level view. Everything runs on serverless cloud containers.</figcaption>
     </figure>
 );
+
+/** How a voice turn is traced in Langfuse, and where PII is redacted on the way. */
+export const CognivisionTracing = () => (
+    <figure className={styles.figure}>
+        <svg
+            className={styles.svg}
+            viewBox="0 0 340 430"
+            role="img"
+            aria-labelledby="cv-trace-title cv-trace-desc"
+        >
+            <title id="cv-trace-title">CogniVision Langfuse tracing and PII redaction</title>
+            <desc id="cv-trace-desc">
+                Each voice turn in the agent produces one trace. Before any trace data leaves the service, three redaction
+                layers run: field-name rules, pattern matching, and named-entity detection. If redaction fails, the payload
+                is replaced with a redaction marker. The redacted trace is stored in self-hosted Langfuse with a session id, a
+                salted-hash user id and tags, and scores for latency, first-token time, schema compliance, clinician decision
+                and review time are attached. The application database keeps the real values; only the trace copy is masked.
+            </desc>
+            <defs>
+                <marker id="cv-trace-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M0,0 L10,5 L0,10 z" className={styles.arrowHead} />
+                </marker>
+            </defs>
+
+            {/* 1 · the agent turn */}
+            <rect x="6" y="6" width="328" height="62" rx="10" className={styles.box} />
+            <text x="18" y="25" className={styles.title}>Voice turn in the AI agent</text>
+            <text x="18" y="40" className={styles.sub}>Real clinical data (synthetic example):</text>
+            <text x="18" y="56" className={`${styles.mono} ${styles.raw}`}>Maya K · 416-555-0142 · 1234-567-890 AB</text>
+
+            <line x1="170" y1="68" x2="170" y2="88" className={styles.arrow} markerEnd="url(#cv-trace-arrow)" />
+            <text x="180" y="82" className={styles.edgeLabel}>mask() runs before anything leaves</text>
+
+            {/* 2 · redaction layers */}
+            <rect x="6" y="90" width="328" height="130" rx="10" className={styles.accentBox} />
+            <text x="18" y="108" className={styles.title}>PII redaction, three layers</text>
+
+            <rect x="16" y="116" width="308" height="26" rx="6" className={styles.box} />
+            <text x="26" y="133" className={styles.step}>0</text>
+            <text x="40" y="133" className={styles.title}>Key-aware</text>
+            <text x="112" y="133" className={styles.sub}>by field name: name, phone, DOB, address</text>
+
+            <rect x="16" y="147" width="308" height="26" rx="6" className={styles.box} />
+            <text x="26" y="164" className={styles.step}>1</text>
+            <text x="40" y="164" className={styles.title}>Pattern match</text>
+            <text x="124" y="164" className={styles.sub}>emails, phones, health cards, postal codes</text>
+
+            <rect x="16" y="178" width="308" height="26" rx="6" className={styles.box} />
+            <text x="26" y="195" className={styles.step}>2</text>
+            <text x="40" y="195" className={styles.title}>Entity detection</text>
+            <text x="134" y="195" className={styles.sub}>free-text names and places (NLP)</text>
+
+            <text x="18" y="214" className={styles.edgeLabel}>Fails closed: any error replaces the payload with [REDACTED]</text>
+
+            <line x1="170" y1="220" x2="170" y2="240" className={styles.arrow} markerEnd="url(#cv-trace-arrow)" />
+
+            {/* 3 · Langfuse trace */}
+            <rect x="6" y="242" width="328" height="96" rx="10" className={styles.box} />
+            <text x="18" y="261" className={styles.title}>Trace in self-hosted Langfuse</text>
+            <text x="18" y="277" className={`${styles.mono} ${styles.masked}`}>[PERSON] · [PHONE] · [HEALTH_CARD]</text>
+            <text x="18" y="296" className={styles.sub}>Session = conversation thread</text>
+            <text x="18" y="310" className={styles.sub}>User = salted hash of the patient id (omitted if no salt)</text>
+            <text x="18" y="324" className={styles.sub}>Tags = the form being filled + turn type</text>
+
+            {/* 4 · scores */}
+            <rect x="6" y="348" width="328" height="52" rx="10" className={styles.box} />
+            <text x="18" y="366" className={styles.title}>Scores on every turn</text>
+            <text x="18" y="380" className={styles.sub}>Latency · first-token time · schema compliance</text>
+            <text x="18" y="392" className={styles.sub}>Clinician approve / reject · time spent reviewing</text>
+
+            <text x="18" y="418" className={styles.edgeLabel}>The app database keeps the real values; only the trace copy is masked.</text>
+        </svg>
+        <figcaption className={styles.caption}>Tracing for observability without patient identifiers.</figcaption>
+    </figure>
+);
