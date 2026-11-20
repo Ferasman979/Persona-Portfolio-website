@@ -13,7 +13,7 @@ import ExperienceCard from "@/components/ExperienceCard";
 import CertificationCard from "@/components/CertificationCard";
 import { PendingScroll } from "@/components/SectionLink";
 import SlideGallery from "@/components/SlideGallery";
-import ProjectGrid from "@/components/ProjectGrid";
+import ProjectsView from "@/components/ProjectsView";
 import { CognivisionAgentLoop, CognivisionArchitecture } from "@/components/diagrams/CognivisionDiagrams";
 
 export default function Home() {
@@ -64,7 +64,11 @@ export default function Home() {
       </div>
 
       <Section id="projects" title="Top Projects">
-        <ProjectGrid className={styles.projectGrid}>
+        <ProjectsView
+          className={styles.projectGrid}
+          activeClassName={styles.projectGridOpen}
+          labelClassName={styles.otherProjectsLabel}
+        >
           <ProjectCard
             title="CogniVision"
             summary={
@@ -385,7 +389,7 @@ export default function Home() {
               />
             </>
           )}
-        </ProjectGrid>
+        </ProjectsView>
 
         <div className={styles.showMoreWrap}>
           <button
