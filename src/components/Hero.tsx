@@ -10,7 +10,7 @@ const Hero = () => {
                 <div className={styles.content}>
                     <p className={styles.eyebrow}>Feras Mahmood · AI Researcher | Data and AI Infra Engineering</p>
                     <h1 id="hero-title" className={styles.title}>
-                        I enjoy researching, designing, and testing AI infrastructure.
+                        I research, test, and benchmark AI platforms before they ship.
                     </h1>
                     <p className={styles.summary}>
                         I have worked with Mitacs-funded healthcare, hardware, and educational startups to engineer data storage infrastructure and search engines.

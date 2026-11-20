@@ -51,7 +51,11 @@ export default function Home() {
               date="Oct 2025 – PRESENT"
               alwaysExpanded={true}
               points={[
-                "Built the OFC data platform with the Centre for Applied AI (CAAI): on-prem storage on an NVIDIA DGX Station, privacy-preserving tokenization and encryption of player identities, and a vision-AI pipeline for futsal analytics."
+                "Work with clients to document requirements, alongside the project management team.",
+                "Research and design products: platforms, data pipelines and AI applications.",
+                "Train, test and benchmark models.",
+                "Build and maintain data warehousing.",
+                "Run cost analysis for each product."
               ]}
             />
             <br />
@@ -134,6 +138,7 @@ export default function Home() {
               {
                 title: "Clinic & Community",
                 items: [
+                  "Work done with the Centre for Applied AI (CAAI), Sheridan College.",
                   <span key="oakville">
                     Built for optometrists at{' '}
                     <a
@@ -218,10 +223,10 @@ export default function Home() {
             title="OFC Data Platform"
             summary={
               <p>
-                Work with Sheridan&apos;s <strong>Centre for Applied AI (CAAI)</strong>: a data platform for a futsal
-                player-development program, covering <strong>1,790 players</strong> across <strong>2,980 sessions</strong>,
-                stored privately on an on-prem <strong>NVIDIA DGX Station</strong>, plus a vision-AI pipeline that reads
-                matches straight from camera footage.
+                Data platform for a futsal player-development program: wearable heel-sensor data from{' '}
+                <strong>1,790 players</strong> across <strong>2,980 sessions</strong>, stored privately on an on-prem{' '}
+                <strong>NVIDIA DGX Station</strong>, with a vision-AI pipeline that reads matches straight from camera
+                footage.
               </p>
             }
             details={
@@ -250,12 +255,6 @@ export default function Home() {
               "Terraform", "AWS CloudFront", "Computer Vision"
             ]}
             features={[
-              {
-                title: "Partnership",
-                items: [
-                  "Work done with the Centre for Applied AI (CAAI), Sheridan College."
-                ]
-              },
               {
                 title: "The Data",
                 items: [
