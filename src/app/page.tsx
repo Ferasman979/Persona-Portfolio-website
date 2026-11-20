@@ -50,6 +50,9 @@ export default function Home() {
               location="Oakville, Ontario"
               date="Oct 2025 – PRESENT"
               alwaysExpanded={true}
+              points={[
+                "Built the OFC data platform with the Centre for Applied AI (CAAI): on-prem storage on an NVIDIA DGX Station, privacy-preserving tokenization and encryption of player identities, and a vision-AI pipeline for futsal analytics."
+              ]}
             />
             <br />
             <ExperienceCard
@@ -85,7 +88,6 @@ export default function Home() {
                 <CognivisionTracing />
               </>
             }
-            githubLink="https://github.com/Ferasman979/Cognivision"
             extraLinks={[
               { label: "CogniVision", href: "https://www.brain-vision.org/cogniviision-faq/" },
               { label: "Oakville Centre for Vision", href: "https://oakvillecentreforvision.com/" },
@@ -216,10 +218,10 @@ export default function Home() {
             title="OFC Data Platform"
             summary={
               <p>
-                Data platform for a futsal player-development program: wearable heel-sensor data from{' '}
-                <strong>1,790 players</strong> across <strong>2,980 sessions</strong>, stored privately on an on-prem{' '}
-                <strong>NVIDIA DGX Station</strong>, with a vision-AI pipeline that reads matches straight from camera
-                footage.
+                Work with Sheridan&apos;s <strong>Centre for Applied AI (CAAI)</strong>: a data platform for a futsal
+                player-development program, covering <strong>1,790 players</strong> across <strong>2,980 sessions</strong>,
+                stored privately on an on-prem <strong>NVIDIA DGX Station</strong>, plus a vision-AI pipeline that reads
+                matches straight from camera footage.
               </p>
             }
             details={
@@ -248,6 +250,12 @@ export default function Home() {
               "Terraform", "AWS CloudFront", "Computer Vision"
             ]}
             features={[
+              {
+                title: "Partnership",
+                items: [
+                  "Work done with the Centre for Applied AI (CAAI), Sheridan College."
+                ]
+              },
               {
                 title: "The Data",
                 items: [
