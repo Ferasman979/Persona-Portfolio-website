@@ -1,0 +1,36 @@
+.gallery {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.slideLink {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: border-color 160ms ease;
+}
+
+.slideLink:hover {
+    border-color: var(--primary);
+}
+
+.slideLink:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+}
+
+.slide {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.caption {
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+}

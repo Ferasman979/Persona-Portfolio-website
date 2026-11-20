@@ -1,22 +1,42 @@
 "use client";
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import Link from 'next/link';
 import styles from './ProjectCard.module.css';
 
 interface ProjectCardProps {
     title: string;
-    description: string | React.ReactNode;
+    /** Short pitch, always visible. */
+    summary: React.ReactNode;
+    /** Visual shown on the collapsed card (e.g. a diagram). */
+    media?: React.ReactNode;
+    /** Shown only when expanded, above the description. */
+    details?: React.ReactNode;
+    /** Shown only when expanded. */
+    description?: React.ReactNode;
+    /** Shown only when expanded. */
+    features?: { title: string; items: (string | React.ReactNode)[] }[];
     githubLink?: string;
     demoLink?: string;
     technologies: string[];
-    features?: { title: string; items: (string | React.ReactNode)[] }[];
     status?: string;
 }
 
-const ProjectCard = ({ title, description, githubLink, demoLink, technologies, features, status }: ProjectCardProps) => {
-    const [showDescription, setShowDescription] = useState(false);
-    const descriptionId = `${title.replace(/\s+/g, '-').toLowerCase()}-description`;
+const ProjectCard = ({
+    title,
+    summary,
+    media,
+    details,
+    description,
+    features,
+    githubLink,
+    demoLink,
+    technologies,
+    status,
+}: ProjectCardProps) => {
+    const [expanded, setExpanded] = useState(false);
+    const contentId = useId();
+    const hasMore = Boolean(details || description || (features && features.length));
 
     return (
         <article className={styles.card}>
@@ -39,30 +59,40 @@ const ProjectCard = ({ title, description, githubLink, demoLink, technologies, f
                 </div>
             </div>
 
-            <button
-                type="button"
-                onClick={() => setShowDescription(!showDescription)}
-                className={styles.descriptionToggle}
-                aria-expanded={showDescription}
-                aria-controls={descriptionId}
-            >
-                {showDescription ? 'Hide description' : 'Show description'}
-            </button>
+            <div className={styles.summary}>{summary}</div>
 
-            {showDescription && (
-                <div id={descriptionId} className={styles.description}>{description}</div>
+            {media && <div className={styles.media}>{media}</div>}
+
+            {hasMore && (
+                <button
+                    type="button"
+                    onClick={() => setExpanded(!expanded)}
+                    className={styles.descriptionToggle}
+                    aria-expanded={expanded}
+                    aria-controls={contentId}
+                >
+                    {expanded ? 'Hide details' : 'Show details'}
+                </button>
             )}
 
-            {features && features.map((feature, idx) => (
-                <div key={idx} className={styles.features}>
-                    <span className={styles.featureTitle}>{feature.title}</span>
-                    <ul className={styles.featureList}>
-                        {feature.items.map((item, i) => (
-                            <li key={i} className={styles.featureItem}>{item}</li>
-                        ))}
-                    </ul>
+            {hasMore && expanded && (
+                <div id={contentId} className={styles.expanded}>
+                    {details && <div className={styles.details}>{details}</div>}
+
+                    {description && <div className={styles.description}>{description}</div>}
+
+                    {features && features.map((feature, idx) => (
+                        <div key={idx} className={styles.features}>
+                            <span className={styles.featureTitle}>{feature.title}</span>
+                            <ul className={styles.featureList}>
+                                {feature.items.map((item, i) => (
+                                    <li key={i} className={styles.featureItem}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
                 </div>
-            ))}
+            )}
 
             <div className={styles.techStack}>
                 {technologies.map((tech) => (

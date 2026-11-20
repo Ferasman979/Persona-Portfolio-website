@@ -51,6 +51,7 @@
   grid-template-columns: 1fr;
   gap: 1.25rem;
   width: 100%;
+  align-items: start;
 }
 
 .certificationGrid {
@@ -107,6 +108,17 @@
 .showMoreButton:hover {
   border-color: var(--primary);
   background: var(--surface-raised);
+}
+
+.cardLink {
+  color: var(--primary-strong);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.cardLink:hover {
+  color: var(--foreground);
 }
 
 .inlineLink {

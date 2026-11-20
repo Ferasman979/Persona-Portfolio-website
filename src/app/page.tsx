@@ -12,6 +12,8 @@ import EndorsementCard from "@/components/EndorsementCard";
 import ExperienceCard from "@/components/ExperienceCard";
 import CertificationCard from "@/components/CertificationCard";
 import { PendingScroll } from "@/components/SectionLink";
+import SlideGallery from "@/components/SlideGallery";
+import { CognivisionAgentLoop, CognivisionArchitecture } from "@/components/diagrams/CognivisionDiagrams";
 
 export default function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -63,46 +65,58 @@ export default function Home() {
       <Section id="projects" title="Top Projects">
         <div className={styles.projectGrid}>
           <ProjectCard
-            title="HR / Talent Acquisition App"
-            status="Completed"
-            description={
-              <div className="space-y-4">
-                <p>
-                  <strong>Smart Recruitment Platform</strong> that streamlines the hiring process by automatically
-                  analyzing resumes and verifying candidate backgrounds.
-                </p>
-                <br />
-                <p>
-                  The system employs <strong>Autonomous AI Agents</strong> that act like digital recruiters. They use
-                  web browsing tools to verify candidate claims, cross-reference experience on external sites, and
-                  conduct research to present a validated report to hiring managers.
-                </p>
-                <br />
-                <p>
-                  Built for scale and reliability, the system features a full observability stack with <strong>Prometheus</strong> (metrics),
-                  <strong>Grafana</strong> (dashboards), and <strong>Tempo</strong> (distributed tracing). The infrastructure is fully containerized with
-                  <strong>Docker</strong> (featuring &quot;baked-in&quot; models) and powered by <strong>MongoDB</strong> for event-driven persistence.
-                </p>
-                <p className="mt-2 text-sm text-gray-400">
-                  <br />
-                  <strong>Deployed on:</strong> Microsoft Azure
-                </p>
-              </div>
+            title="CogniVision"
+            summary={
+              <p>
+                Voice-driven clinical platform for optometrists. Clinicians dictate during an evaluation and an{' '}
+                <strong>AI agent</strong> fills in the forms, pausing for the clinician to approve every change before
+                it reaches the patient&apos;s chart.
+              </p>
             }
-            githubLink="https://github.com/Ferasman979/HRApp"
-            demoLink="/demovid4website.mp4"
+            media={<CognivisionAgentLoop />}
+            details={<CognivisionArchitecture />}
+            githubLink="https://github.com/Ferasman979/Cognivision"
             technologies={[
-              "Next.js", "React", "TypeScript", "LangChain", "LangGraph", "Llama 3", "LlamaParse", "Puppeteer",
-              "MongoDB", "Azure Container Apps", "GitHub Actions", "OpenTelemetry"
+              "React", "TypeScript", "Node.js", "Python", "LangGraph", "Amazon Bedrock", "Amazon Transcribe",
+              "PostgreSQL", "AWS Fargate", "Terraform", "Langfuse"
             ]}
             features={[
               {
-                title: "Key Technical Highlights",
+                title: "Agentic Features",
                 items: [
-                  <span key="1"><strong>Micro-Service Architecture:</strong> Decoupled agents using Model Context Protocol (MCP).</span>,
-                  <span key="2"><strong>Production Observability:</strong> Full metric tracking with Prometheus & Grafana.</span>,
-                  <span key="3"><strong>Containerization:</strong> Optimized Docker builds with pre-loaded models for performance.</span>,
-                  <span key="4"><strong>Event-Driven Design:</strong> Asynchronous pipelines triggered by database events.</span>
+                  <span key="1"><strong>Voice to form:</strong> dictation is transcribed live and stays editable before the agent sees it.</span>,
+                  <span key="2"><strong>Structured extraction:</strong> the agent maps speech to each form&apos;s fields and proposes only what changed.</span>,
+                  <span key="3"><strong>Human in the loop:</strong> the agent pauses for clinician approval; nothing is saved without sign-off.</span>,
+                  <span key="4"><strong>Duplicate check:</strong> flags a likely existing patient before a new record is created.</span>,
+                  <span key="5"><strong>Learns from rejections:</strong> rejected suggestions tune the agent&apos;s instructions, and each change must pass an evaluation gate before it goes live.</span>,
+                  <span key="6"><strong>Private by design:</strong> patient details are redacted from AI traces.</span>
+                ]
+              },
+              {
+                title: "Problems It Solves for Optometrists",
+                items: [
+                  "Less typing during and after evaluations, so more time with the patient.",
+                  "Medical history and evaluation results in one place, with a full audit trail of every change.",
+                  "Flags missing required tests for a service code before a visit is billed.",
+                  "Tracks insurance, charges and payments per patient.",
+                  "Role-based access for admins, billing staff, clinicians and team members."
+                ]
+              },
+              {
+                title: "Clinic & Community",
+                items: [
+                  "Built for optometrists at Oakville Centre for Vision.",
+                  <span key="ig">
+                    Follow CogniVision on Instagram:{' '}
+                    <a
+                      href="https://www.instagram.com/cogniviision/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.cardLink}
+                    >
+                      @cogniviision ↗
+                    </a>
+                  </span>
                 ]
               }
             ]}
@@ -110,6 +124,12 @@ export default function Home() {
           <ProjectCard
             title="OptiMulti-Video"
             status="Completed"
+            summary={
+              <p>
+                Multimodal video-text model with a <strong>custom CUDA kernel</strong> for low-latency fusion, trained
+                across GPUs with FSDP.
+              </p>
+            }
             description={
               <div className="space-y-4">
                 <p>
@@ -145,38 +165,71 @@ export default function Home() {
             ]}
           />
           <ProjectCard
-            title="Sports Analytics App"
-            status="Completed"
-            description={
-              <div className="space-y-4">
-                <p>
-                  <strong>Applied Machine Learning Capstone</strong> built around a <strong>Python</strong> pipeline
-                  (<strong>PyTorch</strong>, <strong>OpenCV</strong>) for classification and anomaly detection on
-                  biometric time-series data.
-                </p>
-                <br />
-                <p>
-                  Model inference is served through a serverless architecture on <strong>Google Cloud Platform
-                  (Cloud Run)</strong>, scaling to zero when idle.
-                </p>
-              </div>
+            title="OFC Data Platform"
+            summary={
+              <p>
+                Data platform for a futsal player-development program: wearable heel-sensor data from{' '}
+                <strong>1,790 players</strong> across <strong>2,980 sessions</strong>, stored privately on an on-prem{' '}
+                <strong>NVIDIA DGX Station</strong>, with a vision-AI pipeline that reads matches straight from camera
+                footage.
+              </p>
             }
-            githubLink="https://github.com/TaimoorAleem/AICricketCoach_CapstoneProject"
+            details={
+              <SlideGallery
+                slides={[
+                  {
+                    src: "/images/ofc/ofc-platform-overview.webp",
+                    alt: "OFC Data Platform overview: futsal at a glance, what the TROPS sensors have captured, the limits of heel sensors, and the web platform.",
+                    caption: "Sport, sensors and web platform",
+                  },
+                  {
+                    src: "/images/ofc/ofc-data-encryption.webp",
+                    alt: "Data encryption flow: names are tokenized in the reviewer's browser, the name list is encrypted, and only codes and scores reach the database on the DGX Station.",
+                    caption: "Keeping player identities private",
+                  },
+                  {
+                    src: "/images/ofc/ofc-vision-ai.webp",
+                    alt: "Vision AI results on unseen footage, with the 2D top-down radar and 3D billboard views of a futsal match.",
+                    caption: "Vision AI: reading a futsal match",
+                  },
+                ]}
+              />
+            }
             technologies={[
-              "Python", "PyTorch", "OpenCV", "Google Cloud Platform", "Cloud Run"
+              "Next.js", "TypeScript", "Python", "PostgreSQL", "Docker Compose", "NVIDIA DGX Station", "Pyodide",
+              "Terraform", "AWS CloudFront", "Computer Vision"
             ]}
             features={[
               {
-                title: "Achievement",
+                title: "The Data",
                 items: [
-                  "First Place for Capstone projects in data analytics stream."
+                  "~35K player appearances over 10 terms (Fall 2023 – Summer 2026).",
+                  "28 metrics per reading: an overall rating, 6 skill scores and 21 raw measurements such as distance, sprints and touches.",
+                  "A web platform shows clients and coaches progress session by session."
                 ]
               },
               {
-                title: "Key Contributions",
+                title: "Privacy by Design",
                 items: [
-                  "Built the classification and anomaly detection pipeline in Python.",
-                  "Deployed scalable inference using Cloud Run."
+                  "Names, birth dates and IDs become random tokens before data leaves the reviewer's browser.",
+                  "The code-to-name list is locked with AES-256; each approved reviewer gets their own RSA-sealed key.",
+                  "The database on the DGX only ever sees tokens and scores, and a leak guard blocks names in uploads."
+                ]
+              },
+              {
+                title: "On-Prem Platform",
+                items: [
+                  "The web app, PostgreSQL and data pipelines run in Docker on the DGX Station, not in the cloud.",
+                  "Reviewers build rosters in their own browser (Python via Pyodide), so name-bearing files never reach the server.",
+                  "Users reach it through an outbound-only tunnel behind CloudFront (Terraform-managed), so the DGX opens no inbound ports."
+                ]
+              },
+              {
+                title: "Vision AI",
+                items: [
+                  "Detector fine-tuned on a single 23-minute session with automatically generated labels, in ~36 minutes in-house.",
+                  "On unseen footage: 33% less player-count flicker, 17% fewer ID switches and the ball found 25% more often.",
+                  "Maps players to the court to within ~1 ft, as a 2D top-down radar and a 3D replayable view."
                 ]
               }
             ]}
@@ -184,8 +237,65 @@ export default function Home() {
           {showAllProjects && (
             <>
               <ProjectCard
+                title="HR / Talent Acquisition App"
+                status="Completed"
+                summary={
+                  <p>
+                    Recruitment platform where <strong>autonomous AI agents</strong> analyze resumes and verify candidate
+                    claims on the web before a hiring manager reviews them.
+                  </p>
+                }
+                description={
+                  <div className="space-y-4">
+                    <p>
+                      <strong>Smart Recruitment Platform</strong> that streamlines the hiring process by automatically
+                      analyzing resumes and verifying candidate backgrounds.
+                    </p>
+                    <br />
+                    <p>
+                      The system employs <strong>Autonomous AI Agents</strong> that act like digital recruiters. They use
+                      web browsing tools to verify candidate claims, cross-reference experience on external sites, and
+                      conduct research to present a validated report to hiring managers.
+                    </p>
+                    <br />
+                    <p>
+                      Built for scale and reliability, the system features a full observability stack with <strong>Prometheus</strong> (metrics),
+                      <strong>Grafana</strong> (dashboards), and <strong>Tempo</strong> (distributed tracing). The infrastructure is fully containerized with
+                      <strong>Docker</strong> (featuring &quot;baked-in&quot; models) and powered by <strong>MongoDB</strong> for event-driven persistence.
+                    </p>
+                    <p className="mt-2 text-sm text-gray-400">
+                      <br />
+                      <strong>Deployed on:</strong> Microsoft Azure
+                    </p>
+                  </div>
+                }
+                githubLink="https://github.com/Ferasman979/HRApp"
+                demoLink="/demovid4website.mp4"
+                technologies={[
+                  "Next.js", "React", "TypeScript", "LangChain", "LangGraph", "Llama 3", "LlamaParse", "Puppeteer",
+                  "MongoDB", "Azure Container Apps", "GitHub Actions", "OpenTelemetry"
+                ]}
+                features={[
+                  {
+                    title: "Key Technical Highlights",
+                    items: [
+                      <span key="1"><strong>Micro-Service Architecture:</strong> Decoupled agents using Model Context Protocol (MCP).</span>,
+                      <span key="2"><strong>Production Observability:</strong> Full metric tracking with Prometheus & Grafana.</span>,
+                      <span key="3"><strong>Containerization:</strong> Optimized Docker builds with pre-loaded models for performance.</span>,
+                      <span key="4"><strong>Event-Driven Design:</strong> Asynchronous pipelines triggered by database events.</span>
+                    ]
+                  }
+                ]}
+              />
+              <ProjectCard
                 title="Workforce Productivity ML Pipeline & Insights"
                 status="Completed"
+                summary={
+                  <p>
+                    End-to-end ML pipeline on <strong>Databricks</strong> that helps HR teams spot performance patterns
+                    and burnout risk, with insights delivered in Power BI.
+                  </p>
+                }
                 description={
                   <div className="space-y-4">
                     <p>
@@ -226,6 +336,12 @@ export default function Home() {
               <ProjectCard
                 title="RetailStore Insights Chatbot"
                 status="Completed"
+                summary={
+                  <p>
+                    Natural-language business-intelligence agent: staff ask questions in plain English and get answers
+                    from sales and inventory data, with no SQL required.
+                  </p>
+                }
                 description={
                   <div className="space-y-4">
                     <p>
@@ -240,10 +356,6 @@ export default function Home() {
                       <strong>SQL Database Chains</strong> and <strong>Few-Shot Prompting</strong> to accurately map natural
                       language questions to executable MySQL queries. It handles complex reasoning, such as calculating net
                       revenue or filtering stock by brand, while ensuring data security through read-only access controls.
-                    </p>
-                    <p className="mt-2 text-sm text-gray-400">
-                      <br />
-                      <strong>Technologies:</strong> Google Gemini Pro, LangChain, Streamlit, Python, MySQL
                     </p>
                   </div>
                 }
